@@ -15,7 +15,7 @@ const Nav = () => {
         <ul>
           <li>
             <NavLink exact="true" to="/">
-              <FontAwesomeIcon icon={faUtensils}></FontAwesomeIcon>  RECIPES 
+              <FontAwesomeIcon icon={faUtensils}></FontAwesomeIcon>RECIPES 
             </NavLink>
           </li>
           <li>
