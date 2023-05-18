@@ -110,6 +110,7 @@ nav ul {
 nav li {
   float: left;
   margin: 20px 0px 20px 0px;
+  
 }
 
 nav li a {
@@ -119,18 +120,34 @@ nav li a {
   padding: 1px 16px;
   text-decoration: none;
   font-size: larger;
-  font-weight: lighter;
+  
+ 
+  opacity: 1;
 }
 
 nav li a:hover {
   transition-delay: 5ms;
   opacity: 1;
-  color: black;
+  color:white;
   /* text-decoration: overline; */
-  background-color: #00f7ff;
-  border-radius: 0px 10px;
-  font-weight: bolder;
+ background-color:black;
+
+  
 }
+
+.abc:hover {
+  
+  background-color:white;
+  opacity: 1;
+}
+
+.abc {
+  background: rgba(255, 255, 255, 0.808);
+  opacity: .9;
+   
+    }
+  
+
 
 nav li:first-child {
   font-size: 200%;

@@ -45,7 +45,7 @@ const Meal = () => {
 
         <div className="heading">
           <MyCarousel />
-        <h1 className="text-center">RECIPES</h1>
+       
         </div>
         <div className="indexContainer">
           <RecipeIndex alphaIndex={(alpa) => setIndex(alpa)} />
