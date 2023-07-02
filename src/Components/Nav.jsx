@@ -9,14 +9,14 @@ import { faShuffle } from "@fortawesome/free-solid-svg-icons";
 const Nav = () => {
   return (
     <div className="main">
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark static-top">
         <NavLink exact="true" to="/">
           <img
             className="img abc"
             src={require("../images/recipes.png")}
             alt=""
             height="56"
-            srcset=""
+            srcSet=""
           />
         </NavLink>
 

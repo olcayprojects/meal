@@ -21,112 +21,66 @@ const Randomeal = () => {
   });
   return (
     <div className="container-fluid">
-    
       <Nav />
       <div className="heading">
         <MyCarousel />
-      <h1 className="text-center">RANDOM MEAL</h1>
+        <h1 className="text-center">RANDOM MEAL</h1>
       </div>
 
-      <div className="Randomcontainer text-center">
-        
-        <div className="itemss" key={item.idmeal}>
-          <h1 key={1}>{item["strMeal"]}</h1>
-          <h4 key={2}>
-            {item["strArea"]} Food | {item["strCategory"]}
-          </h4>
+      <h1 className="text-center">{item["strMeal"]}</h1>
+      <h4 className="text-center">
+        {item["strArea"]} Food | {item["strCategory"]}
+      </h4>
 
-          {item.strTags ? (
-            <h5 key={3}>Tags: {item.strTags}</h5>
-          ) : (
-            <h5>Tags: ???</h5>
-          )}
+      {item.strTags ? (
+        <h5 className="text-center">Tags: {item.strTags}</h5>
+      ) : (
+        <h5 className="text-center">Tags: ???</h5>
+      )}
 
-          <div className="malzemeListesi">
-            <table
-              style={{ width: "100%", margin: "auto" }}
-              className="table table-bordered table-dark table-hover"
+      <img
+        className="w-50 mx-auto d-block"
+        src={item.strMealThumb + "/preview"}
+        onError={(e) => {
+          e.currentTarget.src = item.strMealThumb;
+        }}
+        alt=""
+      />
+
+      <h2 className="text-center">Measure Ingredient</h2>
+      <ol className="list-group list-group-numbered">
+        {Object.keys(item).map((items, index) => {
+          return item["strIngredient" + index] ? (
+            <li
+              key={index}
+              className="list-group-item list-group-item-action list-group-item-dark"
             >
-              <thead className="thead-dark">
-                <tr>
-                  <th className="text-center" style={{ textAlign: "center" }}>
-                    <img
-                      style={{
-                        objectFit: "fill",
-                        width: "100%",
-                        height: "auto",
-                        margin: "auto",
-                      }}
-                      key={8}
-                      src={item.strMealThumb + "/preview"}
-                      onError={(e) => {
-                        e.currentTarget.src = item.strMealThumb;
-                      }}
-                      alt=""
-                    />
-                  </th>
-                  <th className="text-center">Ingredient</th>
-                  <th className="text-center">Measure</th>
-                </tr>
-              </thead>
-              <tbody>
-                {(() => {
-                  let malzemeListesi_p = [];
-                  for (let i = 1; i <= 20; i++) {
-                    if (item["strIngredient" + i]) {
-                      malzemeListesi_p.push(
-                        <tr key={i}>
-                          <td className="text-end">
-                            <img
-                              key={5}
-                              className="img-fluid"
-                              src={
-                                ingredientURL +
-                                item["strIngredient" + i] +
-                                "-Small.png"
-                              }
-                              alt=""
-                              title={item["strIngredient" + i]}
-                            />
-                          </td>
-                          <td className="table-dark text-start" key={6 + i}>
-                            {item["strIngredient" + i]}
-                          </td>
-                          <td
-                            style={{
-                              textAlignVertical: "center",
-                              textAlign: "center",
-                            }}
-                            className="table-dark  text-start"
-                          >
-                            {item["strMeasure" + i]}
-                          </td>
-                        </tr>
-                      );
-                    }
-                  }
-                  //console.log(p);
+              {item["strMeasure" + index]} {item["strIngredient" + index]}
+              <img
+                className="img"
+                src={
+                  ingredientURL + item["strIngredient" + index] + "-Small.png"
+                }
+                alt=""
+                title={item["strIngredient" + index]}
+              />
+            </li>
+          ) : (
+            ""
+          );
+        })}
+      </ol>
 
-                  var filtered = malzemeListesi_p.filter(function (el) {
-                    return el != null;
-                  });
-
-                  return filtered;
-                })()}
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-        <div key={1}>
-          <h2>Instructions</h2>
-          {!item
-            ? "bulunamadı"
-            : Array(item).map((items) => {
-                return <h5 className="text-light" key={7}>{items.strInstructions}</h5>;
-              })}
-        </div>
-      </div>
+      <h2>Instructions</h2>
+      {!item
+        ? ""
+        : Array(item).map((items, index) => {
+            return (
+              <h5 key={index} className="text-light">
+                {items.strInstructions}
+              </h5>
+            );
+          })}
     </div>
   );
 };
