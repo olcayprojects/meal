@@ -1,1 +1,2 @@
-Meal DB
+Meal DB React Project
+TheMealDB API
