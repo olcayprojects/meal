@@ -27,19 +27,8 @@ const Randomeal = () => {
         <h1 className="text-center">RANDOM MEAL</h1>
       </div>
 
-      <h1 className="text-center">{item["strMeal"]}</h1>
-      <h4 className="text-center">
-        {item["strArea"]} Food | {item["strCategory"]}
-      </h4>
-
-      {item.strTags ? (
-        <h5 className="text-center">Tags: {item.strTags}</h5>
-      ) : (
-        <h5 className="text-center">Tags: ???</h5>
-      )}
-
       <img
-        className="w-50 mx-auto d-block"
+        className="img-thumbnail w-50 mx-auto d-block rounded-pill"
         src={item.strMealThumb + "/preview"}
         onError={(e) => {
           e.currentTarget.src = item.strMealThumb;
@@ -47,40 +36,51 @@ const Randomeal = () => {
         alt=""
       />
 
-      <h2 className="text-center">Measure Ingredient</h2>
-      <ol className="list-group list-group-numbered">
-        {Object.keys(item).map((items, index) => {
-          return item["strIngredient" + index] ? (
-            <li
-              key={index}
-              className="list-group-item list-group-item-action list-group-item-dark"
-            >
-              {item["strMeasure" + index]} {item["strIngredient" + index]}
-              <img
-                className="img"
-                src={
-                  ingredientURL + item["strIngredient" + index] + "-Small.png"
-                }
-                alt=""
-                title={item["strIngredient" + index]}
-              />
-            </li>
-          ) : (
-            ""
-          );
-        })}
-      </ol>
+      <h3 className="text-center">{item["strMeal"]}</h3>
+      <h5 className="text-center">
+        {item["strArea"]} Food | {item["strCategory"]}
+      </h5>
 
-      <h2>Instructions</h2>
-      {!item
-        ? ""
-        : Array(item).map((items, index) => {
-            return (
-              <h5 key={index} className="text-light">
-                {items.strInstructions}
-              </h5>
+      {item.strTags ? (
+        <h6 className="text-center">Tags: {item.strTags}</h6>
+      ) : (
+        <h5 className="text-center">Tags: ???</h5>
+      )}
+
+      <div className="container">
+        <ol className="list-group list-group-numbered">
+          {Object.keys(item).map((items, index) => {
+            return item["strIngredient" + index] ? (
+              <li
+                key={index}
+                className="list-group-item list-group-item-action list-group-item-dark"
+              >
+                {item["strMeasure" + index]} {item["strIngredient" + index]}
+                <img
+                  className="img-fluid"
+                  src={
+                    ingredientURL + item["strIngredient" + index] + "-Small.png"
+                  }
+                  alt=""
+                  title={item["strIngredient" + index]}
+                />
+              </li>
+            ) : (
+              ""
             );
           })}
+        </ol>
+
+        {!item
+          ? ""
+          : Array(item).map((items, index) => {
+              return (
+                <h6 key={index} className="text-light p-2">
+                  {items.strInstructions}
+                </h6>
+              );
+            })}
+      </div>
     </div>
   );
 };
