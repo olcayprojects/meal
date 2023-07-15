@@ -20,14 +20,10 @@ body {
 
 .container {
   width: 99%;
-  margin: 6px 1px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   /* grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); */
   grid-gap: 0rem;
-  color: aqua;
-  border-style: ridge;
-  padding: 0 !important;
 }
 
 .card-title {
@@ -58,16 +54,15 @@ body {
   cursor: pointer;
   width: 50px;
   height: 40px;
-  background-color:rgba(41, 41, 41, 0.8);
+  background-color: rgba(41, 41, 41, 0.8);
   display: block;
   justify-content: center;
   align-items: center;
   color: white;
   margin: 0 5px 0 5px;
-  
 }
 .numBox :hover {
-  background-color:rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.8);
   color: black;
   transition: 1s;
 }
@@ -110,7 +105,6 @@ nav ul {
 nav li {
   float: left;
   margin: 20px 0px 20px 0px;
-  
 }
 
 nav li a {
@@ -120,34 +114,27 @@ nav li a {
   padding: 1px 16px;
   text-decoration: none;
   font-size: larger;
-  
- 
+
   opacity: 1;
 }
 
 nav li a:hover {
   transition-delay: 5ms;
   opacity: 1;
-  color:white;
+  color: white;
   /* text-decoration: overline; */
- background-color:black;
-
-  
+  background-color: black;
 }
 
 .abc:hover {
-  
-  background-color:white;
+  background-color: white;
   opacity: 1;
 }
 
 .abc {
   background: rgba(255, 255, 255, 0.808);
-  opacity: .9;
-   
-    }
-  
-
+  opacity: 0.9;
+}
 
 nav li:first-child {
   font-size: 200%;
@@ -162,9 +149,7 @@ p {
 }
 
 pre {
-  white-space: pre-wrap;
-  text-align: justify !important;
-  
+  white-space: pre-line;
 }
 
 .yemekresim {
@@ -227,8 +212,8 @@ ul {
 
 /* On mouse-over, add a deeper shadow */
 
-.card :hover {
-  background-color: rgba(0, 0, 0, 0.5);
+.card  :hover {
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .containerIngredientsFilter {

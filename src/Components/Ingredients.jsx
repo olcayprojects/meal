@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Nav from "./Nav";
 import Loader from "../Components/Loader";
-import MyCarousel from "./Carousel";
 let ingredientURL = "https://www.themealdb.com/images/ingredients/";
 
 const Ingredients = () => {
@@ -33,10 +32,9 @@ const Ingredients = () => {
     <div className="container-fluid">
       <Nav />
       <div className="heading">
-        <MyCarousel />
         <h1 className="text-center">INGREDIENTS</h1>
       </div>
-      <div className="row row-cols-2 row-cols-md-6 g-3 justify-content-md-center ">
+      <div className="row row-cols-1 row-cols-md-6 g-3 justify-content-md-center ">
         {!item ? (
           <h1>bulunamadı</h1>
         ) : (

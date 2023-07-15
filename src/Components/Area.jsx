@@ -4,7 +4,6 @@ import { useParams, useNavigate } from "react-router-dom";
 import Nav from "./Nav";
 import Cmbarealist from "./Cmbarealist";
 import Loader from "../Components/Loader";
-import MyCarousel from "./Carousel";
 
 const AreaFilter = () => {
   let navigate = useNavigate();
@@ -41,7 +40,6 @@ const AreaFilter = () => {
       <div className="container-fluid">
         <Nav />
         <div className="heading">
-          <MyCarousel />
         <h1 className="text-center">CUISINES</h1>
         </div>
         <div>

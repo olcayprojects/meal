@@ -22,11 +22,11 @@ const MealItem2 = ({ data }) => {
     <>
       {!data
         ? "bulunamadı"
-        : data.map((item,index) => {
+        : data.map((item, index) => {
             //const id =Math.floor(Math.random()*1000)
             return (
               <div key={item.idMeal}>
-                <img 
+                <img
                   src={require("../images/separator.jpg")}
                   style={{ width: "100%", objectFit: "contain" }}
                   alt="separator"
@@ -73,7 +73,6 @@ const MealItem2 = ({ data }) => {
                   onClick={() => {
                     navigate(`/recipeinfo/${item.idMeal}`);
                   }}
-                  
                 >
                   <div className="Innstructions">
                     <div className="malzemePng2">
@@ -84,10 +83,9 @@ const MealItem2 = ({ data }) => {
                             p.push(
                               <p
                                 style={{ textAlign: "center" }}
-                                key={Math.random(0,1)}
+                                key={Math.random(0, 1)}
                               >
                                 <img
-                                  
                                   style={{ width: "20%", height: "auto" }}
                                   className="malzemeimg "
                                   src={
@@ -112,18 +110,17 @@ const MealItem2 = ({ data }) => {
                       })()}
                     </div>
                   </div>
-                 
-                    <div className="yemekresim">
-                      <img className="img-thumbnail"
-                        
-                        src={item.strMealThumb + "/preview"}
-                        onError={(e) => {
-                          e.currentTarget.src = item.strMealThumb;
-                        }}
-                        alt=""
-                      />
-                    </div>
-                  
+
+                  <div className="yemekresim">
+                    <img
+                      className="img-thumbnail"
+                      src={item.strMealThumb + "/preview"}
+                      onError={(e) => {
+                        e.currentTarget.src = item.strMealThumb;
+                      }}
+                      alt=""
+                    />
+                  </div>
 
                   <div className="Innstructions">
                     <div className="malzemePng2 ">
@@ -136,8 +133,7 @@ const MealItem2 = ({ data }) => {
                                 style={{ textAlign: "center" }}
                                 key={Math.random(1, 2)}
                               >
-                                <img 
-                                  
+                                <img
                                   style={{ width: "20%", height: "auto" }}
                                   className="malzemeimg "
                                   src={
@@ -163,7 +159,7 @@ const MealItem2 = ({ data }) => {
                     </div>
                   </div>
                 </div>
-                </div>
+              </div>
             );
           })}
     </>

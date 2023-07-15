@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 // import { v4 as uuidv4 } from "uuid";
 import Nav from "./Nav";
-import MyCarousel from "./Carousel";
 
 let response = getData(`https://www.themealdb.com/api/json/v1/1/random.php`);
 let ingredientURL = "https://www.themealdb.com/images/ingredients/";
@@ -23,7 +22,6 @@ const Randomeal = () => {
     <div className="container-fluid">
       <Nav />
       <div className="heading">
-        <MyCarousel />
         <h1 className="text-center">RANDOM MEAL</h1>
       </div>
 
@@ -35,51 +33,56 @@ const Randomeal = () => {
         }}
         alt=""
       />
+      <div className="border border-5 border-dark">
+        <h3 className="text-center">{item["strMeal"]}</h3>
+        <h5 className="text-center">
+          {item["strArea"]} Food | {item["strCategory"]}
+        </h5>
+        {item.strTags ? (
+          <h5 className="text-center">Tags: {item.strTags}</h5>
+        ) : (
+          <h5 className="text-center">Tags: ???</h5>
+        )}
+      </div>
 
-      <h3 className="text-center">{item["strMeal"]}</h3>
-      <h5 className="text-center">
-        {item["strArea"]} Food | {item["strCategory"]}
-      </h5>
-
-      {item.strTags ? (
-        <h6 className="text-center">Tags: {item.strTags}</h6>
-      ) : (
-        <h5 className="text-center">Tags: ???</h5>
-      )}
-
-      <div className="container">
-        <ol className="list-group list-group-numbered">
-          {Object.keys(item).map((items, index) => {
-            return item["strIngredient" + index] ? (
-              <li
-                key={index}
-                className="list-group-item list-group-item-action list-group-item-dark"
-              >
-                {item["strMeasure" + index]} {item["strIngredient" + index]}
-                <img
-                  className="img-fluid"
-                  src={
-                    ingredientURL + item["strIngredient" + index] + "-Small.png"
-                  }
-                  alt=""
-                  title={item["strIngredient" + index]}
-                />
-              </li>
-            ) : (
-              ""
-            );
-          })}
-        </ol>
-
-        {!item
-          ? ""
-          : Array(item).map((items, index) => {
-              return (
-                <h6 key={index} className="text-light p-2">
-                  {items.strInstructions}
-                </h6>
+      <div className="container p-1">
+        <div className="m-1" style={{ border: "dashed", borderColor: "white" }}>
+          <ol className="list-group list-group-numbered fw-bold">
+            {Object.keys(item).map((items, index) => {
+              return item["strIngredient" + index] ? (
+                <li
+                  key={index}
+                  className="list-group-item list-group-item-action bg-black text-light border-dark border border-2"
+                >
+                  <img
+                    className="img-fluid"
+                    src={
+                      ingredientURL +
+                      item["strIngredient" + index] +
+                      "-Small.png"
+                    }
+                    alt=""
+                    title={item["strIngredient" + index]}
+                  />{" "}
+                  {item["strMeasure" + index]} {item["strIngredient" + index]}
+                </li>
+              ) : (
+                ""
               );
             })}
+          </ol>
+        </div>
+        <div className="m-1 pt-2" style={{ border: "dashed", borderColor: "white" }}>
+          {!item
+            ? ""
+            : Array(item).map((items, index) => {
+                return (
+                  <pre key={index} className="text-light p-2">
+                    {items.strInstructions}
+                  </pre>
+                );
+              })}
+        </div>
       </div>
     </div>
   );

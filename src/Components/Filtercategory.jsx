@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 import Categories from "./Categories";
 import Nav from "./Nav";
 import Loader from "../Components/Loader";
-import MyCarousel from "./Carousel";
 
 const Filtercategory = () => {
   const [items, setItems] = useState([]);
@@ -34,8 +33,7 @@ const Filtercategory = () => {
     <div className="container-fluid">
       <Nav />
       <div className="heading">
-        <MyCarousel />
-        <h1 className="text-center">CATEGORIES</h1>
+       <h1 className="text-center">CATEGORIES</h1>
       </div>
       {!items ? (
         ""

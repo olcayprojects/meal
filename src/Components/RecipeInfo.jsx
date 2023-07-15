@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 import Nav from "./Nav";
 import Loader from "../Components/Loader";
 
-
 let url = "";
 let ingredientURL = "https://www.themealdb.com/images/ingredients/";
 
@@ -27,13 +26,11 @@ const RecipeInfo = () => {
       .then((res) => res.json())
       .then((data) => {
         setItem(data.meals[0]);
-        // console.log(Array(data));
         setLoading(false);
       });
   }, []);
 
-  if (loading)
-    return <Loader />;
+  if (loading) return <Loader />;
   return (
     <>
       {!item ? (
@@ -44,8 +41,9 @@ const RecipeInfo = () => {
           <div className="">
             {(() => {
               imageyemek.push(
-                <img  key={item.idMeal}
-                className="img-thumbnail mx-auto d-block"
+                <img
+                  key={item.idMeal}
+                  className="img-thumbnail mx-auto d-block"
                   src={item.strMealThumb + ""}
                   onError={({ currentTarget }) => {
                     currentTarget.onerror = null; // prevents looping
@@ -58,7 +56,9 @@ const RecipeInfo = () => {
             })()}
 
             <div className="">
-              <h1 className="text-center">{item["strMeal"].toUpperCase()}</h1>
+              <h1 className="text-center text-light border border-5 border-dark">
+                {item["strMeal"].toUpperCase()}
+              </h1>
               <div style={mystyle}>{imageyemek}</div>
             </div>
             <div key={item.idMeal} className="text-center">
@@ -73,17 +73,14 @@ const RecipeInfo = () => {
           </div>
           <div className="recipe-details">
             <div className="ingredients">
-              <h3 className="text-center">INGREDIENTS</h3>
-             
-              <ol style={{listStyleType:"upper-roman"}} className="point" 
-  
-              >
+              <ol className="list-group list-group-numbered fs-5">
                 {(() => {
                   let li = [];
                   for (let i = 1; i <= 20; i++) {
                     if (item["strIngredient" + i]) {
                       li.push(
-                        <li className="mx-4"
+                        <li
+                          className="point list-group-item list-group-item-action bg-black text-light border-dark border border-2"
                           key={item.idMeal + i}
                           onClick={(ef) => {
                             navigate(
@@ -92,7 +89,6 @@ const RecipeInfo = () => {
                                 .trim()}`
                             );
                           }}
-      
                         >
                           <img
                             src={
@@ -114,9 +110,8 @@ const RecipeInfo = () => {
                 })()}
               </ol>
             </div>
-            <div className="instructions">
-              <h3 className="text-center">INSTRUCTIONS</h3>
-              <pre style={{fontSize:"16px"}} className="px-2 ">{item["strInstructions"]}</pre>
+            <div className="instructions pt-3">
+              <pre className="px-2 h5">{item["strInstructions"]}</pre>
             </div>
           </div>
         </>
