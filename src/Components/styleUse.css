@@ -18,7 +18,7 @@ body {
   width: 100%;
 }
 
-.container12 {
+.container {
   width: 99%;
   display: grid;
   grid-template-columns: 1fr 2fr;

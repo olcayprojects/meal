@@ -27,6 +27,12 @@ const RecipeInfo = () => {
       .then((data) => {
         setItem(data.meals[0]);
         setLoading(false);
+      })
+      .catch((error) => {
+        setLoading(false);
+        console.log(error);
+        navigate(`/recipeinfo/${52768}`);
+        navigate(0);
       });
   }, []);
 
@@ -57,7 +63,21 @@ const RecipeInfo = () => {
 
             <div className="">
               <h1 className="text-center text-light border border-5 border-dark">
-                {item["strMeal"].toUpperCase()}
+                <i
+                  className="bi bi-arrow-left-square point"
+                  onClick={() => {
+                    navigate(`/recipeinfo/${--item.idMeal}`);
+                    navigate(0);
+                  }}
+                ></i>
+                {" " + item["strMeal"].toUpperCase() + " "}
+                <i
+                  className="bi bi-arrow-right-square point"
+                  onClick={() => {
+                    navigate(`/recipeinfo/${++item.idMeal}`);
+                    navigate(0);
+                  }}
+                ></i>
               </h1>
               <div style={mystyle}>{imageyemek}</div>
             </div>

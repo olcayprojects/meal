@@ -58,7 +58,9 @@ const MealItem2 = ({ data }) => {
                   </h4>
 
                   {item.strTags ? (
-                    <button type="button" className="btn btn-danger">
+                    <button type="button" className="btn btn-danger"
+                    
+                    >
                       Tags: {item["strTags"]}
                     </button>
                   ) : (
