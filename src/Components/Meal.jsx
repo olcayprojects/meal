@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import MealItem2 from "./MealItem2";
+import MealItem2 from "./MealItem";
 import RecipeIndex from "./RecipeIndex";
 import Nav from "./Nav";
 import MyCarousel from "./Carousel";
@@ -64,7 +64,7 @@ const Meal = () => {
             placeholder="You can search your favorite meals"
           />
         </div>
-        <div className="container2">
+        <div className="mealList">
           {show ? <MealItem2 data={item}/> : "Not Found!"}
         </div>
       </div>

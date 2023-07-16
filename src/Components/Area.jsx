@@ -39,9 +39,6 @@ const AreaFilter = () => {
     return (
       <div className="container-fluid">
         <Nav />
-        <div className="heading">
-        <h1 className="text-center">CUISINES</h1>
-        </div>
         <div>
         <h1 className="text-center p-3 mb-2 bg-dark text-light">
           <Cmbarealist /> {areaName} Cuisine

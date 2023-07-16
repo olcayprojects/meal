@@ -6,7 +6,7 @@ import Ingredients from "./Ingredients";
 import Ingredientsfilter from "./Ingredientsfilter";
 import Randomeal from "./Randomeal";
 import Filtercategory from "./Filtercategory";
-import MealItem2 from "./MealItem2";
+import MealItem from "./MealItem";
 import Area from "./Area";
 
 const Components = () => {
@@ -19,7 +19,7 @@ const Components = () => {
       <Route path="/RecipeInfo/:MealId" element={<RecipeInfo />} />
       <Route path="/fg/:CategoryName" element={<Filtercategory />} />
       <Route path="/Randomeal" element={<Randomeal />} />
-      <Route path="/MealItem2" element={<MealItem2 />} />
+      <Route path="/MealItem" element={<MealItem />} />
       <Route path="/Area" element={<Area />} />
       <Route path="/area/:areaName" element={<Area />} />
       <Route

@@ -31,9 +31,6 @@ const Ingredients = () => {
   return (
     <div className="container-fluid">
       <Nav />
-      <div className="heading">
-        <h1 className="text-center">INGREDIENTS</h1>
-      </div>
       <div className="row row-cols-1 row-cols-md-6 g-3 justify-content-md-center ">
         {!item ? (
           <h1>bulunamadı</h1>
@@ -64,14 +61,16 @@ const Ingredients = () => {
                         className="btn bg-dark text-light"
                         onClick={() => setShowMore(!showMore)}
                       >
+                        
                         {showMore
-                          ? item.strDescription
-                          : item.strDescription?.substring(0, 100)
-                          ? item.strDescription?.substring(0, 100)
-                          : "Null"}
-                        <br />
-
-                        {showMore ? "Show less" : "Show more"}
+                          ? item?.strDescription
+                          : item?.strDescription?.substring(0, 100)
+                          }
+                          <hr />
+                        {showMore ? "Show less" : "Show more"
+                       
+                      
+                      }
                       </button>
                     </pre>
                   </div>

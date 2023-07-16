@@ -22,66 +22,66 @@ const Randomeal = () => {
     <div className="container-fluid">
       <Nav />
       <div className="heading">
-        <h1 className="text-center">RANDOM MEAL</h1>
+        <h1 className="text-center">{item["strMeal"]}</h1>
+        <h4 className="text-center">
+          {item["strArea"]} Food | {item["strCategory"]}
+        </h4>
+        {item.strTags ? (
+          <h4 className="text-center">Tags: {item.strTags}</h4>
+        ) : (
+          ""
+        )}
       </div>
 
       <img
-        className="img-thumbnail w-50 mx-auto d-block rounded-pill"
+        className="img-thumbnail w-50 mx-auto d-block"
         src={item.strMealThumb + "/preview"}
         onError={(e) => {
           e.currentTarget.src = item.strMealThumb;
         }}
         alt=""
       />
-      <div className="border border-5 border-dark">
-        <h3 className="text-center">{item["strMeal"]}</h3>
-        <h5 className="text-center">
-          {item["strArea"]} Food | {item["strCategory"]}
-        </h5>
-        {item.strTags ? (
-          <h5 className="text-center">Tags: {item.strTags}</h5>
-        ) : (
-          <h5 className="text-center">Tags: ???</h5>
-        )}
-      </div>
 
-      <div className="container p-1">
-        <div className="m-1" style={{ border: "dashed", borderColor: "white" }}>
-          <ol className="list-group list-group-numbered fw-bold">
-            {Object.keys(item).map((items, index) => {
-              return item["strIngredient" + index] ? (
-                <li
-                  key={index}
-                  className="list-group-item list-group-item-action bg-black text-light border-dark border border-2"
-                >
-                  <img
-                    className="img-fluid"
-                    src={
-                      ingredientURL +
-                      item["strIngredient" + index] +
-                      "-Small.png"
-                    }
-                    alt=""
-                    title={item["strIngredient" + index]}
-                  />{" "}
-                  {item["strMeasure" + index]} {item["strIngredient" + index]}
-                </li>
-              ) : (
-                ""
-              );
-            })}
-          </ol>
-        </div>
-        <div className="m-1 pt-2" style={{ border: "dashed", borderColor: "white" }}>
-          {!item
-            ? ""
-            : Array(item).map((items, index) => {
-                return (
-                  <pre key={index} className="text-light p-2">
-                    {items.strInstructions}
-                  </pre>
+      <div className="container-fluid p-1">
+        <div className="row m-1">
+          <div
+            className="col-xl-4 me-2"
+            style={{ border: "dashed", borderColor: "white" }}
+          >
+            <ol className="list-group list-group-numbered fs-5">
+              {Object.keys(item).map((items, index) => {
+                return item["strIngredient" + index] ? (
+                  <li
+                    key={index}
+                    className="list-group-item list-group-item-action bg-black text-light border-dark border border-1"
+                  >
+                    <img
+                      className="img-fluid"
+                      src={
+                        ingredientURL +
+                        item["strIngredient" + index] +
+                        "-Small.png"
+                      }
+                      alt=""
+                      title={item["strIngredient" + index]}
+                    />
+                    {" " +
+                      item["strMeasure" + index] +
+                      " " +
+                      item["strIngredient" + index]}
+                  </li>
+                ) : (
+                  ""
                 );
               })}
+            </ol>
+          </div>
+          <div
+            className="col pt-2"
+            style={{ border: "dashed", borderColor: "white" }}
+          >
+            <pre className="text-light p-2 fs-5">{item?.strInstructions}</pre>
+          </div>
         </div>
       </div>
     </div>

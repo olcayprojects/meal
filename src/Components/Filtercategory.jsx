@@ -32,9 +32,7 @@ const Filtercategory = () => {
   return (
     <div className="container-fluid">
       <Nav />
-      <div className="heading">
-       <h1 className="text-center">CATEGORIES</h1>
-      </div>
+
       {!items ? (
         ""
       ) : (
@@ -51,8 +49,9 @@ const Filtercategory = () => {
             }
             alt=""
           />
+          <h2 className="text-center">{CategoryName} Meals</h2>
 
-          <div className="row row-cols-2 row-cols-md-6 g-3 justify-content-md-center">
+          <div className="row row-cols-2 row-cols-md-6 g-3 justify-content-md-center pt-4">
             {items.map((item) => {
               return (
                 <div className="col point" key={item.idMeal}>
