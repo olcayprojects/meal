@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Loader from "../Components/Loader";
+
 
 const Categories = () => {
   const [url, setUrl] = useState(
@@ -21,6 +23,7 @@ const Categories = () => {
       })
     );
   }, [url]);
+  if (!show) return <Loader />;
 
   return (
     <>

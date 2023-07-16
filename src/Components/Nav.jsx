@@ -1,10 +1,4 @@
 import { NavLink } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faListAlt } from "@fortawesome/free-solid-svg-icons";
-import { faList } from "@fortawesome/free-solid-svg-icons";
-import { faUtensils } from "@fortawesome/free-solid-svg-icons";
-import { faBowlFood } from "@fortawesome/free-solid-svg-icons";
-import { faShuffle } from "@fortawesome/free-solid-svg-icons";
 
 const Nav = () => {
   return (
@@ -24,22 +18,24 @@ const Nav = () => {
           <li></li>
           <li>
             <NavLink to="/categories">
-              <FontAwesomeIcon icon={faListAlt}></FontAwesomeIcon> CATEGORIES
+            <i class="bi bi-card-list"></i> CATEGORIES
             </NavLink>
           </li>
           <li>
             <NavLink to="/ingredients">
-              <FontAwesomeIcon icon={faList}></FontAwesomeIcon> INGREDIENTS
+            <i class="bi bi-list-ul"></i> INGREDIENTS
             </NavLink>
           </li>
           <li>
             <NavLink to="/Area">
-              <FontAwesomeIcon icon={faBowlFood}></FontAwesomeIcon> CUISINE
+            <i class="bi bi-globe"></i> CUISINE
             </NavLink>
           </li>
           <li>
-            <NavLink reloadDocument to="/randomeal">
-              <FontAwesomeIcon icon={faShuffle}></FontAwesomeIcon> RANDOM MEAL
+            <NavLink reloadDocument to="/randomeal"><i class="bi bi-shuffle pe-1">
+
+            </i>
+              RANDOM MEAL
             </NavLink>
           </li>
         </ul>

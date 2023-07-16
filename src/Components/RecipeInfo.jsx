@@ -34,7 +34,7 @@ const RecipeInfo = () => {
         navigate(`/recipeinfo/${52768}`);
         navigate(0);
       });
-  }, []);
+  }, [navigate]);
 
   if (loading) return <Loader />;
   return (
@@ -64,7 +64,7 @@ const RecipeInfo = () => {
             <div className="">
               <h1 className="text-center text-light border border-5 border-dark">
                 <i
-                  className="bi bi-arrow-left-square point"
+                  className="bi bi-arrow-left-square-fill point"
                   onClick={() => {
                     navigate(`/recipeinfo/${--item.idMeal}`);
                     navigate(0);
@@ -72,7 +72,7 @@ const RecipeInfo = () => {
                 ></i>
                 {" " + item["strMeal"].toUpperCase() + " "}
                 <i
-                  className="bi bi-arrow-right-square point"
+                  className="bi bi-arrow-right-square-fill point"
                   onClick={() => {
                     navigate(`/recipeinfo/${++item.idMeal}`);
                     navigate(0);
@@ -100,14 +100,12 @@ const RecipeInfo = () => {
                     if (item["strIngredient" + i]) {
                       li.push(
                         <li
+                          id={item["strIngredient" + i]}
                           className="point list-group-item list-group-item-action bg-black text-light border-dark border border-2"
                           key={item.idMeal + i}
                           onClick={(ef) => {
-                            navigate(
-                              `/ingredientsfilter/${ef.target.innerText
-                                .split("=>")[0]
-                                .trim()}`
-                            );
+                            console.log(ef);
+                            navigate(`/ingredientsfilter/${ef.target.id}`);
                           }}
                         >
                           <img
@@ -119,8 +117,9 @@ const RecipeInfo = () => {
                             alt=""
                             title={item["strIngredient" + i]}
                           />{" "}
-                          {item["strIngredient" + i]} ={">"}{" "}
-                          {item["strMeasure" + i]}
+                          {item["strMeasure" + i] +
+                            " " +
+                            item["strIngredient" + i]}
                         </li>
                       );
                     }

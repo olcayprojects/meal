@@ -14,16 +14,10 @@ fetch(url)
 
 function Loader() {
   return (
-    <div className="d-flex justify-content-center align-items-center">
-      <Spinner
-        animation="border"
-        role="status"
-        style={{ color: "cyan", width: "40rem", height: "40rem" }}
-      >
-        <span style={{ color: "cyan" }} className="visually-hidden">
+    <div className="d-flex justify-content-center align-items-center mt-5 pt-5">
+        <h1 style={{ color: "cyan" }} className=" fw-bolder">
           Loading...
-        </span>
-      </Spinner>
+        </h1>
     </div>
   );
 }

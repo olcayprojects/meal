@@ -22,7 +22,7 @@ body {
   width: 99%;
   display: grid;
   grid-template-columns: 1fr 2fr;
- /* grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));  */
+  /* grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));  */
   grid-gap: 0rem;
 }
 
@@ -212,7 +212,7 @@ ul {
 
 /* On mouse-over, add a deeper shadow */
 
-.card  :hover {
+.card :hover {
   background-color: rgba(0, 0, 0, 0.4);
 }
 

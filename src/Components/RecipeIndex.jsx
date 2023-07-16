@@ -32,7 +32,11 @@ const RecipeIndex = ({ alphaIndex }) => {
     <>
       {alpha.map((item) => {
         return (
-          <div className="numBox mx-auto" key={num++} onClick={() => alphaIndex(item)}>
+          <div
+            className="numBox mx-auto"
+            key={num++}
+            onClick={() => alphaIndex(item)}
+          >
             <h1>{item}</h1>
           </div>
         );
