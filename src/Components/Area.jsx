@@ -40,22 +40,18 @@ const AreaFilter = () => {
       <div className="container-fluid">
         <Nav />
         <div>
-        <h1 className="text-center p-3 mb-2 bg-dark text-light">
-          <Cmbarealist /> {areaName} Cuisine
-        </h1>
-
-
+          <h1 className="text-center p-3 mb-2 bg-dark text-light">
+            <Cmbarealist /> {areaName} Cuisine
+          </h1>
         </div>
-
 
         <div className="row row-cols-3 g-3 justify-content-md-center">
           {items.map((item) => {
             return (
-              <div className="col col-md-2"  key={item.idMeal}>
+              <div className="col col-md-2" key={item.idMeal}>
                 <div
                   className="card text-dark bg-white"
-                  style={{ color: "white", cursor: "pointer"}}
-                 
+                  style={{ color: "white", cursor: "pointer" }}
                   onClick={() => {
                     navigate(`/recipeinfo/${item.idMeal}`);
                   }}

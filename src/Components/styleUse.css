@@ -61,6 +61,7 @@ body {
   color: white;
   margin: 0 5px 0 5px;
 }
+
 .numBox :hover {
   background-color: rgba(255, 255, 255, 0.8);
   color: black;
@@ -114,7 +115,6 @@ nav li a {
   padding: 1px 16px;
   text-decoration: none;
   font-size: larger;
-
   opacity: 1;
 }
 
@@ -122,7 +122,6 @@ nav li a:hover {
   transition-delay: 5ms;
   opacity: 1;
   color: white;
-  /* text-decoration: overline; */
   background-color: black;
 }
 
@@ -156,6 +155,7 @@ pre {
   text-align: center;
   cursor: pointer;
 }
+
 .mealImg img {
   width: 100%;
   height: 100%;
@@ -186,12 +186,12 @@ pre {
   bottom: 0;
   left: 0;
   right: 0;
-  /* background: url(emptycookbook.png) center center; */
   opacity: 0.2;
   width: 100%;
   height: 100%;
   color: aqua !important;
 }
+
 ul {
   padding: 0 !important;
 }
@@ -209,8 +209,6 @@ ul {
   background-color: black;
   color: teal !important;
 }
-
-/* On mouse-over, add a deeper shadow */
 
 .card :hover {
   background-color: rgba(0, 0, 0, 0.4);
@@ -231,7 +229,6 @@ tr,
 td,
 th {
   font-size: larger;
-
   vertical-align: bottom;
 }
 
@@ -250,7 +247,6 @@ th {
   margin-right: auto;
   height: 400px;
   object-fit: cover;
-  /* opacity: 0.4; */
 }
 
 .carousel-control-prev-icon,
@@ -263,6 +259,7 @@ th {
   border: 2px solid cyan;
   background-image: none;
 }
+
 .carousel-item {
   transition-property: opacity !important;
   transition-duration: 1s, 3s !important;
@@ -271,10 +268,8 @@ th {
 @keyframes mymove {
   0% {
     object-fit: cover;
-
     width: 100%;
     height: 300px;
-
     object-position: -30% -30%;
   }
   25% {

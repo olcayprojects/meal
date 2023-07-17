@@ -14,7 +14,7 @@ const Meal = () => {
   const [show, setShow] = useState(false);
   const [search, setSearch] = useState("");
   const [loading, setLoading] = useState(false);
-  
+
   useEffect(() => {
     setLoading(true);
     fetch(url).then((res) =>
@@ -39,13 +39,11 @@ const Meal = () => {
   if (loading) return <Loader />;
   return (
     <div className="container-fluid">
-    
       <div className="main">
         <Nav />
 
         <div className="heading">
           <MyCarousel />
-       
         </div>
         <div className="indexContainer">
           <RecipeIndex alphaIndex={(alpa) => setIndex(alpa)} />
@@ -65,7 +63,7 @@ const Meal = () => {
           />
         </div>
         <div className="mealList">
-          {show ? <MealItem2 data={item}/> : "Not Found!"}
+          {show ? <MealItem2 data={item} /> : "Not Found!"}
         </div>
       </div>
     </div>

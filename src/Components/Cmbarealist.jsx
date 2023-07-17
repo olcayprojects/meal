@@ -21,7 +21,7 @@ const Arealist = () => {
     <div className="row align-items-center">
       <form>
         <select
-        size="0"
+          size="0"
           defaultValue={""}
           aria-label="Default select example"
           className="form-select text-light bg-dark "

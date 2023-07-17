@@ -37,11 +37,11 @@ const Ingredients = () => {
         ) : (
           item.map((item) => {
             return (
-              <div className="col d-flex point border border-primary p-0 m-2" key={item.idIngredient}>
-                <div
-                  className="card flex-fill text-white bg-dark"
-                  
-                >
+              <div
+                className="col d-flex point border border-primary p-0 m-2"
+                key={item.idIngredient}
+              >
+                <div className="card flex-fill text-white bg-dark">
                   <img
                     className="card-img-top img-thumbnail"
                     key={item.MealId}
@@ -61,16 +61,11 @@ const Ingredients = () => {
                         className="btn bg-dark text-light"
                         onClick={() => setShowMore(!showMore)}
                       >
-                        
                         {showMore
                           ? item?.strDescription
-                          : item?.strDescription?.substring(0, 100)
-                          }
-                          <hr />
-                        {showMore ? "Show less" : "Show more"
-                       
-                      
-                      }
+                          : item?.strDescription?.substring(0, 100)}
+                        <hr />
+                        {showMore ? "Show less" : "Show more"}
                       </button>
                     </pre>
                   </div>

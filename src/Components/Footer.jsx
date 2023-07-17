@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 
-
 const Footer = () => {
   const url = "https://api.quotable.io/random?tags=technology";
 
@@ -11,7 +10,6 @@ const Footer = () => {
       .then((res) => res.json())
       .then((data) => {
         setQuote(data);
-        
       });
   }, [url]);
   return (

@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Loader from "../Components/Loader";
 
-
 const Categories = () => {
   const [url, setUrl] = useState(
     "https://www.themealdb.com/api/json/v1/1/categories.php"
@@ -33,7 +32,10 @@ const Categories = () => {
           ? "bulunamadı"
           : item.map((item) => {
               return (
-                <div className="col col-4 col-md-2 point  rounded-circle" key={item.idCategory}>
+                <div
+                  className="col col-4 col-md-2 point  rounded-circle"
+                  key={item.idCategory}
+                >
                   <div
                     className="card text-dark bg-white "
                     style={{}}
@@ -49,7 +51,7 @@ const Categories = () => {
                       alt={item["strCategoryDescription"]}
                     />
                     <div className="card-img-overlay text-center">
-                      <h4 className="card-title" >
+                      <h4 className="card-title">
                         {item.strCategory.toUpperCase()}
                       </h4>
                     </div>

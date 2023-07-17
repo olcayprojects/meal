@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import Carousel from "react-bootstrap/Carousel";
 import Loader from "../Components/Loader";
 
-
 function MyCarousel() {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -22,7 +21,6 @@ function MyCarousel() {
     "Vegetarian",
     "Breakfast",
   ];
-  
 
   let url =
     "https://www.themealdb.com/api/json/v1/1/filter.php?c=" +
@@ -56,7 +54,7 @@ function MyCarousel() {
   if (error) {
     return <div>Error: {error.message}</div>;
   } else if (!isLoaded) {
-    return <Loader/>;
+    return <Loader />;
   } else {
     return (
       <Carousel fade={true} interval={1000}>
@@ -73,7 +71,11 @@ function MyCarousel() {
                 alt={image1.strMeal}
               />
               <Carousel.Caption>
-                <h1 style={{ color: "white",background:"rgba(0, 0, 0, 0.2)"}}>{image1.strMeal}</h1>
+                <h1
+                  style={{ color: "white", background: "rgba(0, 0, 0, 0.2)" }}
+                >
+                  {image1.strMeal}
+                </h1>
                 <p style={{ color: "white" }}>{image1.idMeal}</p>
               </Carousel.Caption>
             </Carousel.Item>

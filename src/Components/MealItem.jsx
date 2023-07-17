@@ -17,7 +17,6 @@ function toTitleCase(str) {
 
 const MealItem2 = ({ data }) => {
   let navigate = useNavigate();
-  let i = 1;
 
   return (
     <>
@@ -58,9 +57,7 @@ const MealItem2 = ({ data }) => {
                   </h4>
 
                   {item.strTags ? (
-                    <button type="button" className="btn btn-danger"
-                    
-                    >
+                    <button type="button" className="btn btn-danger">
                       Tags: {item["strTags"]}
                     </button>
                   ) : (
@@ -77,26 +74,25 @@ const MealItem2 = ({ data }) => {
                     navigate(`/recipeinfo/${item.idMeal}`);
                   }}
                 >
-                    <div className="malzemePng">
-                      {Object.keys(item).map((items, ind) => {
-                        if (items.substring(0, 6) === "strIng") {
-                          return (
-                            item[items]?
-                            <pre key={ind}>
-
+                  <div className="malzemePng">
+                    {Object.keys(item).map((items, ind) => {
+                      if (items.substring(0, 6) === "strIng") {
+                        return item[items] ? (
+                          <pre key={ind}>
                             <img
                               style={{ width: "20%", height: "auto" }}
                               className="malzemeimg "
                               src={ingredientURL + item[items] + "-small.png"}
                               alt=""
                               title={item[items]}
-                              />
-                              </pre>
-                          :""
-                          );
-                        }
-                      })}
-                    </div>
+                            />
+                          </pre>
+                        ) : (
+                          ""
+                        );
+                      }
+                    })}
+                  </div>
 
                   <div className="mealImg">
                     <img
@@ -109,26 +105,25 @@ const MealItem2 = ({ data }) => {
                     />
                   </div>
 
-                    <div className="malzemePng">
+                  <div className="malzemePng">
                     {Object.keys(item).map((items, ind) => {
-                        if (items.substring(0, 6) === "strIng") {
-                          return (
-                            item[items]?
-                            <pre key={ind}>
-
+                      if (items.substring(0, 6) === "strIng") {
+                        return item[items] ? (
+                          <pre key={ind}>
                             <img
                               style={{ width: "20%", height: "auto" }}
                               className="malzemeimg "
                               src={ingredientURL + item[items] + "-small.png"}
                               alt=""
                               title={item[items]}
-                              />
-                              </pre>
-                          :""
-                          );
-                        }
-                      })}
-                    </div>
+                            />
+                          </pre>
+                        ) : (
+                          ""
+                        );
+                      }
+                    })}
+                  </div>
                 </div>
               </div>
             );
