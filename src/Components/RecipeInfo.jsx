@@ -70,7 +70,9 @@ const RecipeInfo = () => {
                     navigate(0);
                   }}
                 ></i>
-                {" " + item["strMeal"].toUpperCase() + " "}
+                <span className="fw-bold mx-2 px-2"
+                style={{color:"cyan",backgroundColor:"darkcyan"}}
+                >{item["strMeal"].toUpperCase()}</span>
                 <i
                   className="bi bi-arrow-right-square-fill point"
                   onClick={() => {
@@ -79,17 +81,31 @@ const RecipeInfo = () => {
                   }}
                 ></i>
               </h1>
-              <div style={mystyle}>{imageyemek}</div>
+              <div style={{}}>{imageyemek}</div>
             </div>
-            <div key={item.idMeal} className="text-center">
-              <h3>Area: {item.strArea} Food</h3>
-              <h4>Category: {item.strCategory}</h4>
-              {item.strTags ? (
-                <h4>Tags: {item.strTags}</h4>
-              ) : (
-                <h4>Tags: ???</h4>
-              )}
-            </div>
+          </div>
+          <div key={item.idMeal} style={{}} className="text-center m-1">
+            <h3 style={{color:"darkcyan"}}>
+              <span className="fw-bold">Category: </span> {item.strCategory}
+            </h3>
+            <h3 style={{color:"darkseagreen"}}>
+              <span className="fw-bold">Area: </span>
+              {item.strArea} Food
+            </h3>
+            <h4 className="text-center">
+              <span className="fw-bold" style={{color:"greenyellow"}}>Tags:</span>
+              {item?.strTags
+                ? item?.strTags.split(",").map((items) => {
+                    return (
+                      <span className="border border-warning p-1 border-3 mx-2"
+                      style={{backgroundColor:"darkcyan",color:"orange"}}
+                      >
+                        {items}
+                      </span>
+                    );
+                  })
+                : ""}
+            </h4>
           </div>
           <div className="recipe-details">
             <div className="ingredients">

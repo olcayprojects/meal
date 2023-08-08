@@ -22,12 +22,14 @@ const Randomeal = () => {
     <div className="container-fluid">
       <Nav />
       <div className="heading">
-        <h1 className="text-center">{item["strMeal"]}</h1>
+        <h1 className="text-center text-uppercase"
+        style={{color:"cyan",fontWeight:"bold"}}
+        ><span style={{backgroundColor:"darkcyan"}}>{item["strMeal"]}</span></h1>
         <h4 className="text-center">
           {item["strArea"]} Food | {item["strCategory"]}
         </h4>
         {item.strTags ? (
-          <h4 className="text-center">Tags: {item.strTags}</h4>
+          <h4 className="text-center">Tags: <span className="border p-1">{item.strTags}</span></h4>
         ) : (
           ""
         )}

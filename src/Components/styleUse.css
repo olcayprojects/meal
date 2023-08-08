@@ -110,19 +110,19 @@ nav li {
 
 nav li a {
   display: block;
-  color: rgba(255, 255, 255, 0.808);
+  color: rgba(255, 255, 255, 1);
   text-align: center;
   padding: 1px 16px;
   text-decoration: none;
   font-size: larger;
   opacity: 1;
+  transition-delay: 100ms;
 }
 
 nav li a:hover {
-  transition-delay: 5ms;
-  opacity: 1;
   color: white;
-  background-color: black;
+  transform: rotate(360deg);
+  transition: 20ms;
 }
 
 .abc:hover {
