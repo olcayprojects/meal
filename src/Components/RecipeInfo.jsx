@@ -49,7 +49,7 @@ const RecipeInfo = () => {
               imageyemek.push(
                 <img
                   key={item.idMeal}
-                  className="img-thumbnail mx-auto d-block"
+                  className="img img-thumbnail mx-auto d-block"
                   src={item.strMealThumb + ""}
                   onError={({ currentTarget }) => {
                     currentTarget.onerror = null; // prevents looping

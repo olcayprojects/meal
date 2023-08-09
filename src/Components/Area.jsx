@@ -50,7 +50,7 @@ const AreaFilter = () => {
             return (
               <div className="col col-md-2" key={item.idMeal}>
                 <div
-                  className="card text-dark bg-white"
+                  className="imgeffect card text-dark bg-white"
                   style={{ color: "white", cursor: "pointer" }}
                   onClick={() => {
                     navigate(`/recipeinfo/${item.idMeal}`);

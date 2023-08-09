@@ -62,7 +62,7 @@ const Ingredientsfilter = () => {
             <div className="col" key={data.idMeal}>
               <div
                 key={index}
-                className="card text-dark bg-white"
+                className="imgeffect card text-dark bg-white"
                 onClick={() => {
                   navigate(`/recipeinfo/${data.idMeal}`);
                 }}

@@ -41,9 +41,9 @@ const Ingredients = () => {
                 className="col d-flex point border border-primary p-0 m-2"
                 key={item.idIngredient}
               >
-                <div className="card flex-fill text-white bg-dark">
+                <div className="card text-white bg-dark">
                   <img
-                    className="card-img-top img-thumbnail"
+                    className="imgeffect card-img-top img-thumbnail"
                     key={item.MealId}
                     onClick={() => {
                       navigate(`/ingredientsfilter/${item.strIngredient}`);

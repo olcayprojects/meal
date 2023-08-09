@@ -56,7 +56,7 @@ const Filtercategory = () => {
               return (
                 <div className="col point" key={item.idMeal}>
                   <div
-                    className="card text-dark bg-white"
+                    className="imgeffect card text-dark bg-white"
                     key={item.idMeal}
                     onClick={() => {
                       navigate(`/recipeinfo/${item.idMeal}`);

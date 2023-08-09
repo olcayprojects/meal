@@ -36,8 +36,7 @@ body {
 }
 
 .card-img-top:hover {
-  transform: rotate(-360deg);
-  transition: transform 0.02s; /* Animation */
+
 }
 
 .card-img-top {
@@ -211,7 +210,7 @@ ul {
 }
 
 .card :hover {
-  background-color: rgba(0, 0, 0, 0.4);
+  
 }
 
 .containerIngredientsFilter {
@@ -308,4 +307,13 @@ th {
 
 .point {
   cursor: pointer;
+}
+
+.imgeffect{
+  transition: 0.5s;
+}
+.imgeffect:hover{
+  transform: scale(1.05,1.05);
+  /* box-shadow: 0 0 2px 2px cyan; */
+  background-color: #000;
 }
