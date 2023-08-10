@@ -70,9 +70,12 @@ const RecipeInfo = () => {
                     navigate(0);
                   }}
                 ></i>
-                <span className="fw-bold mx-2 px-2"
-                style={{color:"cyan",backgroundColor:"darkcyan"}}
-                >{item["strMeal"].toUpperCase()}</span>
+                <span
+                  className="fw-bold mx-2 px-2"
+                  style={{ color: "cyan", backgroundColor: "darkcyan" }}
+                >
+                  {item["strMeal"].toUpperCase()}
+                </span>
                 <i
                   className="bi bi-arrow-right-square-fill point"
                   onClick={() => {
@@ -85,20 +88,35 @@ const RecipeInfo = () => {
             </div>
           </div>
           <div key={item.idMeal} style={{}} className="text-center m-1">
-            <h3 style={{color:"darkcyan"}}>
+            <h3
+              style={{ color: "darkcyan" }}
+              className="point"
+              onClick={() => {
+                navigate(`/fg/${item.strCategory}`);
+              }}
+            >
               <span className="fw-bold">Category: </span> {item.strCategory}
             </h3>
-            <h3 style={{color:"darkseagreen"}}>
+            <h3
+              style={{ color: "darkseagreen" }}
+              className="point"
+              onClick={(e) => {
+                navigate(`/area/${item.strArea}`);
+              }}
+            >
               <span className="fw-bold">Area: </span>
               {item.strArea} Food
             </h3>
             <h4 className="text-center">
-              <span className="fw-bold" style={{color:"greenyellow"}}>Tags:</span>
+              <span className="fw-bold" style={{ color: "greenyellow" }}>
+                Tags:
+              </span>
               {item?.strTags
                 ? item?.strTags.split(",").map((items) => {
                     return (
-                      <span className="border border-warning p-1 border-3 mx-2"
-                      style={{backgroundColor:"darkcyan",color:"orange"}}
+                      <span
+                        className="border border-warning p-1 border-3 mx-2"
+                        style={{ backgroundColor: "darkcyan", color: "orange" }}
                       >
                         {items}
                       </span>
@@ -120,7 +138,6 @@ const RecipeInfo = () => {
                           className="point list-group-item list-group-item-action bg-black text-light border-dark border border-2"
                           key={item.idMeal + i}
                           onClick={(ef) => {
-                            console.log(ef);
                             navigate(`/ingredientsfilter/${ef.target.id}`);
                           }}
                         >

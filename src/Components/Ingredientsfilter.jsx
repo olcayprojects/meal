@@ -56,7 +56,7 @@ const Ingredientsfilter = () => {
       </h1>
       <div className="row row-cols-2 row-cols-md-6 g-3 justify-content-md-center">
         {!item ? (
-          <h1>!! Not found !!</h1>
+          <h6>{IngredientName} Meals Not Found !!</h6>
         ) : (
           item.map((data, index) => (
             <div className="col" key={data.idMeal}>

@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 // import { v4 as uuidv4 } from "uuid";
+import { useNavigate } from "react-router-dom";
+
 import Nav from "./Nav";
 
 let response = getData(`https://www.themealdb.com/api/json/v1/1/random.php`);
@@ -12,6 +14,8 @@ async function getData(url) {
 }
 
 const Randomeal = () => {
+  let navigate = useNavigate();
+
   const [item, setItem] = useState(response);
   response.then((res) => {
     //  console.log(res.meals[0]);
@@ -22,14 +26,36 @@ const Randomeal = () => {
     <div className="container-fluid">
       <Nav />
       <div className="heading">
-        <h1 className="text-center text-uppercase"
-        style={{color:"cyan",fontWeight:"bold"}}
-        ><span style={{backgroundColor:"darkcyan"}}>{item["strMeal"]}</span></h1>
-        <h4 className="text-center">
-          {item["strArea"]} Food | {item["strCategory"]}
+        <h1
+          className="text-center text-uppercase"
+          style={{ color: "cyan", fontWeight: "bold" }}
+        >
+          <span style={{ backgroundColor: "darkcyan" }}>{item["strMeal"]}</span>
+        </h1>
+        <h4
+          className="text-center point"
+          style={{ color: "darkseagreen" }}
+          onClick={(e) => {
+            navigate(`/area/${item.strArea}`);
+          }}
+        >
+          {item["strArea"]} Food
+        </h4>
+        <h4
+          style={{ color: "greenyellow" }}
+          className="text-center point"
+          onClick={() => {
+            navigate(`/fg/${item.strCategory}`);
+          }}
+        >
+          {item["strCategory"]}
         </h4>
         {item.strTags ? (
-          <h4 className="text-center">Tags: <span className="border p-1">{item.strTags}</span></h4>
+          <h4 className="text-center">
+            <span className="border p-1" style={{ color: "darkseagreen" }}>
+              {item.strTags}
+            </span>
+          </h4>
         ) : (
           ""
         )}
@@ -54,8 +80,13 @@ const Randomeal = () => {
               {Object.keys(item).map((items, index) => {
                 return item["strIngredient" + index] ? (
                   <li
+                    id={item["strIngredient" + index]}
                     key={index}
-                    className="list-group-item list-group-item-action bg-black text-light border-dark border border-1"
+                    onClick={(ef) => {
+                      console.log(ef);
+                      navigate(`/ingredientsfilter/${ef.target.id}`);
+                    }}
+                    className="point list-group-item list-group-item-action bg-black text-light border-dark border border-1"
                   >
                     <img
                       className="img-fluid"

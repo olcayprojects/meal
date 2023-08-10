@@ -18,22 +18,22 @@ const Nav = () => {
           <li></li>
           <li>
             <NavLink to="/categories">
-              <i class="bi bi-card-list"></i> CATEGORIES
+              <i className="bi bi-card-list"></i> CATEGORIES
             </NavLink>
           </li>
           <li>
             <NavLink to="/ingredients">
-              <i class="bi bi-list-ul"></i> INGREDIENTS
+              <i className="bi bi-list-ul"></i> INGREDIENTS
             </NavLink>
           </li>
           <li>
             <NavLink to="/Area">
-              <i class="bi bi-globe"></i> CUISINE
+              <i className="bi bi-globe"></i> CUISINE
             </NavLink>
           </li>
           <li>
             <NavLink reloadDocument to="/randomeal">
-              <i class="bi bi-shuffle pe-1"></i>
+              <i className="bi bi-shuffle pe-1"></i>
               RANDOM MEAL
             </NavLink>
           </li>

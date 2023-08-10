@@ -6,9 +6,15 @@ import MyCarousel from "./Carousel";
 import Loader from "../Components/Loader";
 
 const Meal = () => {
+  const alphabet = "abcdefghijklmnopqrstuvwxyz";
+  const randomCharacter = alphabet[Math.floor(Math.random() * alphabet.length)];
+
   const [url, setUrl] = useState(
-    "https://www.themealdb.com/api/json/v1/1/search.php?f=p"
+    "https://www.themealdb.com/api/json/v1/1/search.php?f=" +
+      randomCharacter +
+      ""
   );
+
   //const [url,setUrl]=useState("http://www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata");
   const [item, setItem] = useState();
   const [show, setShow] = useState(false);
