@@ -173,7 +173,7 @@ pre {
   z-index: 1;
   text-align: left;
   border-style: dashed;
-  color: white;
+  color: orange;
   width: 25%;
   font-weight: bold;
   padding: 1px;
@@ -199,7 +199,7 @@ ul {
 .instructions {
   width: 74%;
   border-style: dashed;
-  color: white;
+  color: orange;
 }
 
 .malzemeListesi {

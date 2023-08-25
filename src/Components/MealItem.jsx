@@ -32,7 +32,11 @@ const MealItem2 = ({ data }) => {
                   alt="separator"
                 />
                 <div className="mealName">
-                  <h1 className="bg-dark ">{toTitleCase(item.strMeal)}</h1>
+                  <h1 className="bg-dark border border-3 border-info rounded-pill" style={{ color: "orange" }}>
+                    <span className="px-2" style={{}}>
+                      {toTitleCase(item.strMeal)}
+                    </span>
+                  </h1>
                   <h4>
                     <button
                       type="button"
@@ -41,7 +45,6 @@ const MealItem2 = ({ data }) => {
                         navigate(`/area/${item.strArea}`);
                       }}
                     >
-                      {" "}
                       {item["strArea"]} Food
                     </button>
                     <button
@@ -51,7 +54,6 @@ const MealItem2 = ({ data }) => {
                         navigate(`/fg/${item.strCategory}`);
                       }}
                     >
-                      {" "}
                       {item["strCategory"]}
                     </button>
                   </h4>
@@ -70,16 +72,16 @@ const MealItem2 = ({ data }) => {
                 <div
                   className="container"
                   style={{ gridTemplateColumns: "1fr 2fr 1fr" }}
-                  onClick={() => {
-                    navigate(`/recipeinfo/${item.idMeal}`);
-                  }}
                 >
                   <div className="malzemePng">
                     {Object.keys(item).map((items, ind) => {
                       if (items.substring(0, 6) === "strIng") {
                         return item[items] ? (
-                          <pre key={ind}>
+                          <pre key={ind} className="point">
                             <img
+                              onClick={(ef) => {
+                                navigate(`/ingredientsfilter/${item[items]}`);
+                              }}
                               style={{ width: "20%", height: "auto" }}
                               className="malzemeimg "
                               src={ingredientURL + item[items] + "-small.png"}
@@ -96,6 +98,9 @@ const MealItem2 = ({ data }) => {
 
                   <div className="mealImg">
                     <img
+                      onClick={() => {
+                        navigate(`/recipeinfo/${item.idMeal}`);
+                      }}
                       className="img-thumbnail"
                       src={item.strMealThumb + "/preview"}
                       onError={(e) => {
@@ -109,10 +114,13 @@ const MealItem2 = ({ data }) => {
                     {Object.keys(item).map((items, ind) => {
                       if (items.substring(0, 6) === "strIng") {
                         return item[items] ? (
-                          <pre key={ind}>
+                          <pre key={ind} className="point">
                             <img
+                              onClick={(ef) => {
+                                navigate(`/ingredientsfilter/${item[items]}`);
+                              }}
                               style={{ width: "20%", height: "auto" }}
-                              className="malzemeimg "
+                              className="malzemeimg"
                               src={ingredientURL + item[items] + "-small.png"}
                               alt=""
                               title={item[items]}

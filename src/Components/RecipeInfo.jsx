@@ -72,7 +72,7 @@ const RecipeInfo = () => {
                 ></i>
                 <span
                   className="fw-bold mx-2 px-2"
-                  style={{ color: "cyan", backgroundColor: "darkcyan" }}
+                  style={{ color: "orange", backgroundColor: "" }}
                 >
                   {item["strMeal"].toUpperCase()}
                 </span>
@@ -116,7 +116,7 @@ const RecipeInfo = () => {
                     return (
                       <span
                         className="border border-warning p-1 border-3 mx-2"
-                        style={{ backgroundColor: "darkcyan", color: "orange" }}
+                        style={{ backgroundColor: "", color: "orange" }}
                       >
                         {items}
                       </span>

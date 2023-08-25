@@ -41,7 +41,7 @@ const AreaFilter = () => {
         <Nav />
         <div>
           <h1 className="text-center p-3 mb-2 bg-dark text-light">
-            <Cmbarealist /> {areaName} Cuisine
+            <Cmbarealist /> <span style={{color:"orange"}}>{areaName} Cuisine</span>
           </h1>
         </div>
 

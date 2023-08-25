@@ -53,7 +53,7 @@ const Ingredients = () => {
                     title={item["strIngredient"]}
                   />
                   <div className="card-body">
-                    <h4 className="card-title">
+                    <h4 className="card-title" style={{color:"orange"}}>
                       {item.strIngredient.toUpperCase()} MEALS
                     </h4>
                     <pre className="card-text">

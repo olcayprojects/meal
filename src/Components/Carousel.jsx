@@ -71,8 +71,8 @@ function MyCarousel() {
                 alt={image1.strMeal}
               />
               <Carousel.Caption>
-                <h1
-                  style={{ color: "white", background: "rgba(0, 0, 0, 0.2)" }}
+                <h1 className="fw-bold rounded-pill border border-3 border-info"
+                  style={{ color: "orange", background: "rgba(0, 0, 0, 0.3)" }}
                 >
                   {image1.strMeal}
                 </h1>

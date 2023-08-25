@@ -49,7 +49,7 @@ const Filtercategory = () => {
             }
             alt=""
           />
-          <h2 className="text-center">{CategoryName} Meals</h2>
+          <h2 className="text-center fs-1 fw-bold" style={{color:"orange"}}>{CategoryName} Meals</h2>
 
           <div className="row row-cols-2 row-cols-md-6 g-3 justify-content-md-center pt-4">
             {items.map((item) => {
@@ -72,7 +72,7 @@ const Filtercategory = () => {
                       alt=""
                     />
                     <div className="card-img-overlay">
-                      <h4 className="card-title">{item.strMeal}</h4>
+                      <h4 className="card-title" style={{}}>{item.strMeal}</h4>
                     </div>
                   </div>
                 </div>

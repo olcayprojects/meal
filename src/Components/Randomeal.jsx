@@ -28,9 +28,9 @@ const Randomeal = () => {
       <div className="heading">
         <h1
           className="text-center text-uppercase"
-          style={{ color: "cyan", fontWeight: "bold" }}
+          style={{ color: "orange", fontWeight: "bold" }}
         >
-          <span style={{ backgroundColor: "darkcyan" }}>{item["strMeal"]}</span>
+          <span className="px-2" style={{}}> {item["strMeal"]}</span>
         </h1>
         <h4
           className="text-center point"
@@ -51,7 +51,7 @@ const Randomeal = () => {
           {item["strCategory"]}
         </h4>
         {item.strTags ? (
-          <h4 className="text-center">
+          <h4 className="text-center">Tags:
             <span className="border p-1" style={{ color: "darkseagreen" }}>
               {item.strTags}
             </span>
@@ -74,7 +74,7 @@ const Randomeal = () => {
         <div className="row m-1">
           <div
             className="col-xl-4 me-2"
-            style={{ border: "dashed", borderColor: "white" }}
+            style={{ border: "dashed", borderColor: "orange" }}
           >
             <ol className="list-group list-group-numbered fs-5">
               {Object.keys(item).map((items, index) => {
@@ -111,7 +111,7 @@ const Randomeal = () => {
           </div>
           <div
             className="col pt-2"
-            style={{ border: "dashed", borderColor: "white" }}
+            style={{ border: "dashed", borderColor: "orange"}}
           >
             <pre className="text-light p-2 fs-5">{item?.strInstructions}</pre>
           </div>

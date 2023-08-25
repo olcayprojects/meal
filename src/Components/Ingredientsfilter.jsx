@@ -51,7 +51,7 @@ const Ingredientsfilter = () => {
     <div className="container-fluid">
       <Nav />
       <img className="imgRotate" style={mystyle} src={imgUrl} alt="" />
-      <h1 style={{ textAlign: "center",fontWeight:"bold",color:"darkcyan" }}>
+      <h1 style={{ textAlign: "center",fontWeight:"bold",color:"orange" }}>
         {toTitleCase(IngredientName)} Meals
       </h1>
       <div className="row row-cols-2 row-cols-md-6 g-3 justify-content-md-center">

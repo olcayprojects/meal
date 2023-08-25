@@ -14,7 +14,7 @@ fetch(url)
 function Loader() {
   return (
     <div className="d-flex justify-content-center align-items-center mt-5 pt-5">
-      <h1 style={{ color: "cyan" }} className=" fw-bolder">
+      <h1 style={{ color: "orange" }} className=" fw-bolder">
         Loading...
       </h1>
     </div>
