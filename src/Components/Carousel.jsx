@@ -64,7 +64,8 @@ function MyCarousel() {
               <img
                 className="d-block w-100"
                 // src={image1.src}
-                src={image1.src + "/preview"}
+                src={image1.src}
+                // src={image1.src + "/preview"}
                 onError={(e) => {
                   e.currentTarget.src = image1.src;
                 }}

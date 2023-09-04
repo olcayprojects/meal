@@ -63,7 +63,8 @@ const Randomeal = () => {
 
       <img
         className="img-thumbnail w-50 mx-auto d-block"
-        src={item.strMealThumb + "/preview"}
+        // src={item.strMealThumb + "/preview"}
+        src={item.strMealThumb}
         onError={(e) => {
           e.currentTarget.src = item.strMealThumb;
         }}

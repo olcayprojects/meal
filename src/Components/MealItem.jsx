@@ -102,7 +102,8 @@ const MealItem2 = ({ data }) => {
                         navigate(`/recipeinfo/${item.idMeal}`);
                       }}
                       className="img-thumbnail"
-                      src={item.strMealThumb + "/preview"}
+                      // src={item.strMealThumb + "/preview"}
+                      src={item.strMealThumb}
                       onError={(e) => {
                         e.currentTarget.src = item.strMealThumb;
                       }}
