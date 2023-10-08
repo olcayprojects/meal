@@ -6,7 +6,7 @@ import MyCarousel from "./Carousel";
 import Loader from "../Components/Loader";
 
 const Meal = () => {
-  const alphabet = "abcdefghijklmnopqrstuvwxyz";
+  const alphabet = "abcdefghijklmnoprstuvwyz";
   const randomCharacter = alphabet[Math.floor(Math.random() * alphabet.length)];
 
   const [url, setUrl] = useState(
@@ -51,7 +51,7 @@ const Meal = () => {
         <div className="heading">
           <MyCarousel />
         </div>
-        <div className="indexContainer">
+        <div className="indexContainer pt-1">
           <RecipeIndex alphaIndex={(alpa) => setIndex(alpa)} />
         </div>
         <br />
@@ -68,7 +68,7 @@ const Meal = () => {
             placeholder="You can search your favorite meals"
           />
         </div>
-        <div className="mealList">
+        <div className="">
           {show ? <MealItem2 data={item} /> : "Not Found!"}
         </div>
       </div>

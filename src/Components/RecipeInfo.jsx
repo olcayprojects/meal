@@ -62,7 +62,7 @@ const RecipeInfo = () => {
             })()}
 
             <div className="">
-              <h1 className="text-center text-light border border-5 border-dark">
+              <h1 className="text-center mt-2 text-light">
                 <i
                   className="bi bi-arrow-left-square-fill point"
                   onClick={() => {
@@ -71,7 +71,7 @@ const RecipeInfo = () => {
                   }}
                 ></i>
                 <span
-                  className="fw-bold mx-2 px-2"
+                  className="fw-bold px-2"
                   style={{ color: "orange", backgroundColor: "" }}
                 >
                   {item["strMeal"].toUpperCase()}

@@ -19,81 +19,50 @@ const MealItem2 = ({ data }) => {
   let navigate = useNavigate();
 
   return (
-    <>
+    <div className="row row-cols-3 justify-content-md-center">
       {!data
         ? "bulunamadı"
         : data.map((item, index) => {
             //const id =Math.floor(Math.random()*1000)
             return (
-              <div key={item.idMeal}>
-                <img
-                  src={require("../images/separator.jpg")}
-                  style={{ width: "100%", objectFit: "contain" }}
-                  alt="separator"
-                />
-                <div className="mealName">
-                  <h1 className="bg-dark border border-3 border-info rounded-pill" style={{ color: "orange" }}>
-                    <span className="px-2" style={{}}>
-                      {toTitleCase(item.strMeal)}
-                    </span>
-                  </h1>
-                  <h4>
-                    <button
-                      type="button"
-                      className="btn btn-success"
-                      onClick={() => {
-                        navigate(`/area/${item.strArea}`);
-                      }}
-                    >
-                      {item["strArea"]} Food
-                    </button>
-                    <button
-                      type="button"
-                      className="btn btn-warning"
-                      onClick={() => {
-                        navigate(`/fg/${item.strCategory}`);
-                      }}
-                    >
-                      {item["strCategory"]}
-                    </button>
-                  </h4>
+              <div key={item.idMeal} className="p-1">
+                <div className="h-100 border border-light border-4 justify-content-md-center">
+                  <div className="mealName">
+                    <h1 className="" style={{ color: "orange" }}>
+                      <span className="px-2 fw-bold" style={{}}>
+                        {toTitleCase(item.strMeal)}
+                      </span>
+                    </h1>
+                    <h4>
+                      <button
+                        type="button"
+                        className="btn btn-success"
+                        onClick={() => {
+                          navigate(`/area/${item.strArea}`);
+                        }}
+                      >
+                        {item["strArea"]} Food
+                      </button>
+                      <button
+                        type="button"
+                        className="btn btn-warning"
+                        onClick={() => {
+                          navigate(`/fg/${item.strCategory}`);
+                        }}
+                      >
+                        {item["strCategory"]}
+                      </button>
+                    </h4>
 
-                  {item.strTags ? (
-                    <button type="button" className="btn btn-danger">
-                      Tags: {item["strTags"]}
-                    </button>
-                  ) : (
-                    <button type="button" className="btn btn-danger">
-                      Tags: ???
-                    </button>
-                  )}
-                </div>
-
-                <div
-                  className="container"
-                  style={{ gridTemplateColumns: "1fr 2fr 1fr" }}
-                >
-                  <div className="malzemePng">
-                    {Object.keys(item).map((items, ind) => {
-                      if (items.substring(0, 6) === "strIng") {
-                        return item[items] ? (
-                          <pre key={ind} className="point">
-                            <img
-                              onClick={(ef) => {
-                                navigate(`/ingredientsfilter/${item[items]}`);
-                              }}
-                              style={{ width: "20%", height: "auto" }}
-                              className="malzemeimg "
-                              src={ingredientURL + item[items] + "-small.png"}
-                              alt=""
-                              title={item[items]}
-                            />
-                          </pre>
-                        ) : (
-                          ""
-                        );
-                      }
-                    })}
+                    {item.strTags ? (
+                      <button type="button" className="btn btn-danger">
+                        Tags: {item["strTags"]}
+                      </button>
+                    ) : (
+                      <button type="button" className="btn btn-danger">
+                        Tags: ???
+                      </button>
+                    )}
                   </div>
 
                   <div className="mealImg">
@@ -101,7 +70,7 @@ const MealItem2 = ({ data }) => {
                       onClick={() => {
                         navigate(`/recipeinfo/${item.idMeal}`);
                       }}
-                      className="img-thumbnail"
+                      className="img-thumbnail p-0 m-0"
                       // src={item.strMealThumb + "/preview"}
                       src={item.strMealThumb}
                       onError={(e) => {
@@ -111,22 +80,21 @@ const MealItem2 = ({ data }) => {
                     />
                   </div>
 
-                  <div className="malzemePng">
+                  <div className="">
                     {Object.keys(item).map((items, ind) => {
                       if (items.substring(0, 6) === "strIng") {
                         return item[items] ? (
-                          <pre key={ind} className="point">
+                          <span key={ind} className="btn btn-dark p-0">
                             <img
                               onClick={(ef) => {
                                 navigate(`/ingredientsfilter/${item[items]}`);
                               }}
-                              style={{ width: "20%", height: "auto" }}
-                              className="malzemeimg"
+                              className="img-fluid"
                               src={ingredientURL + item[items] + "-small.png"}
                               alt=""
                               title={item[items]}
                             />
-                          </pre>
+                          </span>
                         ) : (
                           ""
                         );
@@ -137,7 +105,7 @@ const MealItem2 = ({ data }) => {
               </div>
             );
           })}
-    </>
+    </div>
   );
 };
 
