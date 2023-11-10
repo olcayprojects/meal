@@ -2,8 +2,8 @@ import { NavLink } from "react-router-dom";
 
 const Nav = () => {
   return (
-    <div className="main">
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div className="container">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <NavLink exact="true" to="/">
           <img
             className="img abc"
@@ -15,7 +15,9 @@ const Nav = () => {
         </NavLink>
 
         <ul>
-          <li></li>
+        <li>
+            
+          </li>
           <li>
             <NavLink to="/categories">
               <i className="bi bi-card-list"></i> CATEGORIES

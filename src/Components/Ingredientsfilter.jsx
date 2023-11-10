@@ -51,10 +51,10 @@ const Ingredientsfilter = () => {
     <div className="container-fluid">
       <Nav />
       <img className="imgRotate" style={mystyle} src={imgUrl} alt="" />
-      <h1 style={{ textAlign: "center",fontWeight:"bold",color:"orange" }}>
+      <h1 style={{ color: "orange" }} className="text-center fw-bold">
         {toTitleCase(IngredientName)} Meals
       </h1>
-      <div className="row row-cols-2 row-cols-md-6 g-3 justify-content-md-center">
+      <div className="row row-cols-2 row-cols-md-6 g-1 justify-content-md-center">
         {!item ? (
           <h6>{IngredientName} Meals Not Found !!</h6>
         ) : (
@@ -62,13 +62,14 @@ const Ingredientsfilter = () => {
             <div className="col" key={data.idMeal}>
               <div
                 key={index}
-                className="imgeffect card text-dark bg-white"
+                className="imgeffect card text-dark bg-white point"
                 onClick={() => {
                   navigate(`/recipeinfo/${data.idMeal}`);
                 }}
+                title={"Click go to '" + data.strMeal + "' details"}
               >
                 <img
-                  className="card-img-top"
+                  className="image card-img-top"
                   key={index + 1}
                   src={data.strMealThumb + "/preview"}
                   onError={({ currentTarget }) => {
@@ -77,10 +78,10 @@ const Ingredientsfilter = () => {
                   }}
                   alt=""
                 />
-                <div className="card-img-overlay px-0">
-                  <h4 className="card-title" key={index + 2}>
-                    {toTitleCase(data.strMeal)}
-                  </h4>
+                <div className="card-img-overlay text-end">
+                  <span className="card-title text-white fs-4 px-2" key={index + 2}>
+                    {data.strMeal}
+                  </span>
                 </div>
               </div>
             </div>

@@ -41,7 +41,8 @@ const AreaFilter = () => {
         <Nav />
         <div>
           <h1 className="text-center p-3 mb-2 bg-dark text-light">
-            <Cmbarealist /> <span style={{color:"orange"}}>{areaName} Cuisine</span>
+            <Cmbarealist />{" "}
+            <span style={{ color: "orange" }}>{areaName} Cuisine</span>
           </h1>
         </div>
 
@@ -67,7 +68,7 @@ const AreaFilter = () => {
                   />
 
                   <div className="card-img-overlay px-0">
-                    <h4 className="card-title">{item.strMeal}</h4>
+                    <h4 className="card-title text-white">{item.strMeal}</h4>
 
                     <div />
                   </div>

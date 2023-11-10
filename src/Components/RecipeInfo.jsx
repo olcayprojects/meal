@@ -45,24 +45,8 @@ const RecipeInfo = () => {
         <>
           <Nav />
           <div className="">
-            {(() => {
-              imageyemek.push(
-                <img
-                  key={item.idMeal}
-                  className="img img-thumbnail mx-auto d-block"
-                  src={item.strMealThumb + ""}
-                  onError={({ currentTarget }) => {
-                    currentTarget.onerror = null; // prevents looping
-                    currentTarget.src = item.strMealThumb;
-                  }}
-                  alt=""
-                  title={item.strMeal}
-                />
-              );
-            })()}
-
             <div className="">
-              <h1 className="text-center mt-2 text-light">
+              <h1 className="text-center mt-1 text-light">
                 <i
                   className="bi bi-arrow-left-square-fill point"
                   onClick={() => {
@@ -84,86 +68,101 @@ const RecipeInfo = () => {
                   }}
                 ></i>
               </h1>
-              <div style={{}}>{imageyemek}</div>
+              <img
+                key={item.idMeal}
+                className="img img-fluid mx-auto d-block"
+                src={item.strMealThumb + ""}
+                onError={({ currentTarget }) => {
+                  currentTarget.onerror = null; // prevents looping
+                  currentTarget.src = item.strMealThumb;
+                }}
+                alt=""
+                title={item.strMeal}
+              />
+              <div className="text-center mt-1">
+                {item?.strTags?.split(",").map((items, i) => {
+                  return (
+                    <h5 key={i} className="badge fs-5 bg-light text-black me-1">
+                      {items}
+                    </h5>
+                  );
+                })}
+              </div>
             </div>
           </div>
           <div key={item.idMeal} style={{}} className="text-center m-1">
-            <h3
-              style={{ color: "darkcyan" }}
-              className="point"
+            <span
+              className="btn btn-outline-success fs-4 fw-bold me-2"
               onClick={() => {
                 navigate(`/fg/${item.strCategory}`);
               }}
             >
-              <span className="fw-bold">Category: </span> {item.strCategory}
-            </h3>
-            <h3
-              style={{ color: "darkseagreen" }}
-              className="point"
+              {item.strCategory} Meals
+            </span>
+
+            <span
+              className="btn btn-outline-info fs-4 fw-bold me-2"
               onClick={(e) => {
                 navigate(`/area/${item.strArea}`);
               }}
             >
-              <span className="fw-bold">Area: </span>
-              {item.strArea} Food
-            </h3>
-            <h4 className="text-center">
-              <span className="fw-bold" style={{ color: "greenyellow" }}>
-                Tags:
-              </span>
-              {item?.strTags
-                ? item?.strTags.split(",").map((items) => {
-                    return (
-                      <span
-                        className="border border-warning p-1 border-3 mx-2"
-                        style={{ backgroundColor: "", color: "orange" }}
-                      >
-                        {items}
-                      </span>
-                    );
-                  })
-                : ""}
-            </h4>
+              {item.strArea} Cuisine
+            </span>
           </div>
-          <div className="recipe-details">
-            <div className="ingredients">
-              <ol className="list-group list-group-numbered fs-5">
-                {(() => {
-                  let li = [];
-                  for (let i = 1; i <= 20; i++) {
-                    if (item["strIngredient" + i]) {
-                      li.push(
-                        <li
-                          id={item["strIngredient" + i]}
-                          className="point list-group-item list-group-item-action bg-black text-light border-dark border border-2"
-                          key={item.idMeal + i}
-                          onClick={(ef) => {
-                            navigate(`/ingredientsfilter/${ef.target.id}`);
-                          }}
-                        >
-                          <img
-                            src={
-                              ingredientURL +
-                              item["strIngredient" + i] +
-                              "-Small.png"
-                            }
-                            alt=""
-                            title={item["strIngredient" + i]}
-                          />{" "}
-                          {item["strMeasure" + i] +
-                            " " +
-                            item["strIngredient" + i]}
-                        </li>
-                      );
-                    }
-                  }
 
-                  return li;
-                })()}
-              </ol>
-            </div>
-            <div className="instructions pt-3">
-              <pre className="px-2 h5">{item["strInstructions"]}</pre>
+          <div className="container-fluid p-1">
+            <div className="row m-1">
+              <div
+                className="col-auto py-2 me-2"
+                style={{ border: "dashed", borderColor: "orange" }}
+              >
+                <ol className="list-group list-group-numbered fs-5">
+                  {Object.keys(item).map((items, index) => {
+                    return item["strIngredient" + index] ? (
+                      <li
+                        id={item["strIngredient" + index]}
+                        key={index}
+                        onClick={(ef) => {
+                          navigate(
+                            `/ingredientsfilter/${
+                              item["strIngredient" + index]
+                            }`
+                          );
+                        }}
+                        title= {"Click go to "+item["strIngredient" + index]+ " meals"}
+                        className="point list-group-item list-group-item-action bg-black text-light border-dark border border-2 p-1"
+                      >
+                        <span className="pe-1">
+                          {item["strMeasure" + index]}
+                        </span>
+                        <span>{item["strIngredient" + index]}</span>
+
+                        <img
+                          className="img-fluid ps-2"
+                          style={{ width: "10%" }}
+                          src={
+                            ingredientURL +
+                            item["strIngredient" + index] +
+                            "-Small.png"
+                          }
+                          alt=""
+                          title=""
+                        />
+                      </li>
+                    ) : (
+                      ""
+                    );
+                  })}
+                </ol>
+              </div>
+              <div
+                className="col pt-2"
+                style={{ border: "dashed", borderColor: "orange" }}
+              >
+                <pre className="text-light p-2 fs-5">
+                  {item?.strInstructions}
+                </pre>
+              </div>
             </div>
           </div>
         </>

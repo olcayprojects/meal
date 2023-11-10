@@ -33,27 +33,29 @@ const Categories = () => {
           : item.map((item) => {
               return (
                 <div
-                  className="col col-4 col-md-2 point  rounded-circle"
+                  className="col col-4 col-md-2 point d-flex"
                   key={item.idCategory}
                 >
                   <div
-                    className="card text-dark bg-white "
+                    className="card text-dark bg-white w-100 bg-opacity-25"
                     style={{}}
                     key={item.idCategory}
                     onClick={() => {
                       navigate(`/fg/${item.strCategory}`);
                     }}
                   >
+
                     <img
-                      className="card-img-top img-thumbnail"
+                      className="imgeffectIngredients card-img-top img-fluid"
                       src={item.strCategoryThumb}
                       title={item["strCategoryDescription"]}
                       alt={item["strCategoryDescription"]}
-                    />
-                    <div className="card-img-overlay text-center">
-                      <h4 className="card-title">
+                      />
+                    <div className="text-end">
+                      <span className="card-title text-white px-2 fs-4">
                         {item.strCategory.toUpperCase()}
-                      </h4>
+
+                      </span>
                     </div>
                   </div>
                 </div>

@@ -19,7 +19,7 @@ const MealItem2 = ({ data }) => {
   let navigate = useNavigate();
 
   return (
-    <div className="row row-cols-3 justify-content-md-center">
+    <div className="row row-cols-1 row-cols-md-3 justify-content-md-center">
       {!data
         ? "bulunamadı"
         : data.map((item, index) => {
@@ -27,64 +27,72 @@ const MealItem2 = ({ data }) => {
             return (
               <div key={item.idMeal} className="p-1">
                 <div className="h-100 border border-light border-4 justify-content-md-center">
+                  <div className="mealImg">
+                    <img
+                      onClick={() => {
+                        navigate(`/recipeinfo/${item.idMeal}`);
+                      }}
+                      className="img-thumbnail  p-0 m-0 mb-2"
+                      // src={item.strMealThumb + "/preview"}
+                      src={item.strMealThumb}
+                      onError={(e) => {
+                        e.currentTarget.src = item.strMealThumb;
+                      }}
+                      alt="aa"
+                      title={
+                        "Click go to '" +
+                        item.strMeal.toUpperCase() +
+                        "' details"
+                      }
+                    />
+                  </div>
                   <div className="mealName">
                     <h1 className="" style={{ color: "orange" }}>
                       <span className="px-2 fw-bold" style={{}}>
                         {toTitleCase(item.strMeal)}
                       </span>
                     </h1>
-                    <h4>
+                    <div className="my-2">
                       <button
                         type="button"
-                        className="btn btn-success"
+                        className="btn btn-outline-success me-1 fw-bold fs-5"
                         onClick={() => {
                           navigate(`/area/${item.strArea}`);
                         }}
                       >
-                        {item["strArea"]} Food
+                        {item["strArea"]} Cuisine
                       </button>
                       <button
                         type="button"
-                        className="btn btn-warning"
+                        className="btn btn-outline-warning fw-bold fs-5"
                         onClick={() => {
                           navigate(`/fg/${item.strCategory}`);
                         }}
                       >
-                        {item["strCategory"]}
+                        {item["strCategory"]} Meals
                       </button>
-                    </h4>
+                    </div>
 
-                    {item.strTags ? (
-                      <button type="button" className="btn btn-danger">
-                        Tags: {item["strTags"]}
-                      </button>
-                    ) : (
-                      <button type="button" className="btn btn-danger">
-                        Tags: ???
-                      </button>
-                    )}
-                  </div>
-
-                  <div className="mealImg">
-                    <img
-                      onClick={() => {
-                        navigate(`/recipeinfo/${item.idMeal}`);
-                      }}
-                      className="img-thumbnail p-0 m-0"
-                      // src={item.strMealThumb + "/preview"}
-                      src={item.strMealThumb}
-                      onError={(e) => {
-                        e.currentTarget.src = item.strMealThumb;
-                      }}
-                      alt=""
-                    />
+                    {item["strTags"]?.split(",").map((itemtag, i) => {
+                      return (
+                        <span
+                          key={i}
+                          className="fs-5 badge rounded-pill bg-info text-black my-2"
+                        >
+                          {itemtag}
+                        </span>
+                      );
+                    })}
                   </div>
 
                   <div className="">
                     {Object.keys(item).map((items, ind) => {
                       if (items.substring(0, 6) === "strIng") {
                         return item[items] ? (
-                          <span key={ind} className="btn btn-dark p-0">
+                          <span
+                            key={ind}
+                            className="btn btn-dark me-1 mb-1 p-0"
+                          >
                             <img
                               onClick={(ef) => {
                                 navigate(`/ingredientsfilter/${item[items]}`);
@@ -92,7 +100,11 @@ const MealItem2 = ({ data }) => {
                               className="img-fluid"
                               src={ingredientURL + item[items] + "-small.png"}
                               alt=""
-                              title={item[items]}
+                              title={
+                                "Click go to '" +
+                                item[items].toUpperCase() +
+                                "' integrated meals."
+                              }
                             />
                           </span>
                         ) : (

@@ -38,12 +38,12 @@ const Ingredients = () => {
           item.map((item) => {
             return (
               <div
-                className="col d-flex point border border-primary p-0 m-2"
+                className="col d-flex point border border-dark p-0 m-2"
                 key={item.idIngredient}
               >
-                <div className="card text-white bg-dark">
+                <div className="card bg-opacity-25 bg-dark w-100">
                   <img
-                    className="imgeffect card-img-top img-thumbnail"
+                    className="imgeffectIngredients card-img-top img-fluid"
                     key={item.MealId}
                     onClick={() => {
                       navigate(`/ingredientsfilter/${item.strIngredient}`);
@@ -52,10 +52,10 @@ const Ingredients = () => {
                     alt=""
                     title={item["strIngredient"]}
                   />
-                  <div className="card-body">
-                    <h4 className="card-title" style={{color:"orange"}}>
-                      {item.strIngredient.toUpperCase()} MEALS
-                    </h4>
+                  <div className="card-body text-center">
+                    <span className="card-title fs-4 px-2 text-black" style={{backgroundColor:"orange"}}>
+                      {item.strIngredient.toUpperCase()}
+                    </span>
                     <pre className="card-text">
                       <button
                         className="btn bg-dark text-light"

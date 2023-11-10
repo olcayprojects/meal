@@ -23,8 +23,8 @@ const Arealist = () => {
         <select
           size="0"
           defaultValue={""}
-          aria-label="Default select example"
-          className="form-select text-light bg-dark "
+          aria-label=""
+          className="form-select form-select-lg mb-3 bg-black text-light bg-dark "
           name="values"
           style={{ width: "200px" }}
           menuisopen="false"

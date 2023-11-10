@@ -6,13 +6,11 @@ import MyCarousel from "./Carousel";
 import Loader from "../Components/Loader";
 
 const Meal = () => {
-  const alphabet = "abcdefghijklmnoprstuvwyz";
+  const alphabet = "abcdefghjklmnprstvw";
   const randomCharacter = alphabet[Math.floor(Math.random() * alphabet.length)];
 
   const [url, setUrl] = useState(
-    "https://www.themealdb.com/api/json/v1/1/search.php?f=" +
-      randomCharacter +
-      ""
+    `https://www.themealdb.com/api/json/v1/1/search.php?f=${randomCharacter}`
   );
 
   //const [url,setUrl]=useState("http://www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata");
@@ -24,11 +22,16 @@ const Meal = () => {
   useEffect(() => {
     setLoading(true);
     fetch(url).then((res) =>
-      res.json().then((data) => {
-        setLoading(false);
-        setItem(data.meals);
-        setShow(true);
-      })
+      res
+        .json()
+        .then((data) => {
+          setLoading(false);
+          setItem(data.meals);
+          setShow(true);
+        })
+        .catch((error) => {
+          // console.log(error);
+        })
     );
   }, [url]);
 
