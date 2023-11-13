@@ -88,6 +88,7 @@ const Randomeal = () => {
                     }}
                     className="point list-group-item list-group-item-action bg-black text-light border-dark border border-1"
                   >
+                    <span>{item["strMeasure" + index]}</span>
                     <img
                       className="img-fluid"
                       style={{ width: "25px" }}
@@ -99,13 +100,10 @@ const Randomeal = () => {
                       alt=""
                       title={item["strIngredient" + index]}
                     />
-                    {" " +
-                      item["strMeasure" + index] +
-                      " " +
-                      item["strIngredient" + index]}
+                    <span>{item["strIngredient" + index]}</span>
                   </li>
                 ) : (
-                  ""
+                  null
                 );
               })}
             </ol>

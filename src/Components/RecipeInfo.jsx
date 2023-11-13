@@ -129,16 +129,16 @@ const RecipeInfo = () => {
                             }`
                           );
                         }}
-                        title= {"Click go to "+item["strIngredient" + index]+ " meals"}
+                        title={
+                          "Click go to " +
+                          item["strIngredient" + index] +
+                          " meals"
+                        }
                         className="point list-group-item list-group-item-action bg-black text-light border-dark border border-2 p-1"
                       >
-                        <span className="pe-1">
-                          {item["strMeasure" + index]}
-                        </span>
-                        <span>{item["strIngredient" + index]}</span>
-
+                        <span className="">{item["strMeasure" + index]}</span>
                         <img
-                          className="img-fluid ps-2"
+                          className="img-fluid"
                           style={{ width: "10%" }}
                           src={
                             ingredientURL +
@@ -148,6 +148,11 @@ const RecipeInfo = () => {
                           alt=""
                           title=""
                         />
+                        <span className="">
+                          {item["strIngredient" + index]}
+                        </span>
+
+
                       </li>
                     ) : (
                       ""
