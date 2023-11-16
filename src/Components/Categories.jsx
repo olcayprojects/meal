@@ -30,32 +30,33 @@ const Categories = () => {
       <div className="row row-cols-4 g-3 justify-content-md-center">
         {!item
           ? "bulunamadı"
-          : item.map((item) => {
+          : item.map((itemCategory) => {
               return (
                 <div
                   className="col col-4 col-md-2 point d-flex"
-                  key={item.idCategory}
+                  key={itemCategory.idCategory}
                 >
                   <div
                     className="card text-dark bg-white w-100 bg-opacity-25"
                     style={{}}
-                    key={item.idCategory}
+                    key={itemCategory.idCategory}
                     onClick={() => {
-                      navigate(`/fg/${item.strCategory}`);
+                      navigate(`/fg/${itemCategory.strCategory}`);
                     }}
                   >
-
                     <img
                       className="imgeffectIngredients card-img-top img-fluid"
-                      src={item.strCategoryThumb}
-                      title={item["strCategoryDescription"]}
-                      alt={item["strCategoryDescription"]}
-                      />
+                      src={itemCategory.strCategoryThumb}
+                      title={itemCategory["strCategoryDescription"]}
+                      alt={itemCategory["strCategoryDescription"]}
+                    />
                     <div className="text-end">
                       <span className="card-title text-white px-2 fs-4">
-                        {item.strCategory.toUpperCase()}
-
+                        {itemCategory.strCategory.toUpperCase()}
                       </span>
+                      <h6 className="card-title text-start text-white">
+                        {itemCategory.strCategoryDescription}
+                      </h6>
                     </div>
                   </div>
                 </div>

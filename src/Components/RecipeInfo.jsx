@@ -151,8 +151,6 @@ const RecipeInfo = () => {
                         <span className="">
                           {item["strIngredient" + index]}
                         </span>
-
-
                       </li>
                     ) : (
                       ""

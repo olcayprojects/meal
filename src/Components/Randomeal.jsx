@@ -70,7 +70,6 @@ const Randomeal = () => {
         alt=""
         title={item.strMeal}
       />
-
       <div className="container-fluid p-1">
         <div className="row m-1">
           <div
@@ -78,13 +77,18 @@ const Randomeal = () => {
             style={{ border: "dashed", borderColor: "orange" }}
           >
             <ol className="list-group list-group-numbered fs-5">
+              <h5 className="text-center text-secondary fw-bold">
+                Ingredients
+              </h5>
               {Object.keys(item).map((items, index) => {
                 return item["strIngredient" + index] ? (
                   <li
                     id={item["strIngredient" + index]}
                     key={index}
                     onClick={(ef) => {
-                      navigate(`/ingredientsfilter/${ef.target.id}`);
+                      navigate(
+                        `/ingredientsfilter/${item["strIngredient" + index]}`
+                      );
                     }}
                     className="point list-group-item list-group-item-action bg-black text-light border-dark border border-1"
                   >
@@ -102,9 +106,7 @@ const Randomeal = () => {
                     />
                     <span>{item["strIngredient" + index]}</span>
                   </li>
-                ) : (
-                  null
-                );
+                ) : null;
               })}
             </ol>
           </div>
@@ -114,6 +116,21 @@ const Randomeal = () => {
           >
             <pre className="text-light p-2 fs-5">{item?.strInstructions}</pre>
           </div>
+        </div>
+        {item.strSource ? (
+          <h4 className="text-center text-secondary">
+            Source: {item.strSource}
+          </h4>
+        ) : null}
+
+        <div className="ratio ratio-16x9">
+          <iframe
+            className=""
+            title={item.strMeal}
+            src={`https://www.youtube.com/embed/${
+              item?.strYoutube?.split("=")[1]
+            }`}
+          ></iframe>
         </div>
       </div>
     </div>
