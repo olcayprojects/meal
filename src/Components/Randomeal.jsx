@@ -70,8 +70,8 @@ const Randomeal = () => {
         alt=""
         title={item.strMeal}
       />
-      <div className="container-fluid p-1">
-        <div className="row m-1">
+      <div className="container-fluid p-1 ">
+        <div className="row m-1 d-flex justify-content-center">
           <div
             className="col-auto py-2 me-2"
             style={{ border: "dashed", borderColor: "orange" }}
@@ -117,12 +117,6 @@ const Randomeal = () => {
             <pre className="text-light p-2 fs-5">{item?.strInstructions}</pre>
           </div>
         </div>
-        {item.strSource ? (
-          <h4 className="text-center text-secondary">
-            Source: {item.strSource}
-          </h4>
-        ) : null}
-
         <div className="ratio ratio-16x9">
           <iframe
             className=""
