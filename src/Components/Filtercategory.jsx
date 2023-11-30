@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import Categories from "./Categories";
 import Nav from "./Nav";
 import Loader from "../Components/Loader";
+import { CategoryInfo } from "./Categories";
 
 const Filtercategory = () => {
   const [items, setItems] = useState([]);
@@ -29,6 +30,7 @@ const Filtercategory = () => {
   }, [url]);
   //console.log(CategoryName);
   if (loading) return <Loader />;
+
   return (
     <div className="container-fluid">
       <Nav />
@@ -53,6 +55,7 @@ const Filtercategory = () => {
           <h2 className="text-center fs-1 fw-bold" style={{ color: "orange" }}>
             {CategoryName} Meals
           </h2>
+          <CategoryInfo cName={CategoryName} />
 
           <div className="row row-cols-2 row-cols-md-6 g-3 justify-content-md-center pt-4">
             {items.map((item) => {

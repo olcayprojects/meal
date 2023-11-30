@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Loader from "../Components/Loader";
 
+var infocate = "";
+
 const Categories = () => {
   const [url, setUrl] = useState(
     "https://www.themealdb.com/api/json/v1/1/categories.php"
@@ -18,6 +20,7 @@ const Categories = () => {
         // console.log(data.categories);
 
         setItem(data.categories);
+        infocate = data;
         setShow(true);
       })
     );
@@ -55,7 +58,7 @@ const Categories = () => {
                         {itemCategory.strCategory.toUpperCase()}
                       </span>
                       <h6 className="card-title text-start text-white">
-                        {itemCategory.strCategoryDescription}
+                        {/* {itemCategory.strCategoryDescription} */}
                       </h6>
                     </div>
                   </div>
@@ -66,4 +69,16 @@ const Categories = () => {
     </>
   );
 };
+
+export function CategoryInfo(cName) {
+  var desc = "";
+  infocate.categories?.map((categoryInfo) => {
+    if (categoryInfo.strCategory === cName.cName) {
+      desc = categoryInfo.strCategoryDescription;
+    }
+  });
+
+  return <span className="text-secondary">{desc}</span>;
+}
+
 export default Categories;
