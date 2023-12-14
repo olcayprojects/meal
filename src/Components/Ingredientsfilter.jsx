@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import Nav from "./Nav";
 import Loader from "./Loader";
+import { IngredientsInfo } from "./Ingredients";
 
 function toTitleCase(str) {
   const titleCase = str
@@ -54,6 +55,7 @@ const Ingredientsfilter = () => {
       <h1 style={{ color: "orange" }} className="text-center fw-bold">
         {toTitleCase(IngredientName)} Meals
       </h1>
+      <IngredientsInfo iName={IngredientName} />
       <div className="row row-cols-2 row-cols-md-6 g-1 justify-content-md-center">
         {!item ? (
           <h6>{IngredientName} Meals Not Found !!</h6>
@@ -79,7 +81,10 @@ const Ingredientsfilter = () => {
                   alt=""
                 />
                 <div className="card-img-overlay text-end">
-                  <span className="card-title text-white fs-4 px-2" key={index + 2}>
+                  <span
+                    className="card-title text-white fs-4 px-2"
+                    key={index + 2}
+                  >
                     {data.strMeal}
                   </span>
                 </div>

@@ -30,17 +30,14 @@ const Categories = () => {
   return (
     <>
       <br />
-      <div className="row row-cols-4 g-3 justify-content-md-center">
+      <div className="row row-cols-6 g-3 justify-content-md-center">
         {!item
           ? "bulunamadı"
           : item.map((itemCategory) => {
               return (
-                <div
-                  className="col col-4 col-md-2 point d-flex"
-                  key={itemCategory.idCategory}
-                >
+                <div className="col" key={itemCategory.idCategory}>
                   <div
-                    className="card text-dark bg-white w-100 bg-opacity-25"
+                    className="card text-dark bg-white w-100 h-100 bg-opacity-25"
                     style={{}}
                     key={itemCategory.idCategory}
                     onClick={() => {
@@ -48,18 +45,15 @@ const Categories = () => {
                     }}
                   >
                     <img
-                      className="imgeffectIngredients card-img-top img-fluid"
+                      className="imgeffectIngredients card-img-top"
                       src={itemCategory.strCategoryThumb}
                       title={itemCategory["strCategoryDescription"]}
                       alt={itemCategory["strCategoryDescription"]}
                     />
                     <div className="text-end">
-                      <span className="card-title text-white px-2 fs-4">
+                      <span className="card-title text-white px-1 fs-5">
                         {itemCategory.strCategory.toUpperCase()}
                       </span>
-                      <h6 className="card-title text-start text-white">
-                        {/* {itemCategory.strCategoryDescription} */}
-                      </h6>
                     </div>
                   </div>
                 </div>
@@ -78,7 +72,11 @@ export function CategoryInfo(cName) {
     }
   });
 
-  return <span className="text-secondary">{desc}</span>;
+  return desc ? (
+    <div className="border border-secondary">
+      <pre className="text-secondary p-2">{desc}</pre>;
+    </div>
+  ) : null;
 }
 
 export default Categories;

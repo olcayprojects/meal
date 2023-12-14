@@ -4,6 +4,8 @@ import Nav from "./Nav";
 import Loader from "../Components/Loader";
 let ingredientURL = "https://www.themealdb.com/images/ingredients/";
 
+let infoIngredients = "";
+
 const Ingredients = () => {
   const [url, setUrl] = useState(
     "https://www.themealdb.com/api/json/v1/1/list.php?i=list"
@@ -11,7 +13,7 @@ const Ingredients = () => {
 
   const [item, setItem] = useState();
   const [loading, setLoading] = useState(false);
-  const [showMore, setShowMore] = useState(false);
+  // const [showMore, setShowMore] = useState(false);
 
   let navigate = useNavigate();
 
@@ -19,19 +21,18 @@ const Ingredients = () => {
     setLoading(true);
     fetch(url).then((res) =>
       res.json().then((data) => {
-        // console.log(data.meals);
-        // console.log(data);
         setLoading(false);
         setItem(data.meals);
+        infoIngredients = data;
       })
     );
   }, [url]);
 
   if (loading) return <Loader />;
   return (
-    <div className="container-fluid">
+    <div className="container-fluid m-0 p-0">
       <Nav />
-      <div className="row row-cols-1 row-cols-md-6 g-3 justify-content-md-center ">
+      <div className="row row-cols-1 row-cols-md-6 g-3 mt-1 justify-content-md-center">
         {!item ? (
           <h1>bulunamadı</h1>
         ) : (
@@ -43,7 +44,7 @@ const Ingredients = () => {
               >
                 <div className="card bg-opacity-25 bg-dark w-100">
                   <img
-                    className="imgeffectIngredients card-img-top img-fluid"
+                    className="imgeffectIngredients card-img-top img-fluid "
                     key={item.MealId}
                     onClick={() => {
                       navigate(`/ingredientsfilter/${item.strIngredient}`);
@@ -52,11 +53,14 @@ const Ingredients = () => {
                     alt=""
                     title={item["strIngredient"]}
                   />
-                  <div className="card-body text-center">
-                    <span className="card-title fs-4 px-2 text-black" style={{backgroundColor:"orange"}}>
+                  <div className="card-body text-end">
+                    <span
+                      className="card-title fs-4 px-1 text-black"
+                      style={{ backgroundColor: "orange" }}
+                    >
                       {item.strIngredient.toUpperCase()}
                     </span>
-                    <pre className="card-text">
+                    {/* <pre className="card-text">
                       <button
                         className="btn bg-dark text-light"
                         onClick={() => setShowMore(!showMore)}
@@ -67,7 +71,7 @@ const Ingredients = () => {
                         <hr />
                         {showMore ? "Show less" : "Show more"}
                       </button>
-                    </pre>
+                    </pre> */}
                   </div>
                 </div>
               </div>
@@ -78,4 +82,20 @@ const Ingredients = () => {
     </div>
   );
 };
+
+export function IngredientsInfo(iName) {
+  var desc = "";
+  infoIngredients.meals?.map((ingredientsInfo) => {
+    if (ingredientsInfo.strIngredient === iName.iName) {
+      desc = ingredientsInfo.strDescription;
+    }
+  });
+
+  return desc ? (
+    <div className="m-1 border border-secondary p-2">
+      <pre className="text-secondary">{desc}</pre>
+    </div>
+  ) : null;
+}
+
 export default Ingredients;

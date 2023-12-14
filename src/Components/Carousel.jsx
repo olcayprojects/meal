@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from "react";
 import Carousel from "react-bootstrap/Carousel";
 import Loader from "../Components/Loader";
+import { useNavigate } from "react-router-dom";
 
 function MyCarousel() {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [items, setItems] = useState([]);
+
+  let navigate = useNavigate();
 
   let randomCategories = [
     "Beef",
@@ -51,6 +54,8 @@ function MyCarousel() {
     }),
   ];
 
+  console.log(images);
+
   if (error) {
     return <div>Error: {error.message}</div>;
   } else if (!isLoaded) {
@@ -62,7 +67,10 @@ function MyCarousel() {
           image.map((image1) => (
             <Carousel.Item key={image1.idMeal}>
               <img
-                className="d-block w-100"
+                className="d-block w-100 point"
+                onClick={() => {
+                  navigate(`/recipeinfo/${image1.idMeal}`);
+                }}
                 src={image1.src}
                 // src={image1.src + "/preview"}
                 onError={(e) => {
@@ -71,7 +79,8 @@ function MyCarousel() {
                 alt={image1.strMeal}
               />
               <Carousel.Caption>
-                <h1 className="fw-bold rounded-pill border border-3 border-info"
+                <h1
+                  className="fw-bold rounded-pill border border-3 border-info"
                   style={{ color: "orange", background: "rgba(0, 0, 0, 0.3)" }}
                 >
                   {image1.strMeal}
