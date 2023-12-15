@@ -90,13 +90,13 @@ const MealItem2 = ({ data }) => {
                       if (items.substring(0, 6) === "strIng") {
                         return item[items] ? (
                           <span
+                            onClick={(ef) => {
+                              navigate(`/ingredientsfilter/${item[items]}`);
+                            }}
                             key={ind}
                             className="btn btn-dark me-1 mb-1 p-0"
                           >
                             <img
-                              onClick={(ef) => {
-                                navigate(`/ingredientsfilter/${item[items]}`);
-                              }}
                               className="img-fluid"
                               src={ingredientURL + item[items] + "-small.png"}
                               alt=""
@@ -106,6 +106,7 @@ const MealItem2 = ({ data }) => {
                                 "' integrated meals."
                               }
                             />
+                            <h6 className="text-secondary">{item[items]}</h6>
                           </span>
                         ) : (
                           ""
