@@ -57,7 +57,7 @@ const Filtercategory = () => {
           </h2>
           <CategoryInfo cName={CategoryName} />
 
-          <div className="row row-cols-2 row-cols-md-6 g-3 justify-content-md-center pt-4">
+          <div className="row row-cols-2 row-cols-md-6 g-1 justify-content-md-center pt-4">
             {items.map((item) => {
               return (
                 <div className="col point" key={item.idMeal}>
@@ -69,7 +69,7 @@ const Filtercategory = () => {
                     }}
                   >
                     <img
-                      className="card-img-top img-thumbnail"
+                      className="card-img-top"
                       src={item.strMealThumb + "/preview"}
                       onError={({ currentTarget }) => {
                         currentTarget.onerror = null; // prevents looping
