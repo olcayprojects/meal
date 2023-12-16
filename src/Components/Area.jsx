@@ -39,17 +39,22 @@ const AreaFilter = () => {
     return (
       <div className="container-fluid">
         <Nav />
-        <div>
-          <h1 className="text-center p-3 mb-2 bg-dark text-light">
-            <Cmbarealist />{" "}
-            <span style={{ color: "orange" }}>{areaName} Cuisine</span>
-          </h1>
+        <div className="my-2 text-center">
+          <div className="d-flex justify-content-center">
+            <Cmbarealist />
+          </div>
+          <span
+            className="fs-1 bg-dark p-1 border border-secondary border-3"
+            style={{ color: "orange" }}
+          >
+            {areaName} Cuisine
+          </span>
         </div>
 
-        <div className="row row-cols-3 g-3 justify-content-md-center">
+        <div className="row row-cols-6 g-1 justify-content-md-center">
           {items.map((item) => {
             return (
-              <div className="col col-md-2" key={item.idMeal}>
+              <div className="col " key={item.idMeal}>
                 <div
                   className="imgeffect card text-dark bg-white"
                   style={{ color: "white", cursor: "pointer" }}
