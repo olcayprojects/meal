@@ -43,21 +43,25 @@ const Filtercategory = () => {
 
           <hr className="border border-3 opacity-25"></hr>
 
-          <img
-            className="img-responsive w-50 mx-auto d-block"
-            src={
-              "https://www.themealdb.com/images/category/" +
-              CategoryName +
-              ".png"
-            }
-            alt=""
-          />
-          <h2 className="text-center fs-1 fw-bold" style={{ color: "orange" }}>
-            {CategoryName} Meals
-          </h2>
+          <div className="text-center">
+            <img
+              className="img-responsive w-25 mx-auto d-block"
+              src={
+                "https://www.themealdb.com/images/category/" +
+                CategoryName +
+                ".png"
+              }
+              alt=""
+            />
+            <span
+              className="bg-warning fs-1 fw-bold"
+            >
+              {CategoryName} Meals
+            </span>
+          </div>
           <CategoryInfo cName={CategoryName} />
 
-          <div className="row row-cols-2 row-cols-md-6 g-1 justify-content-md-center pt-4">
+          <div className="row row-cols-3 row-cols-md-6 g-1 justify-content-md-center pt-4">
             {items.map((item) => {
               return (
                 <div className="col point" key={item.idMeal}>
@@ -79,7 +83,7 @@ const Filtercategory = () => {
                     />
                     <div className="card-img-overlay text-end">
                       <span
-                        className="card-title text-white fs-4 px-2"
+                        className="card-title text-warning fs-4 px-2"
                         style={{}}
                       >
                         {item.strMeal}

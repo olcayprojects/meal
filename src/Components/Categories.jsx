@@ -30,7 +30,7 @@ const Categories = () => {
   return (
     <>
       <br />
-      <div className="row row-cols-6 g-3 justify-content-md-center">
+      <div className="row row-cols-3 row-cols-md-6 g-1 justify-content-md-center">
         {!item
           ? "bulunamadı"
           : item.map((itemCategory) => {
@@ -51,7 +51,7 @@ const Categories = () => {
                       alt={itemCategory["strCategoryDescription"]}
                     />
                     <div className="text-end">
-                      <span className="card-title text-white px-1 fs-5">
+                      <span className="bg-warning card-title text-dark fw-bold py-1 px-1 fs-5">
                         {itemCategory.strCategory.toUpperCase()}
                       </span>
                     </div>

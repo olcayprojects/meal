@@ -30,26 +30,26 @@ const Ingredients = () => {
 
   if (loading) return <Loader />;
   return (
-    <div className="container-fluid m-0 p-0">
+    <div className="container-fluid">
       <Nav />
-      <div className="row row-cols-1 row-cols-md-6 g-3 mt-1 justify-content-md-center">
+      <div className="row row-cols-4 row-cols-md-6 mt-1 justify-content-md-center">
         {!item ? (
           <h1>bulunamadı</h1>
         ) : (
           item.map((item) => {
             return (
               <div
-                className="col d-flex point border border-dark p-0 m-2"
+                className="col point border border-1 border-secondary my-1 m-0 p-0"
                 key={item.idIngredient}
               >
-                <div className="card bg-opacity-25 bg-dark w-100">
+                <div className="card bg-opacity-25 bg-dark">
                   <img
-                    className="imgeffectIngredients card-img-top img-fluid "
+                    className="imgeffectIngredients card-img-top img-fluid"
                     key={item.MealId}
                     onClick={() => {
                       navigate(`/ingredientsfilter/${item.strIngredient}`);
                     }}
-                    src={ingredientURL + item["strIngredient"] + "-small.png"}
+                    src={ingredientURL + item["strIngredient"] + ".png"}
                     alt=""
                     title={item["strIngredient"]}
                   />
