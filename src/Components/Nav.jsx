@@ -25,7 +25,7 @@ const Nav = () => {
           </li>
           <li>
             <NavLink to="/ingredients">
-              <i className="bi bi-list-ul"></i> INGREDIENTS
+              <i className="bi bi-list-ul"></i> MAIN INGREDIENTS
             </NavLink>
           </li>
           <li>
@@ -35,8 +35,7 @@ const Nav = () => {
           </li>
           <li>
             <NavLink reloadDocument to="/randomeal">
-              <i className="bi bi-shuffle pe-1"></i>
-              RANDOM MEAL
+              <i className="bi bi-shuffle pe-1"></i> RANDOM MEAL
             </NavLink>
           </li>
         </ul>
