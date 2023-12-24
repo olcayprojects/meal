@@ -54,7 +54,7 @@ const Filtercategory = () => {
               alt=""
             />
             <span
-              className="bg-warning fs-1 fw-bold"
+              className="bg-warning fs-1 px-2 fw-bold"
             >
               {CategoryName} Meals
             </span>
@@ -83,7 +83,7 @@ const Filtercategory = () => {
                     />
                     <div className="card-img-overlay text-end">
                       <span
-                        className="card-title text-warning fs-4 px-2"
+                        className="card-title text-warning fs-5 px-2"
                         style={{}}
                       >
                         {item.strMeal}

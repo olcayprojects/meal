@@ -70,13 +70,13 @@ export function CategoryInfo(cName) {
     if (categoryInfo.strCategory === cName.cName) {
       desc = categoryInfo.strCategoryDescription;
     }
+    return desc;
   });
-
-  return desc ? (
-    <div className="border border-secondary">
-      <pre className="text-secondary p-2">{desc}</pre>;
+  return (
+    <div className="border border-secondary ">
+      <pre className="text-secondary p-2 m-0">{desc}</pre>;
     </div>
-  ) : null;
+  );
 }
 
 export default Categories;
