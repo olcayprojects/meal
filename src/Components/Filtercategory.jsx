@@ -64,14 +64,14 @@ const Filtercategory = () => {
           <div className="row row-cols-3 row-cols-md-6 g-1 justify-content-md-center pt-4">
             {items.map((item) => {
               return (
-                <div className="col point" key={item.idMeal}>
+                <div className="col" key={item.idMeal}>
                   <div
-                    className="imgeffect card text-dark bg-white"
+                    className="imgeffect card text-dark bg-white point"
                     key={item.idMeal}
                     onClick={() => {
                       navigate(`/recipeinfo/${item.idMeal}`);
                     }}
-                  >
+                    >
                     <img
                       className="card-img-top"
                       src={item.strMealThumb + "/preview"}
@@ -81,7 +81,7 @@ const Filtercategory = () => {
                       }}
                       alt=""
                     />
-                    <div className="card-img-overlay text-end">
+                    <div className="card-img-overlay text-start">
                       <span
                         className="card-title text-warning fs-5 px-2"
                         style={{}}

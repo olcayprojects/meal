@@ -53,7 +53,7 @@ const Ingredientsfilter = () => {
       <Nav />
       <img className="imgRotate" style={mystyle} src={imgUrl} alt="" />
       <h1 style={{ color: "orange" }} className="text-center fw-bold">
-        {toTitleCase(IngredientName)} Meals
+      {toTitleCase(IngredientName)} Recipes
       </h1>
       <IngredientsInfo iName={IngredientName} />
       <div className="row row-cols-2 row-cols-md-6 g-1 justify-content-md-center">
