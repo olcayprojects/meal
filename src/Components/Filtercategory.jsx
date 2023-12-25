@@ -53,9 +53,7 @@ const Filtercategory = () => {
               }
               alt=""
             />
-            <span
-              className="bg-warning fs-1 px-2 fw-bold"
-            >
+            <span className="bg-warning fs-1 px-2 fw-bold">
               {CategoryName} Meals
             </span>
           </div>
@@ -71,7 +69,7 @@ const Filtercategory = () => {
                     onClick={() => {
                       navigate(`/recipeinfo/${item.idMeal}`);
                     }}
-                    >
+                  >
                     <img
                       className="card-img-top"
                       src={item.strMealThumb + "/preview"}

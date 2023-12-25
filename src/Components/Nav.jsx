@@ -15,9 +15,7 @@ const Nav = () => {
         </NavLink>
 
         <ul>
-        <li>
-            
-          </li>
+          <li></li>
           <li>
             <NavLink to="/categories">
               <i className="bi bi-card-list"></i> CATEGORIES

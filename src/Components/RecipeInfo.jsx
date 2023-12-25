@@ -80,7 +80,9 @@ const RecipeInfo = () => {
                 title={item.strMeal}
               />
               <div className="text-center mt-1">
-              {item.strTags ? <h5 className="text-center text-primary">{item.strTags}</h5> : null}
+                {item.strTags ? (
+                  <h5 className="text-center text-primary">{item.strTags}</h5>
+                ) : null}
               </div>
             </div>
           </div>
