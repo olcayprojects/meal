@@ -80,13 +80,7 @@ const RecipeInfo = () => {
                 title={item.strMeal}
               />
               <div className="text-center mt-1">
-                {item?.strTags?.split(",").map((items, i) => {
-                  return (
-                    <h5 key={i} className="badge fs-5 bg-light text-black me-1">
-                      {items}
-                    </h5>
-                  );
-                })}
+              {item.strTags ? <h5 className="text-center text-primary">{item.strTags}</h5> : null}
               </div>
             </div>
           </div>

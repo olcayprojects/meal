@@ -50,15 +50,7 @@ const Randomeal = () => {
             {item["strCategory"]} Meals
           </span>
         </h4>
-        {item.strTags ? (
-          <h4 className="text-center">
-            <span className="p-1" style={{ color: "darkseagreen" }}>
-              {item.strTags.replaceAll(",", " ")}
-            </span>
-          </h4>
-        ) : (
-          ""
-        )}
+        {item.strTags ? <h5 className="text-center text-primary">{item.strTags}</h5> : null}
       </div>
       <img
         className="img-thumbnail mx-auto d-block"
