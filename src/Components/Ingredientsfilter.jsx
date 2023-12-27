@@ -51,7 +51,12 @@ const Ingredientsfilter = () => {
   return (
     <div className="container-fluid">
       <Nav />
-      <img className="imgRotate" style={mystyle} src={imgUrl} alt="" />
+      <img
+        className="imgRotate"
+        style={mystyle}
+        src={imgUrl}
+        alt={IngredientName}
+      />
       <h1 style={{ color: "orange" }} className="text-center fw-bold">
         {toTitleCase(IngredientName)} Recipes
       </h1>
@@ -79,6 +84,7 @@ const Ingredientsfilter = () => {
                     currentTarget.src = data.strMealThumb;
                   }}
                   alt=""
+                  title=""
                 />
                 <div className="card-img-overlay text-end">
                   <span

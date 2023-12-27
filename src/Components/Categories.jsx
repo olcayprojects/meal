@@ -47,8 +47,8 @@ const Categories = () => {
                     <img
                       className="imgeffectIngredients card-img-top"
                       src={itemCategory.strCategoryThumb}
-                      title={itemCategory["strCategoryDescription"]}
-                      alt={itemCategory["strCategoryDescription"]}
+                      title={itemCategory.strCategory}
+                      alt={itemCategory.strCategory}
                     />
                     <div className="text-end">
                       <span className="bg-warning card-title text-dark fw-bold py-1 px-1 fs-5">
@@ -73,8 +73,8 @@ export function CategoryInfo(cName) {
     return desc;
   });
   return (
-    <div className="border border-secondary ">
-      <pre className="text-secondary p-2 m-0">{desc}</pre>;
+    <div className="border border-light border-4 bg-dark ">
+      <pre className="text-light p-2 m-0">{desc}</pre>
     </div>
   );
 }

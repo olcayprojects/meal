@@ -77,7 +77,7 @@ const Filtercategory = () => {
                         currentTarget.onerror = null; // prevents looping
                         currentTarget.src = item.strMealThumb;
                       }}
-                      alt=""
+                      alt={item.strMeal}
                     />
                     <div className="card-img-overlay text-start">
                       <span

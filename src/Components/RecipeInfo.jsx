@@ -13,10 +13,9 @@ const RecipeInfo = () => {
   const [loading, setLoading] = useState(false);
   let navigate = useNavigate();
   //const { MealName } = useParams();
-  let imageyemek = [];
-  const mystyle = {
-    // width: 1400,
-  };
+  // const mystyle = {
+  //    width: 1400,
+  // };
 
   url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${MealId}`;
 
@@ -76,7 +75,7 @@ const RecipeInfo = () => {
                   currentTarget.onerror = null; // prevents looping
                   currentTarget.src = item.strMealThumb;
                 }}
-                alt=""
+                alt={item.strMeal}
                 title={item.strMeal}
               />
               <div className="text-center mt-1">
@@ -113,6 +112,9 @@ const RecipeInfo = () => {
                 style={{ border: "dashed", borderColor: "orange" }}
               >
                 <ol className="list-group list-group-numbered fs-5">
+                  <h5 className="text-center text-secondary fw-bold">
+                    <span className="bg-light px-2">Ingredients</span>
+                  </h5>
                   {Object.keys(item).map((items, index) => {
                     return item["strIngredient" + index] ? (
                       <li
@@ -130,7 +132,7 @@ const RecipeInfo = () => {
                           item["strIngredient" + index] +
                           " meals"
                         }
-                        className="point list-group-item list-group-item-action bg-black text-light border-dark border border-2 p-1"
+                        className="point list-group-item list-group-item-action bg-black text-light border-secondary border border-2 p-1"
                       >
                         <span className="">{item["strMeasure" + index]}</span>
                         <img
@@ -142,7 +144,7 @@ const RecipeInfo = () => {
                             "-Small.png"
                           }
                           alt=""
-                          title=""
+                          title={item["strIngredient" + index]}
                         />
                         <span className="">
                           {item["strIngredient" + index]}

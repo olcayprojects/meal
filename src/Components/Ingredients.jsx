@@ -4,7 +4,7 @@ import Nav from "./Nav";
 import Loader from "../Components/Loader";
 let ingredientURL = "https://www.themealdb.com/images/ingredients/";
 
-let infoIngredients = "";
+var infoIngredients = "";
 
 const Ingredients = () => {
   const [url, setUrl] = useState(
@@ -84,16 +84,18 @@ const Ingredients = () => {
 };
 
 export function IngredientsInfo(iName) {
-  var desc = "";
-  infoIngredients.meals?.map((ingredientsInfo) => {
-    if (ingredientsInfo.strIngredient === iName.iName) {
-      desc = ingredientsInfo.strDescription;
-    }
-  });
+  const [desc, setDesc] = useState("");
 
+  useEffect(() => {
+    infoIngredients.meals?.map((ingredientsInfo) => {
+      if (ingredientsInfo.strIngredient === iName.iName) {
+        setDesc(ingredientsInfo.strDescription);
+      }
+    });
+  }, [iName.iName]);
   return desc ? (
-    <div className="m-1 border border-secondary p-2">
-      <pre className="text-secondary">{desc}</pre>
+    <div className="m-1 border border-light border-4 p-2 bg-dark">
+      <pre className="text-light">{desc}</pre>
     </div>
   ) : null;
 }
