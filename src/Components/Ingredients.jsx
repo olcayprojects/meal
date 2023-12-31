@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import Nav from "./Nav";
 import Loader from "../Components/Loader";
 let ingredientURL = "https://www.themealdb.com/images/ingredients/";
+let ingUrl = "https://www.themealdb.com/api/json/v1/1/list.php?i=list";
 
-var infoIngredients = "";
+var descIng = "";
 
 const Ingredients = () => {
-  const [url, setUrl] = useState(
-    "https://www.themealdb.com/api/json/v1/1/list.php?i=list"
-  );
+  const [url, setUrl] = useState(ingUrl);
 
   const [item, setItem] = useState();
   const [loading, setLoading] = useState(false);
@@ -23,7 +22,7 @@ const Ingredients = () => {
       res.json().then((data) => {
         setLoading(false);
         setItem(data.meals);
-        infoIngredients = data;
+        descIng = data;
       })
     );
   }, [url]);
@@ -49,7 +48,7 @@ const Ingredients = () => {
                     onClick={() => {
                       navigate(`/ingredientsfilter/${item.strIngredient}`);
                     }}
-                    src={ingredientURL + item["strIngredient"] + ".png"}
+                    src={ingredientURL + item["strIngredient"] + "-Small.png"}
                     alt=""
                     title={item["strIngredient"]}
                   />
@@ -83,19 +82,18 @@ const Ingredients = () => {
   );
 };
 
-export function IngredientsInfo(iName) {
-  const [desc, setDesc] = useState("");
+export function IngredientsInfo(props) {
+  var desc = "";
+  descIng.meals?.map((categoryInfo) => {
+    if (categoryInfo.strIngredient === props.iName) {
+      desc = categoryInfo.strDescription;
+    }
+    return desc;
+  });
 
-  useEffect(() => {
-    infoIngredients.meals?.map((ingredientsInfo) => {
-      if (ingredientsInfo.strIngredient === iName.iName) {
-        setDesc(ingredientsInfo.strDescription);
-      }
-    });
-  }, [iName.iName]);
   return desc ? (
-    <div className="m-1 border border-light border-4 p-2 bg-dark">
-      <pre className="text-light">{desc}</pre>
+    <div className="border border-light border-4 bg-dark mb-1 ">
+      <pre className="text-light p-2 m-0">{desc}</pre>
     </div>
   ) : null;
 }
