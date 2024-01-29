@@ -134,10 +134,12 @@ const RecipeInfo = () => {
                         }
                         className="point list-group-item list-group-item-action bg-black text-light border-secondary border border-2 p-1"
                       >
-                        <span className="">{item["strMeasure" + index]}</span>
+                        <span className="fst-italic">
+                          {item["strMeasure" + index]}
+                        </span>
                         <img
                           className="img-fluid"
-                          style={{ width: "10%" }}
+                          style={{ width: "25%" }}
                           src={
                             ingredientURL +
                             item["strIngredient" + index] +

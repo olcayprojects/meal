@@ -29,32 +29,33 @@ const Ingredients = () => {
 
   if (loading) return <Loader />;
   return (
-    <div className="container-fluid">
+    <div className="container-fluid p-0">
       <Nav />
-      <div className="row row-cols-4 row-cols-md-6 mt-1 justify-content-md-center">
+      <div className="row row-cols-4 row-cols-md-6 mt-1 justify-content-md-center m-0 p-0">
         {!item ? (
           <h1>bulunamadı</h1>
         ) : (
           item.map((item) => {
             return (
               <div
-                className="col point border border-1 border-secondary my-1 m-0 p-0"
+                className="col point border border-1 border-secondary my-1 m-0 p-0 mx-0 bg-dark"
                 key={item.idIngredient}
               >
                 <div className="card bg-opacity-25 bg-dark">
                   <img
-                    className="imgeffectIngredients card-img-top img-fluid"
+                    className="imgeffectIngredients card-img-top img-thumbnail bg-black"
+                    style={{ height: "" }}
                     key={item.MealId}
                     onClick={() => {
                       navigate(`/ingredientsfilter/${item.strIngredient}`);
                     }}
                     src={ingredientURL + item["strIngredient"] + "-Small.png"}
-                    alt=""
+                    alt={item["strIngredient"]}
                     title={item["strIngredient"]}
                   />
-                  <div className="card-body text-end">
+                  <div className="card-body text-bottom text-center">
                     <span
-                      className="card-title fs-4 px-1 text-black"
+                      className="card-title fs-5 px-1 text-black"
                       style={{ backgroundColor: "orange" }}
                     >
                       {item.strIngredient.toUpperCase()}
