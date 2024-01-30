@@ -55,7 +55,7 @@ const Ingredients = () => {
                   />
                   <div className="card-body text-bottom text-center">
                     <span
-                      className="card-title fs-5 px-1 text-black"
+                      className="card-title fs-5 fw-bold p-1 text-black"
                       style={{ backgroundColor: "orange" }}
                     >
                       {item.strIngredient.toUpperCase()}
