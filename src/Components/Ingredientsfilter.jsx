@@ -86,9 +86,9 @@ const Ingredientsfilter = () => {
                   alt=""
                   title=""
                 />
-                <div className="card-img-overlay text-end">
+                <div className="card-img-overlay d-flex">
                   <span
-                    className="card-title text-white fs-4 px-2"
+                    className="card-title text-warning fs-4 px-3 align-self-end rounded-pill"
                     key={index + 2}
                   >
                     {data.strMeal}

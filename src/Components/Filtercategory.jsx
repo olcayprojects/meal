@@ -64,7 +64,7 @@ const Filtercategory = () => {
               return (
                 <div className="col" key={item.idMeal}>
                   <div
-                    className="imgeffect card text-dark bg-white point"
+                    className="imgeffect card text-dark bg-white point "
                     key={item.idMeal}
                     onClick={() => {
                       navigate(`/recipeinfo/${item.idMeal}`);
@@ -79,9 +79,9 @@ const Filtercategory = () => {
                       }}
                       alt={item.strMeal}
                     />
-                    <div className="card-img-overlay text-start">
+                    <div className="card-img-overlay d-flex">
                       <span
-                        className="card-title text-warning fs-5 px-2"
+                        className="card-title text-warning fs-4 px-3 align-self-end rounded-pill"
                         style={{}}
                       >
                         {item.strMeal}

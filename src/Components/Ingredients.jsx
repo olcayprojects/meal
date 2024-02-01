@@ -93,7 +93,7 @@ export function IngredientsInfo(props) {
   });
 
   return desc ? (
-    <div className="border border-light border-4 bg-dark mb-1 ">
+    <div className="border border-warning border-4 bg-dark mb-1 ">
       <pre className="text-light p-2 m-0">{desc}</pre>
     </div>
   ) : null;

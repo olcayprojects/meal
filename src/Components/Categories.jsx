@@ -37,7 +37,7 @@ const Categories = () => {
               return (
                 <div className="col" key={itemCategory.idCategory}>
                   <div
-                    className="card text-dark bg-white w-100 h-100 bg-opacity-25"
+                    className="card text-dark w-100 h-100"
                     style={{}}
                     key={itemCategory.idCategory}
                     onClick={() => {
