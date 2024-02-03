@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
 import Nav from "./Nav";
 import Loader from "./Loader";
 import { IngredientsInfo } from "./Ingredients";
+import Meallist from "./Meallist";
 
 function toTitleCase(str) {
   const titleCase = str
@@ -18,7 +18,6 @@ function toTitleCase(str) {
 }
 
 const Ingredientsfilter = () => {
-  let navigate = useNavigate();
   const { IngredientName = "Avocado" } = useParams();
   const [loading, setLoading] = useState(false);
 
@@ -61,44 +60,7 @@ const Ingredientsfilter = () => {
         {toTitleCase(IngredientName)} Recipes
       </h1>
       <IngredientsInfo iName={IngredientName} />
-      <div className="row row-cols-2 row-cols-md-6 g-1 justify-content-md-center">
-        {!item ? (
-          <h6>{IngredientName} Meals Not Found !!</h6>
-        ) : (
-          item.map((data, index) => (
-            <div className="col" key={data.idMeal}>
-              <div
-                key={index}
-                className="imgeffect card text-dark bg-white point"
-                onClick={() => {
-                  navigate(`/recipeinfo/${data.idMeal}`);
-                }}
-                title={"Click go to '" + data.strMeal + "' details"}
-              >
-                <img
-                  className="image card-img-top"
-                  key={index + 1}
-                  src={data.strMealThumb + "/preview"}
-                  onError={({ currentTarget }) => {
-                    currentTarget.onerror = null; // prevents looping
-                    currentTarget.src = data.strMealThumb;
-                  }}
-                  alt=""
-                  title=""
-                />
-                <div className="card-img-overlay d-flex">
-                  <span
-                    className="card-title text-warning fs-4 px-3 align-self-end rounded-pill"
-                    key={index + 2}
-                  >
-                    {data.strMeal}
-                  </span>
-                </div>
-              </div>
-            </div>
-          ))
-        )}
-      </div>
+      <Meallist item={item} />
     </div>
   );
 };

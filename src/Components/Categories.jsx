@@ -73,7 +73,7 @@ export function CategoryInfo(cName) {
     return desc;
   });
   return (
-    <div className="border border-light border-4 bg-dark ">
+    <div className="border border-warning border-4 bg-dark ">
       <pre className="text-light p-2 m-0">{desc}</pre>
     </div>
   );

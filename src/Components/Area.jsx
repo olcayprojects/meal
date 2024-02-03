@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 import Nav from "./Nav";
 import Cmbarealist from "./Cmbarealist";
 import Loader from "../Components/Loader";
+import Meallist from "./Meallist";
 
 const AreaFilter = () => {
-  let navigate = useNavigate();
   const { areaName = "Turkish" } = useParams();
 
   let url = `https://themealdb.com/api/json/v1/1/filter.php?a=${areaName}`;
@@ -51,37 +51,7 @@ const AreaFilter = () => {
           </span>
         </div>
 
-        <div className="row row-cols-6 g-1 justify-content-md-center">
-          {items.map((item) => {
-            return (
-              <div className="col " key={item.idMeal}>
-                <div
-                  className="imgeffect card text-dark bg-white"
-                  style={{ color: "white", cursor: "pointer" }}
-                  onClick={() => {
-                    navigate(`/recipeinfo/${item.idMeal}`);
-                  }}
-                >
-                  <img
-                    className="card-img "
-                    src={item.strMealThumb + "/preview"}
-                    onError={({ currentTarget }) => {
-                      currentTarget.onerror = null; // prevents looping
-                      currentTarget.src = item.strMealThumb;
-                    }}
-                    alt={item.strMeal}
-                  />
-
-                  <div className="card-img-overlay px-0">
-                    <h4 className="card-title text-white">{item.strMeal}</h4>
-
-                    <div />
-                  </div>
-                </div>
-              </div>
-            );
-          })}
-        </div>
+        <Meallist item={items} />
       </div>
     );
   }
