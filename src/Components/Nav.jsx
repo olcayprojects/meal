@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 const Nav = () => {
   return (
     <div className="container">
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+      <nav className="navbar navbar-expand-md navbar-dark bg-dark">
         <NavLink exact="true" to="/">
           <img
             className="img abc"
@@ -14,7 +14,7 @@ const Nav = () => {
           />
         </NavLink>
         <button
-          class="navbar-toggler"
+          className="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarSupportedContent"
@@ -22,13 +22,13 @@ const Nav = () => {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span class="navbar-toggler-icon"></span>
+          <span className="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul className="navbar-nav mr-auto">
             {" "}
             <li></li>
-            <li class="">
+            <li>
               {" "}
               <NavLink to="/categories">
                 <i className="bi bi-card-list"></i> CATEGORIES

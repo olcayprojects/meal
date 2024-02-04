@@ -54,12 +54,12 @@ const Ingredients = () => {
                     title={item["strIngredient"]}
                   />
                   <div className="card-body text-bottom text-center">
-                    <span
-                      className="card-title fs-5 fw-bold p-1 text-black"
-                      style={{ backgroundColor: "orange" }}
+                    <h6
+                      className="card-title fw-bold p-0 text-warning bg-black"
+                      style={{}}
                     >
                       {item.strIngredient.toUpperCase()}
-                    </span>
+                    </h6>
                     {/* <pre className="card-text">
                       <button
                         className="btn bg-dark text-light"
