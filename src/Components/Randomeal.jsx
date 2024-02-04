@@ -3,9 +3,9 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import Nav from "./Nav";
+import Ingredientlist from "./Ingredientlist";
 
 let response = getData(`https://www.themealdb.com/api/json/v1/1/random.php`);
-let ingredientURL = "https://www.themealdb.com/images/ingredients/";
 
 async function getData(url) {
   let res = await fetch(url);
@@ -70,39 +70,8 @@ const Randomeal = () => {
             className="col-auto py-2 me-2"
             style={{ border: "dashed", borderColor: "orange" }}
           >
-            <ol className="list-group list-group-numbered fs-5">
-              <h5 className="text-center text-secondary fw-bold">
-                Ingredients
-              </h5>
-              {Object.keys(item).map((items, index) => {
-                return item["strIngredient" + index] ? (
-                  <li
-                    id={item["strIngredient" + index]}
-                    key={index}
-                    onClick={(ef) => {
-                      navigate(
-                        `/ingredientsfilter/${item["strIngredient" + index]}`
-                      );
-                    }}
-                    className="point list-group-item list-group-item-action bg-black text-light border-dark border border-1"
-                  >
-                    <span>{item["strMeasure" + index]}</span>
-                    <img
-                      className="img-fluid"
-                      style={{ width: "25px" }}
-                      src={
-                        ingredientURL +
-                        item["strIngredient" + index] +
-                        "-Small.png"
-                      }
-                      alt=""
-                      title={item["strIngredient" + index]}
-                    />
-                    <span>{item["strIngredient" + index]}</span>
-                  </li>
-                ) : null;
-              })}
-            </ol>
+            <Ingredientlist item={item}/>
+
           </div>
           <div
             className="col pt-2"

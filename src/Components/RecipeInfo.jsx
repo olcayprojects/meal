@@ -3,9 +3,9 @@ import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import Nav from "./Nav";
 import Loader from "../Components/Loader";
+import Ingredientlist from "./Ingredientlist";
 
 let url = "";
-let ingredientURL = "https://www.themealdb.com/images/ingredients/";
 
 const RecipeInfo = () => {
   const [item, setItem] = useState();
@@ -108,55 +108,10 @@ const RecipeInfo = () => {
           <div className="container-fluid p-1">
             <div className="row m-1">
               <div
-                className="col-auto py-2 me-2"
+                className="col-md-auto py-2 me-2"
                 style={{ border: "dashed", borderColor: "orange" }}
               >
-                <ol className="list-group list-group-numbered fs-5">
-                  <h5 className="text-center text-secondary fw-bold">
-                    <span className="bg-light px-2">Ingredients</span>
-                  </h5>
-                  {Object.keys(item).map((items, index) => {
-                    return item["strIngredient" + index] ? (
-                      <li
-                        id={item["strIngredient" + index]}
-                        key={index}
-                        onClick={(ef) => {
-                          navigate(
-                            `/ingredientsfilter/${
-                              item["strIngredient" + index]
-                            }`
-                          );
-                        }}
-                        title={
-                          "Click go to " +
-                          item["strIngredient" + index] +
-                          " meals"
-                        }
-                        className="point list-group-item list-group-item-action bg-black text-light border-secondary border border-2 p-1"
-                      >
-                        <span className="fst-italic">
-                          {item["strMeasure" + index]}
-                        </span>
-                        <img
-                          className="img-fluid"
-                          style={{ width: "25%" }}
-                          src={
-                            ingredientURL +
-                            item["strIngredient" + index] +
-                            "-Small.png"
-                          }
-                          alt=""
-                          title={item["strIngredient" + index]}
-                        />
-                        <span className="">
-                          {item["strIngredient" + index]}
-                        </span>
-                      </li>
-                    ) : (
-                      ""
-                    );
-                  })}
-                </ol>
+                <Ingredientlist item={item} />
               </div>
               <div
                 className="col pt-2"
