@@ -30,14 +30,19 @@ const Categories = () => {
   return (
     <>
       <br />
-      <div className="row row-cols-3 row-cols-md-6 g-1 justify-content-md-center">
+      <div className="row row-cols-3 row-cols-md-auto g-1 justify-content-center"
+
+      >
         {!item
           ? "bulunamadı"
           : item.map((itemCategory) => {
               return (
-                <div className="col" key={itemCategory.idCategory}>
+                <div className="col" key={itemCategory.idCategory}
+                style={{ boxSizing: "border-box", width: "130px" }}
+
+                >
                   <div
-                    className="card text-dark w-100 h-100"
+                    className="card text-dark h-100"
                     style={{}}
                     key={itemCategory.idCategory}
                     onClick={() => {
@@ -50,7 +55,7 @@ const Categories = () => {
                       title={itemCategory.strCategory}
                       alt={itemCategory.strCategory}
                     />
-                    <div className="text-end">
+                    <div className="text-center pt-2">
                       <span className="bg-warning card-title text-dark fw-bold py-1 px-1 fs-5">
                         {itemCategory.strCategory.toUpperCase()}
                       </span>

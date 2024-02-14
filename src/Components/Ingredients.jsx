@@ -31,17 +31,20 @@ const Ingredients = () => {
   return (
     <div className="container-fluid p-0">
       <Nav />
-      <div className="row row-cols-4 row-cols-md-6 mt-1 justify-content-md-center m-0 p-0">
+      <div className="row row-cols-auto row-cols-md-auto mt-1 justify-content-center m-0 p-0">
         {!item ? (
           <h1>bulunamadı</h1>
         ) : (
           item.map((item) => {
             return (
               <div
-                className="col point border border-1 border-secondary my-1 m-0 p-0 mx-0 bg-dark"
+                className="col point border border-1 border-secondary my-1 m-0 p-0 mx-1 bg-dark"
                 key={item.idIngredient}
               >
-                <div className="card bg-opacity-25 bg-dark">
+                <div
+                  className="card bg-opacity-25 bg-dark"
+                  style={{ boxSizing: "border-box", width: "100px" }}
+                >
                   <img
                     className="imgeffectIngredients card-img-top img-thumbnail bg-black"
                     style={{ height: "" }}
