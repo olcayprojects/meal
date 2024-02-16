@@ -25,7 +25,7 @@ const Randomeal = () => {
   return (
     <div className="container-fluid">
       <Nav />
-      <div className="heading">
+      <div className="heading mt-2">
         <h1
           className="text-center text-uppercase fw-bold"
           style={{ color: "orange" }}
@@ -70,8 +70,7 @@ const Randomeal = () => {
             className="col-auto py-2 me-2"
             style={{ border: "dashed", borderColor: "orange" }}
           >
-            <Ingredientlist item={item}/>
-
+            <Ingredientlist item={item} />
           </div>
           <div
             className="col pt-2"

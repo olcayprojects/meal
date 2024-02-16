@@ -29,17 +29,15 @@ const Categories = () => {
 
   return (
     <>
-      <br />
-      <div className="row row-cols-3 row-cols-md-auto g-1 justify-content-center"
-
-      >
+      <div className="row row-cols-3 row-cols-md-auto mt-2 g-1 justify-content-center">
         {!item
           ? "bulunamadı"
           : item.map((itemCategory) => {
               return (
-                <div className="col" key={itemCategory.idCategory}
-                style={{ boxSizing: "border-box", width: "130px" }}
-
+                <div
+                  className="col"
+                  key={itemCategory.idCategory}
+                  style={{ boxSizing: "border-box", width: "130px" }}
                 >
                   <div
                     className="card text-dark h-100"
@@ -50,7 +48,7 @@ const Categories = () => {
                     }}
                   >
                     <img
-                      className="imgeffectIngredients card-img-top"
+                      className="imgeffect card-img-top"
                       src={itemCategory.strCategoryThumb}
                       title={itemCategory.strCategory}
                       alt={itemCategory.strCategory}

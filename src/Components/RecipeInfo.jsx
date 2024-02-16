@@ -69,7 +69,7 @@ const RecipeInfo = () => {
               </h1>
               <img
                 key={item.idMeal}
-                className="img img-fluid mx-auto d-block"
+                className="img-thumbnail mx-auto d-block rounded"
                 src={item.strMealThumb + ""}
                 onError={({ currentTarget }) => {
                   currentTarget.onerror = null; // prevents looping

@@ -51,7 +51,7 @@ const Meal = () => {
       <div className="main">
         <Nav />
 
-        <div className="heading">
+        <div className="heading mt-2">
           <MyCarousel />
         </div>
         <div className="indexContainer pt-1">

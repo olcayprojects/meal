@@ -39,7 +39,7 @@ const AreaFilter = () => {
     return (
       <div className="container-fluid">
         <Nav />
-        <div className="my-2 text-center">
+        <div className="my-2 text-center mt-3">
           <div className="d-flex justify-content-center">
             <Cmbarealist />
           </div>

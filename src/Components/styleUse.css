@@ -282,10 +282,10 @@ th {
   cursor: pointer;
 }
 
-.imgeffectIngredients {
+.imgeffect {
   transition: 0.4s;
 }
-.imgeffectIngredients:hover {
+.imgeffect:hover {
   transform: scale(1.1, 1.1);
   /* box-shadow: 0 0 2px 2px cyan; */
   /* transition: 0.4s; */
@@ -309,8 +309,6 @@ th {
   transition: 0.4s;
 }
 
-.catImg:hover{
-
+.catImg:hover {
   object-fit: fill !important;
 }
-
