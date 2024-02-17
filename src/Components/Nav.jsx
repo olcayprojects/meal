@@ -27,7 +27,7 @@ const Nav = () => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav ms-auto me-2">
             <li></li>
-            <li>
+            <li className="">
               <NavLink to="/categories">
                 <i className="bi bi-card-list"></i> CATEGORIES
               </NavLink>

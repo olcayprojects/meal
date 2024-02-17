@@ -38,23 +38,23 @@ const Categories = () => {
                   className="col"
                   key={itemCategory.idCategory}
                   style={{ boxSizing: "border-box", width: "130px" }}
+                  onClick={() => {
+                    navigate(`/fg/${itemCategory.strCategory}`);
+                  }}
                 >
                   <div
-                    className="card text-dark h-100"
+                    className="card text-dark h-100 imgeffect"
                     style={{}}
                     key={itemCategory.idCategory}
-                    onClick={() => {
-                      navigate(`/fg/${itemCategory.strCategory}`);
-                    }}
                   >
                     <img
-                      className="imgeffect card-img-top"
+                      className="card-img-top"
                       src={itemCategory.strCategoryThumb}
                       title={itemCategory.strCategory}
                       alt={itemCategory.strCategory}
                     />
                     <div className="text-center pt-2">
-                      <span className="bg-warning card-title text-dark fw-bold py-1 px-1 fs-5">
+                      <span className="text-warning card-title bg-dark fw-bold mb-1 px-1 fs-5">
                         {itemCategory.strCategory.toUpperCase()}
                       </span>
                     </div>
@@ -76,8 +76,8 @@ export function CategoryInfo(cName) {
     return desc;
   });
   return (
-    <div className="border border-warning border-4 bg-dark ">
-      <pre className="text-light p-2 m-0">{desc}</pre>
+    <div className="border border-warning border-4 bg-dark mb-2">
+      <pre className="text-warning fst-italic fs-5 p-2 m-0">{desc}</pre>
     </div>
   );
 }
