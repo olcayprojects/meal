@@ -43,12 +43,12 @@ const Ingredients = () => {
                 key={item.idIngredient}
               >
                 <div
-                  className="card bg-opacity-25 bg-dark "
+                  className="card bg-dark"
                   style={{ boxSizing: "border-box", width: "100px" }}
                   title={item["strIngredient"]}
                 >
                   <img
-                    className="card-img-top img-fluid bg-dark"
+                    className="card-img-top img-fluid"
                     style={{ height: "" }}
                     key={item.MealId}
                     onClick={() => {
@@ -59,7 +59,7 @@ const Ingredients = () => {
                   />
                   <div className="card-body text-bottom text-center p-0 m-0">
                     <h6
-                      className="card-title fw-bold px-1 m-0 text-warning bg-black text-truncate"
+                      className="card-title fw-bold px-1 m-0 text-white bg-success text-truncate"
                       style={{}}
                     >
                       {item.strIngredient}
