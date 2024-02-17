@@ -48,7 +48,7 @@ const Categories = () => {
                     key={itemCategory.idCategory}
                   >
                     <img
-                      className="card-img-top"
+                      className="card-img-top shadow"
                       src={itemCategory.strCategoryThumb}
                       title={itemCategory.strCategory}
                       alt={itemCategory.strCategory}
@@ -68,16 +68,17 @@ const Categories = () => {
 };
 
 export function CategoryInfo(cName) {
-  var desc = "";
-  infocate.categories?.map((categoryInfo) => {
-    if (categoryInfo.strCategory === cName.cName) {
-      desc = categoryInfo.strCategoryDescription;
-    }
-    return desc;
-  });
+  const [info, setInfo] = useState([]);
+  useEffect(() => {
+    infocate.categories?.map((categoryInfo) => {
+      if (categoryInfo.strCategory === cName.cName) {
+        setInfo(categoryInfo.strCategoryDescription);
+      }
+    });
+}, [cName]);
   return (
     <div className="border border-warning border-4 bg-dark mb-2">
-      <pre className="text-warning fst-italic fs-5 p-2 m-0">{desc}</pre>
+      <pre className="text-warning fst-italic fs-5 p-2 m-0">{info}</pre>
     </div>
   );
 }
