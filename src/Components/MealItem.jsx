@@ -47,8 +47,8 @@ const MealItem2 = ({ data }) => {
                     />
                   </div>
                   <div className="mealName">
-                    <h1 className="" style={{ color: "orange" }}>
-                      <span className="px-2 fw-bold" style={{}}>
+                    <h1 className="" style={{}}>
+                      <span className="px-1 fw-bold bg-warning text-dark" style={{}}>
                         {toTitleCase(item.strMeal)}
                       </span>
                     </h1>
@@ -64,7 +64,7 @@ const MealItem2 = ({ data }) => {
                       </button>
                       <button
                         type="button"
-                        className="btn btn-outline-warning fw-bold fs-5"
+                        className="btn btn-outline-primary fw-bold fs-5"
                         onClick={() => {
                           navigate(`/fg/${item.strCategory}`);
                         }}

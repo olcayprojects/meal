@@ -30,7 +30,7 @@ const Randomeal = () => {
           className="text-center text-uppercase fw-bold"
           style={{ color: "orange" }}
         >
-          <span className="px-2"> {item["strMeal"]}</span>
+          <span className="px-2 bg-dark border border-warning"> {item["strMeal"]}</span>
         </h1>
         <h4 className="text-center">
           <span
@@ -51,7 +51,7 @@ const Randomeal = () => {
           </span>
         </h4>
         {item.strTags ? (
-          <h5 className="text-center text-primary">{item.strTags}</h5>
+          <h5 className="text-center text-secondary">{item.strTags.toUpperCase()}</h5>
         ) : null}
       </div>
       <img

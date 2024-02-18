@@ -42,7 +42,7 @@ const Filtercategory = () => {
 
           <div className="text-center">
             <img
-              className="img-responsive w-50 mx-auto d-block"
+              className="img-responsive w-25 mx-auto d-block"
               src={
                 "https://www.themealdb.com/images/category/" +
                 CategoryName +

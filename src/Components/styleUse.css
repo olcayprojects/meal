@@ -97,7 +97,7 @@ nav li a {
 }
 
 nav li :hover {
-  color: white;
+  color: #f0ad4e;
   font-weight: bolder;
   /* transform: rotate(10deg); */
 }

@@ -54,8 +54,8 @@ const RecipeInfo = () => {
                   }}
                 ></i>
                 <span
-                  className="fw-bold px-2"
-                  style={{ color: "orange", backgroundColor: "" }}
+                  className="fw-bold px-2 text-warning bg-dark mx-1"
+                  style={{ }}
                 >
                   {item["strMeal"].toUpperCase()}
                 </span>
@@ -80,7 +80,7 @@ const RecipeInfo = () => {
               />
               <div className="text-center mt-1">
                 {item.strTags ? (
-                  <h5 className="text-center text-primary">{item.strTags}</h5>
+                  <h5 className="text-center text-secondary">{item.strTags.toUpperCase()}</h5>
                 ) : null}
               </div>
             </div>
