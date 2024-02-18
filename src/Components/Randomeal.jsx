@@ -76,7 +76,7 @@ const Randomeal = () => {
             className="col pt-2"
             style={{ border: "dashed", borderColor: "orange" }}
           >
-            <pre className="text-light p-2 fs-5">{item?.strInstructions}</pre>
+            <pre className="text-warning bg-dark fst-italic p-2 fs-5">{item?.strInstructions}</pre>
           </div>
         </div>
         <div className="ratio ratio-16x9">
