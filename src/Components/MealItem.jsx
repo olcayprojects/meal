@@ -19,14 +19,14 @@ const MealItem2 = ({ data }) => {
   let navigate = useNavigate();
 
   return (
-    <div className="row row-cols-1 row-cols-md-3 justify-content-md-center">
+    <div className="row row-cols-1 row-cols-md-3 row-cols-lg-4 justify-content-center">
       {!data
         ? "bulunamadı"
         : data.map((item, index) => {
             //const id =Math.floor(Math.random()*1000)
             return (
               <div key={item.idMeal} className="p-1">
-                <div className="h-100 border border-light border-4 justify-content-md-center">
+                <div className="h-100 border border-warning border-4">
                   <div className="mealImg">
                     <img
                       onClick={() => {
@@ -48,7 +48,10 @@ const MealItem2 = ({ data }) => {
                   </div>
                   <div className="mealName">
                     <h1 className="" style={{}}>
-                      <span className="px-1 fw-bold bg-dark text-warning border border-warning" style={{}}>
+                      <span
+                        className="px-1 fw-bold bg-dark text-warning border border-warning"
+                        style={{}}
+                      >
                         {toTitleCase(item.strMeal)}
                       </span>
                     </h1>
@@ -106,7 +109,9 @@ const MealItem2 = ({ data }) => {
                                 "' integrated meals."
                               }
                             />
-                            <h6 className="text-secondary">{item[items]}</h6>
+                            <h6 className="text-warning px-1 m-0 border border-secondary">
+                              {item[items].toUpperCase()}
+                            </h6>
                           </span>
                         ) : (
                           ""

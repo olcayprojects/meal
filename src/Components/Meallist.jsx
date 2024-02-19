@@ -4,7 +4,7 @@ export default function Meallist(props) {
   let navigate = useNavigate();
 
   return (
-    <div className="row row-cols-2 row-cols-md-6 g-1 justify-content-md-center">
+    <div className="row row-cols-2 row-cols-md-4 row-cols-lg-6 g-1 justify-content-center">
       {!props.item ? (
         <h6>Meals Not Found !!</h6>
       ) : (
