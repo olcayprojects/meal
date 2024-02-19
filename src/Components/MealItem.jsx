@@ -48,7 +48,7 @@ const MealItem2 = ({ data }) => {
                   </div>
                   <div className="mealName">
                     <h1 className="" style={{}}>
-                      <span className="px-1 fw-bold bg-warning text-dark" style={{}}>
+                      <span className="px-1 fw-bold bg-dark text-warning border border-warning" style={{}}>
                         {toTitleCase(item.strMeal)}
                       </span>
                     </h1>
@@ -94,7 +94,7 @@ const MealItem2 = ({ data }) => {
                               navigate(`/ingredientsfilter/${item[items]}`);
                             }}
                             key={ind}
-                            className="btn btn-dark me-1 mb-1 p-0"
+                            className="btn btn-dark me-1 mb-1 p-0 border border-warning"
                           >
                             <img
                               className="img-fluid"

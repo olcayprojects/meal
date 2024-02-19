@@ -8,7 +8,7 @@ export default function Ingredientlist(props) {
     <ol className="list-group list-group-numbered fs-5">
       <h5 className="text-center text-secondary fw-bold">
         {" "}
-        <span className="bg-dark text-warning px-2">Ingredients</span>
+        <span className="bg-dark text-warning border border-warning px-2">Ingredients</span>
       </h5>
       {Object.keys(props.item).map((items, index) => {
         return props.item["strIngredient" + index] ? (

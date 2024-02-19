@@ -57,7 +57,9 @@ const Ingredientsfilter = () => {
         alt={IngredientName}
       />
       <h1 style={{ color: "orange" }} className="text-center fw-bold">
-        {toTitleCase(IngredientName)} Recipes
+        <span className="bg-dark border border-warning px-2">
+          {toTitleCase(IngredientName)} Recipes
+        </span>
       </h1>
       <IngredientsInfo iName={IngredientName} />
       <Meallist item={item} />
