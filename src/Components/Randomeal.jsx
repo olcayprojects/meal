@@ -30,11 +30,11 @@ const Randomeal = () => {
           className="text-center text-uppercase fw-bold"
           style={{ color: "orange" }}
         >
-          <span className="px-2 bg-dark border border-warning"> {item["strMeal"]}</span>
+          <span className="px-4 bg-warning text-dark rounded-pill"> {item["strMeal"]}</span>
         </h1>
         <h4 className="text-center">
           <span
-            className="btn btn-outline-success me-1 fs-5 fw-bold"
+            className="btn btn-outline-success me-1 fs-5 fw-bold border-2"
             onClick={(e) => {
               navigate(`/area/${item.strArea}`);
             }}
@@ -42,7 +42,7 @@ const Randomeal = () => {
             {item["strArea"]} Cuisine
           </span>
           <span
-            className="btn btn-outline-info text-center fs-5 fw-bold"
+            className="btn btn-outline-info text-center fs-5 fw-bold border-2"
             onClick={() => {
               navigate(`/fg/${item.strCategory}`);
             }}
@@ -51,7 +51,7 @@ const Randomeal = () => {
           </span>
         </h4>
         {item.strTags ? (
-          <h5 className="text-center text-secondary">{item.strTags.toUpperCase()}</h5>
+          <h5 className="text-center text-primary fs-4">{item.strTags}</h5>
         ) : null}
       </div>
       <img

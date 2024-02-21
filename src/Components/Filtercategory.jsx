@@ -50,7 +50,7 @@ const Filtercategory = () => {
               }
               alt=""
             />
-            <span className="bg-warning fs-1 px-2 fw-bold">
+            <span className="bg-warning fs-1 px-4 fw-bold rounded-pill">
               {CategoryName} Meals
             </span>
           </div>

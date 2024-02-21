@@ -43,10 +43,7 @@ const AreaFilter = () => {
           <div className="d-flex justify-content-center">
             <Cmbarealist />
           </div>
-          <span
-            className="fs-1 bg-dark p-1 border border-secondary border-3"
-            style={{ color: "orange" }}
-          >
+          <span className="fs-1 bg-warning text-dark px-4 fw-bold rounded-pill">
             {areaName} Cuisine
           </span>
         </div>

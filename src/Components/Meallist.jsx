@@ -12,7 +12,7 @@ export default function Meallist(props) {
           <div className="col" key={data.idMeal}>
             <div
               key={index}
-              className="imgeffect card text-dark bg-white point"
+              className="imgeffect card text-dark bg-black border border-warning point"
               onClick={() => {
                 navigate(`/recipeinfo/${data.idMeal}`);
               }}
