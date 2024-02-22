@@ -1,27 +1,27 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 // import { v4 as uuidv4 } from "uuid";
 import { useNavigate } from "react-router-dom";
 
 import Nav from "./Nav";
 import Ingredientlist from "./Ingredientlist";
 
-let response = getData(`https://www.themealdb.com/api/json/v1/1/random.php`);
-
-async function getData(url) {
-  let res = await fetch(url);
-  let data = res.json();
-  return data;
-}
-
 const Randomeal = () => {
   let navigate = useNavigate();
 
-  const [item, setItem] = useState(response);
-  response.then((res) => {
-    //  console.log(res.meals[0]);
+  const [item, setItem] = useState([]);
 
-    setItem(res.meals[0]);
-  });
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch(
+        "https://www.themealdb.com/api/json/v1/1/random.php"
+      );
+      const result = await response.json();
+      setItem(result.meals[0]);
+    };
+    fetchData();
+  }, []);
+
+
   return (
     <div className="container-fluid">
       <Nav />
@@ -30,7 +30,10 @@ const Randomeal = () => {
           className="text-center text-uppercase fw-bold"
           style={{ color: "orange" }}
         >
-          <span className="px-4 bg-warning text-dark rounded-pill"> {item["strMeal"]}</span>
+          <span className="px-4 bg-warning text-dark rounded-pill">
+            {" "}
+            {item["strMeal"]}
+          </span>
         </h1>
         <h4 className="text-center">
           <span
@@ -76,7 +79,9 @@ const Randomeal = () => {
             className="col pt-2"
             style={{ border: "dashed", borderColor: "orange" }}
           >
-            <pre className="text-warning bg-dark fst-italic p-2 fs-5">{item?.strInstructions}</pre>
+            <pre className="text-warning bg-dark fst-italic p-2 fs-5">
+              {item?.strInstructions}
+            </pre>
           </div>
         </div>
         <div className="ratio ratio-16x9">
