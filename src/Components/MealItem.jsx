@@ -49,7 +49,7 @@ const MealItem2 = ({ data }) => {
                   <div className="mealName">
                     <h1 className="" style={{}}>
                       <span
-                        className="px-1 fw-bold bg-dark text-warning border border-warning"
+                        className="px-1 fw-bold bg-dark text-warning"
                         style={{}}
                       >
                         {toTitleCase(item.strMeal)}
@@ -58,7 +58,7 @@ const MealItem2 = ({ data }) => {
                     <div className="my-2">
                       <button
                         type="button"
-                        className="btn btn-outline-success me-1 fw-bold fs-5"
+                        className="btn btn-outline-success me-1 fw-bold fs-5 border-2"
                         onClick={() => {
                           navigate(`/area/${item.strArea}`);
                         }}
@@ -67,7 +67,7 @@ const MealItem2 = ({ data }) => {
                       </button>
                       <button
                         type="button"
-                        className="btn btn-outline-primary fw-bold fs-5"
+                        className="btn btn-outline-primary fw-bold fs-5 border-2"
                         onClick={() => {
                           navigate(`/fg/${item.strCategory}`);
                         }}

@@ -22,7 +22,7 @@ export default function Ingredientlist(props) {
             }}
             className="point list-group-item list-group-item-action bg-dark text-warning border-warning border border-1"
           >
-            <span>{props.item["strMeasure" + index]}</span>
+            <span>{props.item["strMeasure" + index].trim()+" "}</span>
             <img
               className="img-fluid"
               style={{ width: "25px" }}
@@ -34,7 +34,7 @@ export default function Ingredientlist(props) {
               alt=""
               title={props.item["strIngredient" + index]}
             />
-            <span>{props.item["strIngredient" + index]}</span>
+            <span>{" "+props.item["strIngredient" + index]}</span>
           </li>
         ) : null;
       })}

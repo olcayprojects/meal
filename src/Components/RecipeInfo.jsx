@@ -87,7 +87,7 @@ const RecipeInfo = () => {
           </div>
           <div key={item.idMeal} style={{}} className="text-center m-1">
             <span
-              className="btn btn-outline-success fs-4 fw-bold me-2"
+              className="btn btn-outline-success fs-4 fw-bold me-2 border-2"
               onClick={() => {
                 navigate(`/fg/${item.strCategory}`);
               }}
@@ -96,7 +96,7 @@ const RecipeInfo = () => {
             </span>
 
             <span
-              className="btn btn-outline-info fs-4 fw-bold me-2"
+              className="btn btn-outline-info fs-4 fw-bold me-2 border-2"
               onClick={(e) => {
                 navigate(`/area/${item.strArea}`);
               }}
