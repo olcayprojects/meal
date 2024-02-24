@@ -21,7 +21,6 @@ const Randomeal = () => {
     fetchData();
   }, []);
 
-
   return (
     <div className="container-fluid">
       <Nav />

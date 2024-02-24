@@ -26,15 +26,13 @@ const MealItem2 = ({ data }) => {
             //const id =Math.floor(Math.random()*1000)
             return (
               <div key={item.idMeal} className="p-1">
-                <div className="h-100 border border-warning border-4 bg-dark bg-opacity-50 op"
-                >
-                  <div className="mealImg"
-                  >
+                <div className="h-100 border border-warning border-1 bg-dark bg-opacity-50">
+                  <div className="mealImg">
                     <img
                       onClick={() => {
                         navigate(`/recipeinfo/${item.idMeal}`);
                       }}
-                      className="img-thumbnail  p-0 m-0 mb-2"
+                      className="img-thumbnail p-0 m-0 mb-2"
                       // src={item.strMealThumb + "/preview"}
                       src={item.strMealThumb}
                       onError={(e) => {

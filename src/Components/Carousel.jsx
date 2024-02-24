@@ -78,12 +78,12 @@ function MyCarousel() {
               />
               <Carousel.Caption>
                 <h1
-                  className="fw-bold rounded-pill border border-3 border-info"
+                  className="fw-bold rounded-pill border border-3 border-warning"
                   style={{ color: "orange", background: "rgba(0, 0, 0, 0.3)" }}
                 >
                   {image1.strMeal}
                 </h1>
-                <p style={{ color: "white" }}>{image1.idMeal}</p>
+                <span className="text-warning">{image1.idMeal}</span>
               </Carousel.Caption>
             </Carousel.Item>
           ))

@@ -102,17 +102,17 @@ nav li a {
 nav li :hover {
   color: #f0ad4e;
   font-weight: bolder;
-  /* transform: rotate(10deg); */
+  transform: rotate(-1deg);
 }
 
 .abc:hover {
-  background-color: white;
+  background-color: #f0ad4e;
   opacity: 1;
 }
 
 .abc {
-  background: rgba(255, 255, 255, 0.808);
-  opacity: 0.9;
+  background-color: #f0ad4e;
+  opacity: 0.8;
 }
 
 nav li:first-child {
@@ -233,8 +233,17 @@ th {
   outline: cyan;
   background-size: 100%, 100%;
   border-radius: 20%;
-  border: 2px solid cyan;
+  border: 3px ridge #f0ad4e;
   background-image: none;
+}
+
+.carousel .carousel-indicators button {
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  background-color: orange !important;
+  margin: 0;
+  margin-bottom: -8px;
 }
 
 .carousel-item {

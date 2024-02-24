@@ -2,11 +2,11 @@ import { NavLink } from "react-router-dom";
 
 const Nav = () => {
   return (
-    <div className="container">
+    <div className="container-fluid">
       <nav className="navbar navbar-expand-md navbar-dark bg-dark">
         <NavLink exact="true" to="/">
           <img
-            className="img  abc ms-2"
+            className="img abc ms-2"
             src={require("../images/recipes.png")}
             alt=""
             height="56"
