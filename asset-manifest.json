@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/meal/static/css/main.2a26afd1.css",
-    "main.js": "/meal/static/js/main.a532e941.js",
+    "main.css": "/meal/static/css/main.183478c3.css",
+    "main.js": "/meal/static/js/main.9a5951ce.js",
     "static/media/bootstrap-icons.woff?": "/meal/static/media/bootstrap-icons.449ad8adf6ae0424b7ed.woff",
     "static/media/bootstrap-icons.woff2?": "/meal/static/media/bootstrap-icons.dea24bf5a7646d8b84e7.woff2",
     "static/media/recipes.png": "/meal/static/media/recipes.5aace8a850ec9656ad68.png",
     "index.html": "/meal/index.html",
-    "main.2a26afd1.css.map": "/meal/static/css/main.2a26afd1.css.map",
-    "main.a532e941.js.map": "/meal/static/js/main.a532e941.js.map"
+    "main.183478c3.css.map": "/meal/static/css/main.183478c3.css.map",
+    "main.9a5951ce.js.map": "/meal/static/js/main.9a5951ce.js.map"
   },
   "entrypoints": [
-    "static/css/main.2a26afd1.css",
-    "static/js/main.a532e941.js"
+    "static/css/main.183478c3.css",
+    "static/js/main.9a5951ce.js"
   ]
 }
