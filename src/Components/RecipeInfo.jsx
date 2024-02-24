@@ -55,7 +55,7 @@ const RecipeInfo = () => {
                 ></i>
                 <span
                   className="fw-bold px-2 text-warning bg-dark mx-1"
-                  style={{ }}
+                  style={{}}
                 >
                   {item["strMeal"].toUpperCase()}
                 </span>
@@ -80,7 +80,9 @@ const RecipeInfo = () => {
               />
               <div className="text-center mt-1">
                 {item.strTags ? (
-                  <span className="text-center text-warning px-2 bg-dark fs-5">{item.strTags.toUpperCase()}</span>
+                  <span className="text-center text-warning px-2 bg-dark fs-5">
+                    {item.strTags.toUpperCase()}
+                  </span>
                 ) : null}
               </div>
             </div>
@@ -108,7 +110,7 @@ const RecipeInfo = () => {
           <div className="container-fluid p-1">
             <div className="row m-1">
               <div
-                className="col-md-auto py-2 me-2"
+                className="IngredientList col-md-auto py-2 me-2"
                 style={{ border: "dashed", borderColor: "orange" }}
               >
                 <Ingredientlist item={item} />

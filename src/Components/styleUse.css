@@ -305,15 +305,6 @@ th {
   /* transition: 0.4s; */
 }
 
-.imgeffectCat {
-  transition: 0.2s;
-}
-.imgeffectCat:hover {
-  transform: scale(1.1);
-  /* box-shadow: 0 0 2px 2px cyan; */
-  transition: 0.9s;
-}
-
 .imgeffect {
   transition: 1.8s;
 }
@@ -323,6 +314,8 @@ th {
   transition: 0.4s;
 }
 
-.catImg:hover {
-  object-fit: fill !important;
+.IngredientList li:hover {
+  background-color: #f0ad4e !important;
+  color: black !important;
+  font-weight: bold;
 }

@@ -5,24 +5,27 @@ export default function Ingredientlist(props) {
   let ingredientURL = "https://www.themealdb.com/images/ingredients/";
 
   return (
-    <ol className="list-group list-group-numbered fs-5">
+    <ol className="list-group list-group-numbered fs-5 point">
       <h5 className="text-center text-secondary fw-bold">
         {" "}
-        <span className="bg-dark text-warning border border-warning px-2">Ingredients</span>
+        <span className="bg-dark text-warning border border-warning px-2">
+          Ingredients
+        </span>
       </h5>
       {Object.keys(props.item).map((items, index) => {
         return props.item["strIngredient" + index] ? (
           <li
             id={props.item["strIngredient" + index]}
+            title={"Click " + props.item["strIngredient" + index] + " Recipes"}
             key={index}
             onClick={(ef) => {
               navigate(
                 `/ingredientsfilter/${props.item["strIngredient" + index]}`
               );
             }}
-            className="point list-group-item list-group-item-action bg-dark text-warning border-warning border border-1"
+            className="list-group-item list-group-item-action bg-dark text-warning border-warning border border-1"
           >
-            <span>{props.item["strMeasure" + index].trim()+" "}</span>
+            <span>{props.item["strMeasure" + index].trim() + " "}</span>
             <img
               className="img-fluid"
               style={{ width: "25px" }}
@@ -32,9 +35,8 @@ export default function Ingredientlist(props) {
                 "-Small.png"
               }
               alt=""
-              title={props.item["strIngredient" + index]}
             />
-            <span>{" "+props.item["strIngredient" + index]}</span>
+            <span>{" " + props.item["strIngredient" + index]}</span>
           </li>
         ) : null;
       })}
