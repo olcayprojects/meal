@@ -110,7 +110,7 @@ const RecipeInfo = () => {
           <div className="container-fluid p-1">
             <div className="row m-1">
               <div
-                className="IngredientList col-md-auto py-2 me-2"
+                className="IngredientList col-md-auto p-1"
                 style={{ border: "dashed", borderColor: "orange" }}
               >
                 <Ingredientlist item={item} />

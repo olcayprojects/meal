@@ -16,14 +16,14 @@ export default function Ingredientlist(props) {
         return props.item["strIngredient" + index] ? (
           <li
             id={props.item["strIngredient" + index]}
-            title={"Click " + props.item["strIngredient" + index] + " Recipes"}
+            title={"Click go to " + props.item["strIngredient" + index] + " Recipes"}
             key={index}
             onClick={(ef) => {
               navigate(
                 `/ingredientsfilter/${props.item["strIngredient" + index]}`
               );
             }}
-            className="list-group-item list-group-item-action bg-dark text-warning border-warning border border-1"
+            className="list-group-item list-group-item-action bg-dark text-warning border-warning border border-2 p-2"
           >
             <span>{props.item["strMeasure" + index].trim() + " "}</span>
             <img
