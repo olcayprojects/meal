@@ -5,8 +5,6 @@ import Loader from "../Components/Loader";
 let ingredientURL = "https://www.themealdb.com/images/ingredients/";
 let ingUrl = "https://www.themealdb.com/api/json/v1/1/list.php?i=list";
 
-var descIng = "";
-
 const Ingredients = () => {
   const [url, setUrl] = useState(ingUrl);
 
@@ -22,7 +20,6 @@ const Ingredients = () => {
       res.json().then((data) => {
         setLoading(false);
         setItem(data.meals);
-        descIng = data;
       })
     );
   }, [url]);
@@ -88,19 +85,31 @@ const Ingredients = () => {
 };
 
 export function IngredientsInfo(props) {
-  var desc = "";
-  descIng.meals?.map((categoryInfo) => {
-    if (categoryInfo.strIngredient === props.iName) {
-      desc = categoryInfo.strDescription;
-    }
-    return desc;
-  });
+  const [url, setUrl] = useState(ingUrl);
+  const [descIng, setDescIng] = useState([]);
 
-  return desc ? (
+  useEffect(() => {
+    fetch(url).then((res) =>
+      res.json().then((data) => {
+        data.meals.map((idIngredient) => {
+          if (props.iName === idIngredient.strIngredient) {
+            setDescIng(idIngredient);
+          }
+        });
+      })
+    );
+  }, [url, props.iName]);
+
+  return descIng?.strDescription ? (
     <div className="border border-warning border-4 bg-dark mb-1 ">
-      <pre className="text-light p-2 m-0">{desc}</pre>
+      <pre className="text-warning fs-5 fst-italic p-2 m-0">
+        {descIng?.strType ? "Type: " + descIng?.strType + "\n" : ""}
+        {"Description:\n" +descIng?.strDescription}
+      </pre>
     </div>
-  ) : null;
+  ) : (
+    ""
+  );
 }
 
 export default Ingredients;
