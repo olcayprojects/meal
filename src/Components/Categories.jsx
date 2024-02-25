@@ -17,8 +17,6 @@ const Categories = () => {
   useEffect(() => {
     fetch(url).then((res) =>
       res.json().then((data) => {
-        // console.log(data.categories);
-
         setItem(data.categories);
         infocate = data;
         setShow(true);
@@ -72,14 +70,29 @@ export function CategoryInfo(cName) {
   useEffect(() => {
     infocate.categories?.map((categoryInfo) => {
       if (categoryInfo.strCategory === cName.cName) {
-        setInfo(categoryInfo.strCategoryDescription);
+        setInfo(categoryInfo);
       }
     });
-}, [cName]);
+  }, [cName]);
   return (
-    <div className="border border-warning border-4 bg-dark mb-2">
-      <pre className="text-warning fst-italic fs-5 p-2 m-0">{info}</pre>
-    </div>
+    <>
+      <div className="text-center">
+        <img
+          className="img-responsive w-25 mx-auto d-block"
+          src={info.strCategoryThumb}
+          alt={info.strCategory}
+          title={info.strCategory}
+        />
+        <span className="bg-warning fs-1 px-4 fw-bold rounded-pill">
+          {info.strCategory} Meals
+        </span>
+      </div>
+      <div className="border border-warning border-4 bg-dark mb-2">
+        <pre className="text-warning fst-italic fs-5 p-2 m-0">
+          {info.strCategoryDescription}
+        </pre>
+      </div>
+    </>
   );
 }
 
