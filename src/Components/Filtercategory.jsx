@@ -39,21 +39,6 @@ const Filtercategory = () => {
       ) : (
         <>
           <Categories />
-
-          <div className="text-center">
-            <img
-              className="img-responsive w-25 mx-auto d-block"
-              src={
-                "https://www.themealdb.com/images/category/" +
-                CategoryName +
-                ".png"
-              }
-              alt=""
-            />
-            <span className="bg-warning fs-1 px-4 fw-bold rounded-pill">
-              {CategoryName} Meals
-            </span>
-          </div>
           <CategoryInfo cName={CategoryName} />
           <Meallist item={items} />
         </>
