@@ -33,9 +33,9 @@ const Categories = () => {
           : item.map((itemCategory) => {
               return (
                 <div
-                  className="col"
+                  className="col mx-1 w-10"
                   key={itemCategory.idCategory}
-                  style={{ boxSizing: "border-box", width: "130px" }}
+                  style={{ boxSizing: "border-box", width: ""}}
                   onClick={() => {
                     navigate(`/fg/${itemCategory.strCategory}`);
                   }}
@@ -76,7 +76,7 @@ export function CategoryInfo(cName) {
   }, [cName]);
   return (
     <>
-      <div className="text-center">
+      <div className="text-center mt-2">
         <img
           className="img-responsive w-25 mx-auto d-block"
           src={info.strCategoryThumb}
@@ -87,7 +87,10 @@ export function CategoryInfo(cName) {
           {info.strCategory} Meals
         </span>
       </div>
-      <div className="border border-warning border-4 bg-dark mb-2">
+      <div
+        className="bg-dark mb-2"
+        style={{ borderStyle: "ridge", borderColor: "orange" }}
+      >
         <pre className="text-warning fst-italic fs-5 p-2 m-0">
           {info.strCategoryDescription}
         </pre>

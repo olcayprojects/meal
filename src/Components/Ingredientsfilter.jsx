@@ -56,8 +56,8 @@ const Ingredientsfilter = () => {
         src={imgUrl}
         alt={IngredientName}
       />
-      <h1 style={{ color: "orange" }} className="text-center fw-bold">
-        <span className="bg-dark border border-warning px-2">
+      <h1 style={{ color: "orange" }} className="text-center fw-bold mt-1">
+        <span className="bg-warning text-dark border border-dark border-3 px-4 rounded-pill">
           {toTitleCase(IngredientName)} Recipes
         </span>
       </h1>

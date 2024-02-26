@@ -101,10 +101,13 @@ export function IngredientsInfo(props) {
   }, [url, props.iName]);
 
   return descIng?.strDescription ? (
-    <div className="border border-warning border-4 bg-dark mb-1 ">
+    <div
+      className="bg-dark mb-1"
+      style={{ borderStyle: "ridge", borderColor: "orange" }}
+    >
       <pre className="text-warning fs-5 fst-italic p-2 m-0">
         {descIng?.strType ? "Type: " + descIng?.strType + "\n" : ""}
-        {"Description:\n" +descIng?.strDescription}
+        {"Description:\n" + descIng?.strDescription}
       </pre>
     </div>
   ) : (
