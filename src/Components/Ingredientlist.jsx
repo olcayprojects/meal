@@ -8,9 +8,15 @@ export default function Ingredientlist(props) {
     <ul className="list-group fs-5 point">
       <h5 className="text-center text-secondary fw-bold">
         {" "}
-        <span className=" text-warning">
-          The ingredients for {props.item.strMeal}!
-        </span>
+        <pre className=" text-warning">
+          The ingredients for{" "}
+          {props.item.strMeal.length > 30
+            ? props.item.strMeal.substring(0, 24) +
+              "\n" +
+              props.item.strMeal.substring(24, props.item.strMeal.length)
+            : props.item.strMeal}
+          !
+        </pre>
       </h5>
       {Object.keys(props.item).map((items, index) => {
         return props.item["strIngredient" + index] ? (
@@ -47,7 +53,9 @@ export default function Ingredientlist(props) {
                 }
                 alt=""
               />
-              <span className="fw-bold">{" " + props.item["strIngredient" + index]}</span>
+              <span className="fw-bold">
+                {" " + props.item["strIngredient" + index]}
+              </span>
             </li>
           </div>
         ) : null;
