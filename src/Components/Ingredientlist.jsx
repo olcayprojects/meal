@@ -6,57 +6,56 @@ export default function Ingredientlist(props) {
 
   return (
     <ul className="list-group fs-5 point">
-      <h5 className="text-center text-secondary fw-bold">
-        {" "}
-        <pre className=" text-warning">
-          The ingredients for{" "}
-          {props.item.strMeal.length > 30
-            ? props.item.strMeal.substring(0, 24) +
-              "\n" +
-              props.item.strMeal.substring(24, props.item.strMeal.length)
-            : props.item.strMeal}
-          !
+      <h5 className="text-center text-secondary">
+        <pre className="text-warning">
+          The ingredients for
+          <span className="ps-2 fw-bold">
+            {props.item.strMeal?.length > 30
+              ? props.item.strMeal.substring(0, 24) +
+                "\n" +
+                props.item.strMeal.substring(24, props.item.strMeal.length)
+              : props.item.strMeal}
+            !
+          </span>
         </pre>
       </h5>
       {Object.keys(props.item).map((items, index) => {
         return props.item["strIngredient" + index] ? (
           <div className="" key={index}>
-            <input
-              className="form-check-input me-3"
-              type="checkbox"
-              value=""
-              aria-label="..."
-            ></input>
-            <li
-              id={props.item["strIngredient" + index]}
-              title={
-                "Click go to " +
-                props.item["strIngredient" + index] +
-                " Recipes"
-              }
-              key={index}
-              onClick={(ef) => {
-                navigate(
-                  `/ingredientsfilter/${props.item["strIngredient" + index]}`
-                );
-              }}
-              className="list-group-item-action bg-dark text-warning border-warning border-bottom p-0 d-inline"
-            >
-              <span>{props.item["strMeasure" + index].trim() + " "}</span>
-              <img
-                className="img-fluid"
-                style={{ width: "25px" }}
-                src={
-                  ingredientURL +
+            <span className="ps-1">
+              <li
+                id={props.item["strIngredient" + index]}
+                title={
+                  "Click go to " +
                   props.item["strIngredient" + index] +
-                  "-Small.png"
+                  " Recipes"
                 }
-                alt=""
-              />
-              <span className="fw-bold">
-                {" " + props.item["strIngredient" + index]}
-              </span>
-            </li>
+                key={index}
+                onClick={(ef) => {
+                  navigate(
+                    `/ingredientsfilter/${props.item["strIngredient" + index]}`
+                  );
+                }}
+                className="list-group-item-action bg-dark text-warning border-warning border-bottom p-0 d-inline"
+              >
+                <span className="ps-2">
+                  {props.item["strMeasure" + index].trim()}
+                </span>
+                <img
+                  className="img-fluid"
+                  style={{ width: "25px" }}
+                  src={
+                    ingredientURL +
+                    props.item["strIngredient" + index] +
+                    "-Small.png"
+                  }
+                  alt=""
+                />
+                <span className="fw-bold pe-2">
+                  {props.item["strIngredient" + index]}
+                </span>
+              </li>
+            </span>
           </div>
         ) : null;
       })}
