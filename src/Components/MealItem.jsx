@@ -47,18 +47,18 @@ const MealItem2 = ({ data }) => {
                     />
                   </div>
                   <div className="mealName">
-                    <h1 className="" style={{}}>
+                    <h2 className="" style={{}}>
                       <span
-                        className="px-1 fw-bold bg-dark text-warning"
+                        className="px-3 border border-dark border-4 fw-bold bg-warning text-dark rounded-4"
                         style={{}}
                       >
                         {toTitleCase(item.strMeal)}
                       </span>
-                    </h1>
+                    </h2>
                     <div className="my-2">
                       <button
                         type="button"
-                        className="btn btn-outline-success me-1 fw-bold fs-5 border-2"
+                        className="btn btn-outline-success me-1 fw-bold border-2"
                         onClick={() => {
                           navigate(`/area/${item.strArea}`);
                         }}
@@ -67,7 +67,7 @@ const MealItem2 = ({ data }) => {
                       </button>
                       <button
                         type="button"
-                        className="btn btn-outline-primary fw-bold fs-5 border-2"
+                        className="btn btn-outline-primary fw-bold border-3"
                         onClick={() => {
                           navigate(`/fg/${item.strCategory}`);
                         }}
@@ -80,7 +80,7 @@ const MealItem2 = ({ data }) => {
                       return (
                         <span
                           key={i}
-                          className="fs-5 badge rounded-pill bg-info text-black my-2"
+                          className="fs-5 badge rounded-pill bg-info text-black mb-2 mx-1"
                         >
                           {itemtag}
                         </span>
