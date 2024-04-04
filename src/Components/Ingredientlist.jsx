@@ -4,18 +4,24 @@ export default function Ingredientlist(props) {
   let navigate = useNavigate();
   let ingredientURL = "https://www.themealdb.com/images/ingredients/";
 
+  let mealName = "";
+
+  for (let index = 25; index > 20; index--) {
+    if (props.item.strMeal.substring(index, index + 1) === " ") {
+      mealName =
+        props.item.strMeal.substring(0, index) +
+        "\n" +
+        props.item.strMeal.substring(index, props.item.strMeal.length);
+    }
+  }
+
   return (
     <ul className="list-group fs-5 point">
       <h5 className="text-center text-secondary">
         <pre className="text-warning">
           The ingredients for
           <span className="ps-2 fw-bold">
-            {props.item.strMeal?.length > 30
-              ? props.item.strMeal.substring(0, 24) +
-                "\n" +
-                props.item.strMeal.substring(24, props.item.strMeal.length)
-              : props.item.strMeal}
-            !
+            {props.item.strMeal?.length > 30 ? mealName : props.item.strMeal}!
           </span>
         </pre>
       </h5>

@@ -68,7 +68,7 @@ const Meal = () => {
             aria-describedby="inputGroup-sizing-lg"
             onChange={(e) => setSearch(e.target.value)}
             onKeyPress={searchRecipe}
-            placeholder="You can search your favorite meals"
+            placeholder="Type your favorite MEAL and press 'ENTER'"
           />
         </div>
         <div className="">
