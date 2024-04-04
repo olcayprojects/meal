@@ -6,12 +6,13 @@ export default function Ingredientlist(props) {
 
   let mealName = "";
 
-  for (let index = 25; index > 20; index--) {
+  for (let index = 25; index > 1; index--) {
     if (props.item.strMeal.substring(index, index + 1) === " ") {
       mealName =
         props.item.strMeal.substring(0, index) +
         "\n" +
         props.item.strMeal.substring(index, props.item.strMeal.length);
+      break;
     }
   }
 
