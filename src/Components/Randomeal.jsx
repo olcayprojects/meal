@@ -66,10 +66,10 @@ const Randomeal = () => {
         alt=""
         title={item.strMeal}
       />
-      <div className="container-fluid p-1 ">
+      <div className="container-fluid p-1">
         <div className="row m-1 d-flex justify-content-center">
           <div
-            className="col-auto py-2 me-2"
+            className="IngredientList col-md-auto p-0 px-1"
             style={{ border: "dashed", borderColor: "orange" }}
           >
             <Ingredientlist item={item} />

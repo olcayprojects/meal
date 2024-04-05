@@ -7,7 +7,7 @@ export default function Ingredientlist(props) {
   let mealName = "";
 
   for (let index = 25; index > 1; index--) {
-    if (props.item.strMeal.substring(index, index + 1) === " ") {
+    if (props.item.strMeal?.substring(index, index + 1) === " ") {
       mealName =
         props.item.strMeal.substring(0, index) +
         "\n" +
@@ -29,8 +29,8 @@ export default function Ingredientlist(props) {
       </h4>
       {Object.keys(props.item).map((items, index) => {
         return props.item["strIngredient" + index] ? (
-          <div className="" key={index}>
-            <span className="ps-1">
+          <div className="pb-1" key={index}>
+            <span className="p-0">
               <li
                 id={props.item["strIngredient" + index]}
                 title={
@@ -44,7 +44,7 @@ export default function Ingredientlist(props) {
                     `/ingredientsfilter/${props.item["strIngredient" + index]}`
                   );
                 }}
-                className="list-group-item-action bg-dark text-warning border-warning border-bottom p-0 d-inline"
+                className="px-2 list-group-item-action bg-dark text-warning border-warning border-bottom p-0 d-inline"
               >
                 <span className="p-0">
                   {props.item["strMeasure" + index].trim()}
