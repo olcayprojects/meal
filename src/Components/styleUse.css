@@ -136,14 +136,15 @@ pre {
 }
 
 .mealImg img {
-  transition: transform 1.9s; /* Animation */
-  opacity: 0.7;
+  /*  transition: transform 1.9s; /* Animation */
+  /*transform: scaleX(-1);*/
 }
 
 .mealImg :hover {
-  transition: transform 1.9s; /* Animation */
-  transform: rotateX(10deg);
-  opacity: 1;
+  /*.abc: transform 0.3s; Animation
+  /* transform: rotateX(10deg); */
+  /* transform: scaleX(1);*/
+  filter: saturate(2);
 }
 
 .ingredients {
