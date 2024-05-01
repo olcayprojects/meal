@@ -1,2 +1,3 @@
 Meal DB React Project
-TheMealDB API
+
+https://olcayprojects.github.io/meal/
