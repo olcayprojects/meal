@@ -32,13 +32,13 @@ const MealItem2 = ({ data }) => {
                       onClick={() => {
                         navigate(`/recipeinfo/${item.idMeal}`);
                       }}
-                      className="img-thumbnail p-0 m-0 mb-2"
+                      className="img-thumbnail p-1 m-0 mb-2"
                       // src={item.strMealThumb + "/preview"}
                       src={item.strMealThumb}
                       onError={(e) => {
                         e.currentTarget.src = item.strMealThumb;
                       }}
-                      alt="aa"
+                      alt={item.strMeal}
                       title={
                         "Click go to '" +
                         item.strMeal.toUpperCase() +
@@ -102,7 +102,7 @@ const MealItem2 = ({ data }) => {
                             <img
                               className="img-fluid"
                               src={ingredientURL + item[items] + "-small.png"}
-                              alt=""
+                              alt={item[items]}
                               title={
                                 "Click go to '" +
                                 item[items].toUpperCase() +
