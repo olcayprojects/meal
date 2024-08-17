@@ -119,7 +119,8 @@ const RecipeInfo = () => {
                 className="col pt-2"
                 style={{ border: "dashed", borderColor: "orange" }}
               >
-                <pre className="text-warning bg-dark p-2 fs-5 fst-italic">
+                <h4 className="text-primary text-center m-0">Instructions</h4>
+                <pre className="text-warning bg-dark p-2 fs-5 lh-sm">
                   {item?.strInstructions}
                 </pre>
               </div>
