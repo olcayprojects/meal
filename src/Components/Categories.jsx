@@ -27,26 +27,26 @@ const Categories = () => {
 
   return (
     <>
-      <div className="row row-cols-3 row-cols-md-auto mt-2 g-1 justify-content-center">
+      <div className="row row-cols-3 row-cols-md-auto mt-2 g-0 justify-content-center">
         {!item
           ? "bulunamadı"
           : item.map((itemCategory) => {
               return (
                 <div
-                  className="col mx-1 w-10"
+                  className="col m-1 border border-dark border-4"
                   key={itemCategory.idCategory}
-                  style={{ boxSizing: "border-box", width: ""}}
+                  style={{ boxSizing: "", width: "" }}
                   onClick={() => {
                     navigate(`/fg/${itemCategory.strCategory}`);
                   }}
                 >
                   <div
-                    className="card text-dark h-100 imgeffect"
+                    className="card text-dark bg-transparent imgeffect"
                     style={{}}
                     key={itemCategory.idCategory}
                   >
                     <img
-                      className="card-img-top shadow"
+                      className="card-img-top  shadow"
                       src={itemCategory.strCategoryThumb}
                       title={itemCategory.strCategory}
                       alt={itemCategory.strCategory}

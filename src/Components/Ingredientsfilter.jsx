@@ -51,7 +51,7 @@ const Ingredientsfilter = () => {
     <div className="container-fluid">
       <Nav />
       <img
-        className="imgRotate imgeffect"
+        className="imgRotate"
         style={mystyle}
         src={imgUrl}
         alt={IngredientName}

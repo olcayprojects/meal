@@ -13,10 +13,12 @@ fetch(url)
 
 function Loader() {
   return (
-    <div className="d-flex justify-content-center align-items-center mt-5 pt-5">
-      <h1 style={{ color: "orange" }} className=" fw-bolder">
-        Loading...
-      </h1>
+    <div className="d-flex min-vh-100">
+      <div className="d-flex flex-grow-1 justify-content-center align-items-center">
+        <h1 style={{ color: "orange" }} className="fw-bold">
+          Loading...
+        </h1>
+      </div>
     </div>
   );
 }
