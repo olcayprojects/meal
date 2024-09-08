@@ -33,7 +33,7 @@ const Categories = () => {
           : item.map((itemCategory) => {
               return (
                 <div
-                  className="col m-1 border border-dark border-4"
+                  className="col m-1 border border-dark border-4 bg-dark"
                   key={itemCategory.idCategory}
                   style={{ boxSizing: "", width: "" }}
                   onClick={() => {
