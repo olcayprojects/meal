@@ -105,14 +105,25 @@ export function IngredientsInfo(props) {
       className="bg-dark mb-1"
       style={{ borderStyle: "ridge", borderColor: "orange" }}
     >
-      <pre className="text-warning fs-5 fst-italic p-2 m-0">
-        {descIng?.strType ? "Type: " + descIng?.strType + "\n" : ""}
-        {"Description:\n" + descIng?.strDescription}
+      <pre className="text-warning fs-5 fst-italic px-2 m-0">
+        {descIng?.strType ? (
+          <>
+            <span className="fw-bold fst-normal text-success">Type: </span>
+            <span>{descIng?.strType}</span>
+          </>
+        ) : null}
+        {descIng?.strDescription ? (
+          <>
+            <br />
+            <span className="fw-bold fst-normal text-success">
+              Description:{" "}
+            </span>
+            <span>{descIng?.strDescription}</span>
+          </>
+        ) : null}
       </pre>
     </div>
-  ) : (
-    ""
-  );
+  ) : null;
 }
 
 export default Ingredients;
