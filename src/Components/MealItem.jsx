@@ -109,7 +109,7 @@ const MealItem2 = ({ data }) => {
                                 "' integrated meals."
                               }
                             />
-                            <h6 className="text-warning px-1 m-0 border border-secondary">
+                            <h6 className="text-warning bg-black p-1 m-0 border border-light">
                               {item[items].toUpperCase()}
                             </h6>
                           </span>
