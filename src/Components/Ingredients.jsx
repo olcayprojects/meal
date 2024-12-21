@@ -35,12 +35,12 @@ const Ingredients = () => {
           item.map((item) => {
             return (
               <div
-                className="col point my-1 m-0 p-0 mx-1 bg-dark border imgeffect"
+                className="col point my-1 m-0 p-0 mx-1"
                 style={{}}
                 key={item.idIngredient}
               >
                 <div
-                  className="card bg-dark"
+                  className="card bg-dark  rounded-pill"
                   style={{ boxSizing: "border-box", width: "100px" }}
                   title={item["strIngredient"]}
                 >
@@ -102,7 +102,7 @@ export function IngredientsInfo(props) {
 
   return descIng?.strDescription ? (
     <div
-      className="bg-dark mb-1"
+      className="bg-dark mb-1 "
       style={{ borderStyle: "ridge", borderColor: "orange" }}
     >
       <pre className="text-warning fs-5 fst-italic px-2 m-0">
