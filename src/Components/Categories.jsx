@@ -88,10 +88,10 @@ export function CategoryInfo(cName) {
         </span>
       </div>
       <div
-        className="bg-dark mb-2"
+        className="bg-dark m-2"
         style={{ borderStyle: "ridge", borderColor: "orange" }}
       >
-        <pre className="text-warning fst-italic fs-5 p-2 m-0">
+        <pre className="text-light fst-italic fs-5 p-1 m-0">
           {info.strCategoryDescription}
         </pre>
       </div>

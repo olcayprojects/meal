@@ -80,7 +80,7 @@ const RecipeInfo = () => {
               />
               <div className="text-center mt-1">
                 {item.strTags ? (
-                  <span className="text-center text-warning px-2 bg-dark fs-5">
+                  <span className="text-center text-black fw-bolder rounded-pill px-2 bg-warning fs-4">
                     {item.strTags.toUpperCase()}
                   </span>
                 ) : null}
@@ -116,10 +116,10 @@ const RecipeInfo = () => {
                 <Ingredientlist item={item} />
               </div>
               <div
-                className="col pt-2"
+                className="col p-1"
                 style={{ border: "dashed", borderColor: "orange" }}
               >
-                <h4 className="text-primary text-center m-0">Instructions</h4>
+                <h4 className="text-black fw-bolder bg-warning text-center m-0">Instructions</h4>
                 <pre className="text-warning bg-dark p-2 fs-5 lh-sm">
                   {item?.strInstructions}
                 </pre>

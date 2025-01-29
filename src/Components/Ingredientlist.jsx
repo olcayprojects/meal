@@ -18,10 +18,10 @@ export default function Ingredientlist(props) {
 
   return (
     <ul className="list-group fs-5 point">
-      <h4 className="text-center m-0 text-secondary">
-        <pre className="text-primary m-0">
+      <h4 className="text-center m-0">
+        <pre className="text-black bg-warning m-0">
           The ingredients for
-          <span className="ps-2 fw-bold">
+          <span className="ps-2 fw-bolder">
             "{props.item.strMeal?.length > 30 ? mealName : props.item.strMeal}"
           </span>
         </pre>
