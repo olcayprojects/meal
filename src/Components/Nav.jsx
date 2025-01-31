@@ -25,25 +25,38 @@ const Nav = () => {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav ms-auto me-2">
+          <ul className="navbar-nav d-flex ms-auto me-2">
             <li></li>
-            <li className="">
-              <NavLink to="/categories">
+            <li className="pe-1">
+              <NavLink
+                to="/categories"
+                className="nav-link bg-black p-3 rounded-3 fs-5"
+              >
                 <i className="bi bi-card-list"></i> CATEGORIES
               </NavLink>
             </li>
-            <li>
-              <NavLink to="/ingredients">
+            <li className="nav-item pe-1">
+              <NavLink
+                to="/ingredients"
+                className="nav-link bg-black p-3 rounded-3 fs-5"
+              >
                 <i className="bi bi-list-ul"></i> MAIN INGREDIENTS
               </NavLink>
             </li>
-            <li>
-              <NavLink to="/Area">
+            <li className="nav-item pe-1">
+              <NavLink
+                to="/Area"
+                className="nav-link bg-black p-3 rounded-3 fs-5"
+              >
                 <i className="bi bi-globe"></i> CUISINE
               </NavLink>
             </li>
-            <li>
-              <NavLink reloadDocument to="/randomeal">
+            <li className="nav-item">
+              <NavLink
+                reloadDocument
+                to="/randomeal"
+                className="nav-link bg-black p-3 rounded-3 fs-5"
+              >
                 <i className="bi bi-shuffle pe-1"></i> RANDOM MEAL
               </NavLink>
             </li>
