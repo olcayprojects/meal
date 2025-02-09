@@ -9,7 +9,7 @@ export default function Meallist(props) {
         <h6>Meals Not Found !!</h6>
       ) : (
         props.item.map((data, index) => (
-          <div className="col" key={data.idMeal}>
+          <div className="col py-2" key={data.idMeal}>
             <div
               key={index}
               className="imgeffect card text-dark bg-black border border-warning point"

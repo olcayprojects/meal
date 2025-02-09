@@ -35,7 +35,7 @@ const Ingredients = () => {
           item.map((item) => {
             return (
               <div
-                className="col point my-1 m-0 p-0 mx-1"
+                className="col point my-4 m-0 p-0"
                 style={{}}
                 key={item.idIngredient}
               >

@@ -19,13 +19,13 @@ export default function Ingredientlist(props) {
   return (
     <ul className="list-group fs-5 point">
       <h4 className="text-center m-0">
-        <pre className="text-black bg-warning m-0">
+        <pre className="text-black bg-warning m-0 fs-4">
           The ingredients for
           <span className="ps-2 fw-bolder">
             "{props.item.strMeal?.length > 30 ? mealName : props.item.strMeal}"
           </span>
         </pre>
-        <hr className="my-1 mx-2 border border-warning border-2" />
+        <hr className="my-1 border border-warning border-4" />
       </h4>
       {Object.keys(props.item).map((items, index) => {
         return props.item["strIngredient" + index] ? (
@@ -44,7 +44,7 @@ export default function Ingredientlist(props) {
                     `/ingredientsfilter/${props.item["strIngredient" + index]}`
                   );
                 }}
-                className="px-2 list-group-item-action bg-dark text-warning border-warning border-bottom p-0 d-inline"
+                className="px-2 list-group-item-action bg-dark text-warning border-warning border-top border-bottom p-0 d-block "
               >
                 <span className="p-0">
                   {props.item["strMeasure" + index].trim()}

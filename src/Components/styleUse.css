@@ -326,6 +326,6 @@ th {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: darkgrey;
-  outline: 1px solid slategrey;
+  background-color: #f0ad4e;
+  outline: 1px solid cyan;
 }

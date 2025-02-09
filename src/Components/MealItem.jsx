@@ -97,7 +97,7 @@ const MealItem2 = ({ data }) => {
                               navigate(`/ingredientsfilter/${item[items]}`);
                             }}
                             key={ind}
-                            className="btn btn-light me-1 mb-1 p-0 rounded-pill"
+                            className="btn btn-outline-light me-1 mb-1 p-0 rounded-pill"
                           >
                             <img
                               className="img-fluid"

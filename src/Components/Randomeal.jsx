@@ -69,7 +69,7 @@ const Randomeal = () => {
       <div className="container-fluid p-1">
         <div className="row m-1 d-flex justify-content-center">
           <div
-            className="IngredientList col-md-auto p-0 px-1"
+            className="IngredientList col-md-auto p-1"
             style={{ border: "dashed", borderColor: "orange" }}
           >
             <Ingredientlist item={item} />
@@ -78,6 +78,10 @@ const Randomeal = () => {
             className="col pt-2"
             style={{ border: "dashed", borderColor: "orange" }}
           >
+            {" "}
+            <h4 className="text-black fw-bolder bg-warning text-center m-0">
+              Instructions
+            </h4>
             <pre className="text-warning bg-dark fst-italic p-2 fs-5">
               {item?.strInstructions}
             </pre>
