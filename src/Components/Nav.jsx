@@ -29,7 +29,7 @@ const Nav = () => {
             <li className="pe-3">
               <NavLink
                 to="/categories"
-                className="nav-link bg-black text-warning p-2 rounded-3 fs-5"
+                className="border border-warning nav-link bg-black text-warning p-2 rounded-3 fs-5"
               >
                 <i className="bi bi-card-list"></i> CATEGORIES
               </NavLink>
@@ -37,7 +37,7 @@ const Nav = () => {
             <li className="nav-item pe-3">
               <NavLink
                 to="/ingredients"
-                className="nav-link bg-black text-warning p-2 rounded-3 fs-5"
+                className="border border-warning nav-link bg-black text-warning p-2 rounded-3 fs-5"
               >
                 <i className="bi bi-list-ul"></i> MAIN INGREDIENTS
               </NavLink>
@@ -45,7 +45,7 @@ const Nav = () => {
             <li className="nav-item pe-3">
               <NavLink
                 to="/Area"
-                className="nav-link bg-black text-warning p-2 rounded-3 fs-5"
+                className="border border-warning nav-link bg-black text-warning p-2 rounded-3 fs-5"
               >
                 <i className="bi bi-globe"></i> CUISINE
               </NavLink>
@@ -54,7 +54,7 @@ const Nav = () => {
               <NavLink
                 reloadDocument
                 to="/randomeal"
-                className="nav-link bg-black text-warning p-2 rounded-3 fs-5"
+                className="border border-warning nav-link bg-black text-warning p-2 rounded-3 fs-5"
               >
                 <i className="bi bi-shuffle pe-3"></i> RANDOM MEAL
               </NavLink>
