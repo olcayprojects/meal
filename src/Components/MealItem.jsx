@@ -19,7 +19,7 @@ const MealItem2 = ({ data }) => {
   let navigate = useNavigate();
 
   return (
-    <div className="row row-cols-1 row-cols-md-3 row-cols-lg-4 justify-content-center">
+    <div className="row row-cols-1 row-cols-md-3 row-cols-lg-5 justify-content-center">
       {!data
         ? "bulunamadı"
         : data.map((item, index) => {
@@ -100,6 +100,7 @@ const MealItem2 = ({ data }) => {
                             className="btn btn-outline-light me-1 mb-1 p-0 rounded-pill"
                           >
                             <img
+                              style={{ width: "50px" }}
                               className="img-fluid"
                               src={ingredientURL + item[items] + "-small.png"}
                               alt={item[items]}

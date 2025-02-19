@@ -43,7 +43,7 @@ const RecipeInfo = () => {
       ) : (
         <>
           <Nav />
-          <div className="">
+          <div className="mx-1">
             <div className="">
               <h1 className="text-center mt-1 text-light">
                 <i
@@ -87,7 +87,15 @@ const RecipeInfo = () => {
               </div>
             </div>
           </div>
-          <div key={item.idMeal} style={{}} className="text-center m-1">
+          <div
+            key={item.idMeal}
+            style={{
+              border: "dashed",
+              borderColor: "orange",
+              borderWidth: "2px",
+            }}
+            className="text-center m-1 p-1"
+          >
             <span
               className="btn btn-outline-success fs-4 fw-bold me-2 border-2"
               onClick={() => {
@@ -110,14 +118,22 @@ const RecipeInfo = () => {
           <div className="container-fluid p-1">
             <div className="row m-1">
               <div
-                className="IngredientList col-md-auto p-1"
-                style={{ border: "dashed", borderColor: "orange" }}
+                className="IngredientList bg-dark col-md-auto p-1"
+                style={{
+                  border: "dashed",
+                  borderColor: "orange",
+                  borderWidth: "5px",
+                }}
               >
                 <Ingredientlist item={item} />
               </div>
               <div
-                className="col p-1"
-                style={{ border: "dashed", borderColor: "orange" }}
+                className="col p-1 bg-dark ms-1"
+                style={{
+                  border: "dashed",
+                  borderColor: "orange",
+                  borderWidth: "5px",
+                }}
               >
                 <h4 className="text-center m-0">
                   <pre className="text-black fw-bolder bg-warning text-center p-0 m-0 fs-4">
@@ -126,7 +142,7 @@ const RecipeInfo = () => {
                   <hr className="my-1 border border-warning border-4" />
                 </h4>
 
-                <pre className="text-warning bg-dark p-1 fs-5 lh-sm">
+                <pre className="text-warning bg-dark p-1 fs-5 lh-sm m-0">
                   {item?.strInstructions}
                 </pre>
               </div>

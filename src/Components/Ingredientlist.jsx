@@ -19,10 +19,10 @@ export default function Ingredientlist(props) {
   return (
     <ul className="list-group fs-5 point">
       <h4 className="text-center m-0">
-        <pre className="text-black bg-warning m-0 fs-4">
-          The ingredients for
+        <pre className="text-black bg-warning px-2 m-0 fs-4">
+          Ingredients
           <span className="ps-2 fw-bolder">
-            "{props.item.strMeal?.length > 30 ? mealName : props.item.strMeal}"
+            {/* "{props.item.strMeal?.length > 30 ? mealName : props.item.strMeal}" */}
           </span>
         </pre>
         <hr className="my-1 border border-warning border-4" />
@@ -44,11 +44,8 @@ export default function Ingredientlist(props) {
                     `/ingredientsfilter/${props.item["strIngredient" + index]}`
                   );
                 }}
-                className="px-2 list-group-item-action bg-dark text-warning border-warning border-top border-bottom p-0 d-block "
+                className="fw-bold list-group-item-action bg-dark text-warning border-warning border-top border-bottom p-0 d-block "
               >
-                <span className="p-0">
-                  {props.item["strMeasure" + index].trim()}
-                </span>
                 <img
                   className="img-fluid mx-1"
                   style={{ width: "25px" }}
@@ -57,10 +54,12 @@ export default function Ingredientlist(props) {
                     props.item["strIngredient" + index] +
                     "-Small.png"
                   }
-                  alt=""
+                  alt={props.item["strIngredient" + index]}
                 />
-                <span className="fw-bold pe-2">
-                  {props.item["strIngredient" + index]}
+                <span className="">
+                  {`${props.item["strMeasure" + index].trim()} ${
+                    props.item["strIngredient" + index]
+                  }`}
                 </span>
               </li>
             </span>
