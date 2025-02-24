@@ -43,30 +43,35 @@ const RecipeInfo = () => {
       ) : (
         <>
           <Nav />
-          <div className="mx-1">
-            <div className="">
-              <h1 className="text-center mt-1 text-light">
+          <div className="">
+            <div>
+              <div className="d-flex fs-1 my-1 text-warning justify-content-center align-items-center">
                 <i
-                  className="bi bi-arrow-left-square-fill point"
+                  className="bi bi-arrow-left-square-fill point mt-1"
                   onClick={() => {
                     navigate(`/recipeinfo/${--item.idMeal}`);
                     navigate(0);
                   }}
                 ></i>
                 <span
-                  className="fw-bold px-2 text-warning bg-dark mx-1"
-                  style={{}}
+                  className="fw-bold px-1 bg-warning text-dark"
+                  style={{
+                    border: "dashed",
+                    borderColor: "dimgrey",
+                    borderWidth: "4px",
+                  }}
                 >
                   {item["strMeal"].toUpperCase()}
                 </span>
                 <i
-                  className="bi bi-arrow-right-square-fill point"
+                  className="bi bi-arrow-right-square-fill point mt-1"
                   onClick={() => {
                     navigate(`/recipeinfo/${++item.idMeal}`);
                     navigate(0);
                   }}
                 ></i>
-              </h1>
+              </div>
+
               <img
                 key={item.idMeal}
                 className="img-thumbnail mx-auto d-block rounded"
@@ -92,9 +97,9 @@ const RecipeInfo = () => {
             style={{
               border: "dashed",
               borderColor: "orange",
-              borderWidth: "2px",
+              borderWidth: "5px",
             }}
-            className="text-center m-1 p-1"
+            className="text-center m-1 p-1 bg-dark"
           >
             <span
               className="btn btn-outline-success fs-4 fw-bold me-2 border-2"

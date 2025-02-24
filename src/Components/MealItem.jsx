@@ -26,7 +26,15 @@ const MealItem2 = ({ data }) => {
             //const id =Math.floor(Math.random()*1000)
             return (
               <div key={item.idMeal} className="p-1">
-                <div className="h-100 border border-warning border-1 bg-dark bg-opacity-50">
+                <div
+                  className="h-100  bg-dark bg-opacity-50
+                "
+                  style={{
+                    border: "dashed",
+                    borderColor: "orange",
+                    borderWidth: "5px",
+                  }}
+                >
                   <div className="mealImg">
                     <img
                       onClick={() => {
