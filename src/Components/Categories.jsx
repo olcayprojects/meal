@@ -35,7 +35,7 @@ const Categories = () => {
                 <div
                   className="col m-1 border border-dark border-4 bg-dark"
                   key={itemCategory.idCategory}
-                  style={{ boxSizing: "", width: "" }}
+                  style={{ width: "150px" }}
                   onClick={() => {
                     navigate(`/fg/${itemCategory.strCategory}`);
                   }}
@@ -46,10 +46,11 @@ const Categories = () => {
                     key={itemCategory.idCategory}
                   >
                     <img
-                      className="card-img-top  shadow"
+                      className="card-img-top shadow"
                       src={itemCategory.strCategoryThumb}
                       title={itemCategory.strCategory}
                       alt={itemCategory.strCategory}
+                      style={{ width: "100%", height: "auto" }}
                     />
                     <div className="text-center pt-2">
                       <span className="text-warning card-title bg-dark fw-bold mb-1 px-1 fs-5">
