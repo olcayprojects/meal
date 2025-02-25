@@ -27,7 +27,7 @@ const MealItem2 = ({ data }) => {
             return (
               <div key={item.idMeal} className="p-1">
                 <div
-                  className="h-100  bg-dark bg-opacity-50
+                  className="h-100 bg-dark bg-opacity-75
                 "
                   style={{
                     border: "dashed",
@@ -40,7 +40,7 @@ const MealItem2 = ({ data }) => {
                       onClick={() => {
                         navigate(`/recipeinfo/${item.idMeal}`);
                       }}
-                      className="img-thumbnail p-1 m-0 mb-2"
+                      className="img-fluid p-0 m-0 mb-2"
                       // src={item.strMealThumb + "/preview"}
                       src={item.strMealThumb}
                       onError={(e) => {
@@ -55,14 +55,12 @@ const MealItem2 = ({ data }) => {
                     />
                   </div>
                   <div className="mealName">
-                    <h2 className="" style={{}}>
-                      <span
-                        className="px-3 border border-dark border-4 fw-bold bg-warning text-dark rounded-4"
-                        style={{}}
-                      >
-                        {toTitleCase(item.strMeal)}
-                      </span>
-                    </h2>
+                    <span
+                      className="px-2 fs-3 border border-dark border-4 fw-bold bg-warning text-dark rounded-4"
+                      style={{}}
+                    >
+                      {toTitleCase(item.strMeal)}
+                    </span>
                     <div className="my-2">
                       <button
                         type="button"
@@ -105,7 +103,7 @@ const MealItem2 = ({ data }) => {
                               navigate(`/ingredientsfilter/${item[items]}`);
                             }}
                             key={ind}
-                            className="btn btn-outline-light me-1 mb-1 p-0 rounded-pill"
+                            className="btn btn-outline-warning me-1 mb-1 p-0 "
                           >
                             <img
                               style={{ width: "50px" }}
@@ -118,7 +116,14 @@ const MealItem2 = ({ data }) => {
                                 "' integrated meals."
                               }
                             />
-                            <h6 className="text-warning bg-black p-1 m-0 border border-light">
+                            <h6
+                              className="text-warning-emphasis px-1 m-0 fw-bold fs-5"
+                              style={{
+                                borderStyle: "dotted",
+                                borderWidth: "2px",
+                                borderColor: "orange",
+                              }}
+                            >
                               {item[items].toUpperCase()}
                             </h6>
                           </span>

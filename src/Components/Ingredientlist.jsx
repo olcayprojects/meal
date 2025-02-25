@@ -56,7 +56,7 @@ export default function Ingredientlist(props) {
                   }
                   alt={props.item["strIngredient" + index]}
                 />
-                <span className="">
+                <span className="pe-1">
                   {`${props.item["strMeasure" + index].trim()} ${
                     props.item["strIngredient" + index]
                   }`}
