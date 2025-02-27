@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 
 const Nav = () => {
   return (
-    <div className="container-fluid">
+    <div className="container-fluid sticky-top">
       <nav className="navbar navbar-expand-md navbar-dark bg-dark p-0">
         <NavLink exact="true" to="/">
           <img
