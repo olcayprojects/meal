@@ -26,7 +26,7 @@ const Ingredients = () => {
 
   if (loading) return <Loader />;
   return (
-    <div className="container-fluid p-0">
+    <div className="container-fluid m-0 p-0">
       <Nav />
       <div className="row row-cols-auto row-cols-md-auto mt-2 justify-content-center m-0 p-0">
         {!item ? (
@@ -35,13 +35,13 @@ const Ingredients = () => {
           item.map((item) => {
             return (
               <div
-                className="col point my-4 m-0 p-0"
+                className="col point m-0 p-0"
                 style={{}}
                 key={item.idIngredient}
               >
                 <div
-                  className="card bg-dark  rounded-pill"
-                  style={{ boxSizing: "border-box", width: "100px" }}
+                  className="btn btn-outline-warning me-1 my-1 p-0 "
+                  style={{ boxSizing: "border-box", width: "150px" }}
                   title={item["strIngredient"]}
                 >
                   <img
@@ -56,7 +56,7 @@ const Ingredients = () => {
                   />
                   <div className="card-body text-bottom text-center p-0 m-0">
                     <h6
-                      className="card-title fw-bold px-1 m-0 text-white bg-success text-truncate"
+                      className="card-title fw-bolder fs-5 px-1 m-0 text-warning-emphasis bg-warning text-truncate"
                       style={{}}
                     >
                       {item.strIngredient}

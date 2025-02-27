@@ -74,7 +74,12 @@ const RecipeInfo = () => {
 
               <img
                 key={item.idMeal}
-                className="img-thumbnail mx-auto d-block rounded"
+                className="img-fluid mx-auto d-block rounded"
+                style={{
+                  borderStyle: "dashed",
+                  borderWidth: "5px",
+                  borderColor: "orange",
+                }}
                 src={item.strMealThumb + ""}
                 onError={({ currentTarget }) => {
                   currentTarget.onerror = null; // prevents looping

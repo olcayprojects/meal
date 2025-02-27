@@ -57,7 +57,12 @@ const Randomeal = () => {
         ) : null}
       </div>
       <img
-        className="img-thumbnail mx-auto d-block"
+        className="img-fluid mx-auto d-block"
+        style={{
+          borderStyle: "dashed",
+          borderWidth: "5px",
+          borderColor: "orange",
+        }}
         // src={item.strMealThumb + "/preview"}
         src={item.strMealThumb}
         onError={(e) => {
@@ -66,28 +71,36 @@ const Randomeal = () => {
         alt=""
         title={item.strMeal}
       />
-      <div className="container-fluid p-1">
-        <div className="row m-1 d-flex justify-content-center">
+      <div className="container-fluid p-0 mt-1">
+        <div className="row d-flex justify-content-center">
           <div
-            className="IngredientList col-md-auto p-1"
-            style={{ border: "dashed", borderColor: "orange" }}
+            className="IngredientList col-md-auto p-0 me-1"
+            style={{
+              border: "dashed",
+              borderColor: "orange",
+              borderWidth: "4px",
+            }}
           >
             <Ingredientlist item={item} />
           </div>
           <div
-            className="col pt-2"
-            style={{ border: "dashed", borderColor: "orange" }}
+            className="col p-0"
+            style={{
+              border: "dashed",
+              borderColor: "orange",
+              borderWidth: "4px",
+            }}
           >
             {" "}
             <h4 className="text-black fw-bolder bg-warning text-center m-0">
               Instructions
             </h4>
-            <pre className="text-warning bg-dark fst-italic p-2 fs-5">
+            <pre className="text-warning bg-dark fst-italic fs-5 px-2">
               {item?.strInstructions}
             </pre>
           </div>
         </div>
-        <div className="ratio ratio-16x9">
+        <div className="ratio ratio-16x9 mt-2">
           <iframe
             className=""
             title={item.strMeal}

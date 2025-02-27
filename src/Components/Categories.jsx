@@ -90,9 +90,9 @@ export function CategoryInfo(cName) {
       </div>
       <div
         className="bg-dark m-2"
-        style={{ borderStyle: "ridge", borderColor: "orange" }}
+        style={{ borderStyle: "dashed", borderColor: "orange" }}
       >
-        <pre className="text-light fst-italic fs-5 p-1 m-0">
+        <pre className="text-warning fst-italic fs-5 p-1 m-0">
           {info.strCategoryDescription}
         </pre>
       </div>
