@@ -13,11 +13,13 @@ fetch(url)
 
 function Loader() {
   return (
-    <div className="d-flex min-vh-100">
-      <div className="d-flex flex-grow-1 justify-content-center align-items-center">
-        <h1 style={{ color: "orange" }} className="fw-bold">
-          Loading...
-        </h1>
+    <div className="d-flex flex-grow-1 justify-content-center align-items-center">
+      <div
+        class="spinner-grow text-warning"
+        style={{ width: "300px", height: "300px" }}
+        role="status"
+      >
+        <span class="visually-hidden">Loading...</span>
       </div>
     </div>
   );
