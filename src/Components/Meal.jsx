@@ -54,20 +54,18 @@ const Meal = () => {
         <div className="heading mt-2">
           <MyCarousel />
         </div>
-        <div className="indexContainer pt-1">
+        <div className="indexContainer py-2">
           <RecipeIndex alphaIndex={(alpa) => setIndex(alpa)} />
         </div>
-        <br />
         <div className="input-group input-group-lg">
           <div className="input-group-prepend"></div>
-
           <input
             type="search"
-            className="form-control"
+            className="form-control bg-warning-subtle fw-bold fs-4"
             aria-label="Large"
             aria-describedby="inputGroup-sizing-lg"
             onChange={(e) => setSearch(e.target.value)}
-            onKeyPress={searchRecipe}
+            onKeyDown={searchRecipe}
             placeholder="Type your favorite MEAL and press 'ENTER'"
           />
         </div>
