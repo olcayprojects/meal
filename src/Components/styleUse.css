@@ -34,23 +34,22 @@ body {
 
 .numBox {
   cursor: pointer;
-  width: 50px;
+  width: 60px;
   height: 40px;
   background-color: rgba(41, 41, 41, 0.8);
   display: block;
   justify-content: center;
   align-items: center;
-  color: white;
+  color: orange;
   margin: 0 5px 0 5px;
 }
 
 .numBox :hover {
-  background-color: rgba(255, 255, 255, 0.8);
   color: black;
-  border: 1px solid orange;
   font-weight: bold;
   background-color: orange;
-  transition: all 3s ease-out, color 1ms;
+  transition: all 0.5s ease-out, color 0.5ms;
+  border-style: none;
 }
 
 .recipe-details {
