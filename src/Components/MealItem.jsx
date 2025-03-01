@@ -1,7 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import React from "react";
-
-let ingredientURL = "https://www.themealdb.com/images/ingredients/";
+import { MealItemIngredients } from "./MealItemIngredients";
 
 function toTitleCase(str) {
   const titleCase = str
@@ -93,46 +92,7 @@ const MealItem2 = ({ data }) => {
                       );
                     })}
                   </div>
-
-                  <div className="">
-                    {Object.keys(item).map((items, ind) => {
-                      if (items.substring(0, 6) === "strIng") {
-                        return item[items] ? (
-                          <span
-                            onClick={(ef) => {
-                              navigate(`/ingredientsfilter/${item[items]}`);
-                            }}
-                            key={ind}
-                            className="btn btn-outline-warning me-1 mb-1 p-0 "
-                          >
-                            <img
-                              style={{ width: "50px" }}
-                              className="img-fluid"
-                              src={ingredientURL + item[items] + "-small.png"}
-                              alt={item[items]}
-                              title={
-                                "Click go to '" +
-                                item[items].toUpperCase() +
-                                "' integrated meals."
-                              }
-                            />
-                            <h6
-                              className="text-warning-emphasis px-1 m-0 fw-bold fs-5"
-                              style={{
-                                borderStyle: "dotted",
-                                borderWidth: "2px",
-                                borderColor: "orange",
-                              }}
-                            >
-                              {item[items].toUpperCase()}
-                            </h6>
-                          </span>
-                        ) : (
-                          ""
-                        );
-                      }
-                    })}
-                  </div>
+                  <MealItemIngredients key={item.idMeal} item={item} />
                 </div>
               </div>
             );
