@@ -22,7 +22,7 @@ export const MealItemIngredients = ({ item }) => {
                 <img
                   style={{ width: "50px" }}
                   className="img-fluid"
-                  src={`${ingredientURL}${ingredient}-small.png`}
+                  src={`${ingredientURL}${ingredient}-Small.png`}
                   alt={ingredient}
                   title={`Click to go to '${ingredient.toUpperCase()}' integrated meals.`}
                 />

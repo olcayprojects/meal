@@ -25,7 +25,7 @@ const Ingredientsfilter = () => {
 
   const [item, setItem] = useState([]);
 
-  let imgUrl = `https://www.themealdb.com/images/ingredients/${IngredientName}.png`;
+  let imgUrl = `https://www.themealdb.com/images/ingredients/${IngredientName}-large.png`;
 
   const mystyle = {
     display: "block",

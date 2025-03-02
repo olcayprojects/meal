@@ -39,9 +39,9 @@ const MealItem2 = ({ data }) => {
                       onClick={() => {
                         navigate(`/recipeinfo/${item.idMeal}`);
                       }}
-                      className="img-fluid p-0 m-0 mb-2"
+                      className="card-img-top"
                       // src={item.strMealThumb + "/preview"}
-                      src={item.strMealThumb}
+                      src={item.strMealThumb + "/medium"}
                       onError={(e) => {
                         e.currentTarget.src = item.strMealThumb;
                       }}

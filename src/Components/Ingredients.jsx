@@ -84,26 +84,36 @@ const Ingredients = () => {
   );
 };
 
-export function IngredientsInfo(props) {
+export function IngredientsInfo({ iName }) {
   const [url, setUrl] = useState(ingUrl);
   const [descIng, setDescIng] = useState([]);
 
   useEffect(() => {
-    fetch(url).then((res) =>
-      res.json().then((data) => {
-        data.meals.map((idIngredient) => {
-          if (props.iName === idIngredient.strIngredient) {
-            setDescIng(idIngredient);
-          }
-        });
+    fetch(url)
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return res.json();
       })
-    );
-  }, [url, props.iName]);
+      .then((data) => {
+        const ingredient = data.meals.find(
+          (idIngredient) =>
+            idIngredient.strIngredient.toLowerCase() === iName.toLowerCase()
+        );
+        if (ingredient) {
+          setDescIng(ingredient);
+        }
+      })
+      .catch((error) => {
+        console.error("There was an error fetching the data:", error);
+      });
+  }, [url, iName]);
 
   return descIng?.strDescription ? (
     <div
       className="bg-dark mb-1 "
-      style={{ borderStyle: "ridge", borderColor: "orange" }}
+      style={{ borderStyle: "dashed", borderColor: "orange" }}
     >
       <pre className="text-warning fs-5 fst-italic px-2 m-0">
         {descIng?.strType ? (
@@ -113,13 +123,12 @@ export function IngredientsInfo(props) {
           </>
         ) : null}
         {descIng?.strDescription ? (
-          <>
-            <br />
-            <span className="fw-bold fst-normal text-success">
-              Description:{" "}
+          <div className="py-1">
+            <span className="fw-bold pe-1 fst-normal text-success">
+              Description:
             </span>
             <span>{descIng?.strDescription}</span>
-          </>
+          </div>
         ) : null}
       </pre>
     </div>

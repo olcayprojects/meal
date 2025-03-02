@@ -26,7 +26,7 @@ export default function Meallist(props) {
               <img
                 className="image card-img-top"
                 key={index + 1}
-                src={data.strMealThumb + "/preview"}
+                src={data.strMealThumb + "/Medium"}
                 onError={({ currentTarget }) => {
                   currentTarget.onerror = null; // prevents looping
                   currentTarget.src = data.strMealThumb;
