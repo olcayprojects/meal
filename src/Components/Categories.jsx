@@ -95,7 +95,7 @@ export function CategoryInfo({ cName }) {
         className="bg-dark m-2"
         style={{ borderStyle: "dashed", borderColor: "orange" }}
       >
-        <pre className="text-warning fst-italic fs-5 p-1 m-0">
+        <pre className="text-warning lh-sm fst-italic fs-5 p-1 m-0">
           {infocate?.strCategoryDescription}
         </pre>
       </div>

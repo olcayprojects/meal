@@ -123,7 +123,7 @@ export function IngredientsInfo({ iName }) {
           </>
         ) : null}
         {descIng?.strDescription ? (
-          <div className="py-1">
+          <div className="py-1 lh-sm">
             <span className="fw-bold pe-1 fst-normal text-success">
               Description:
             </span>
