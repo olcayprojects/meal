@@ -78,15 +78,16 @@ function MyCarousel() {
               />
               <Carousel.Caption>
                 <h1
-                  className="fw-bold rounded-pill border border-2 border-warning"
+                  className="fw-bold px-3 rounded-pill border-start border-end border-5 border-warning text-warning"
                   style={{
-                    color: "greenyellow",
                     background: "rgba(0, 0, 0, 0.3)",
+                    display: "inline-block",
+                    borderWidth: `${image1.strMeal.length}px`,
                   }}
                 >
                   {image1.strMeal.toUpperCase()}
                 </h1>
-                <span className="text-warning">{image1.idMeal}</span>
+                {/* <h5 className="text-warning-emphasis">{image1.idMeal}</h5> */}
               </Carousel.Caption>
             </Carousel.Item>
           ))

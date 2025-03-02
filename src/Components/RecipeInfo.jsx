@@ -98,31 +98,40 @@ const RecipeInfo = () => {
             </div>
           </div>
           <div
-            key={item.idMeal}
             style={{
-              border: "dashed",
-              borderColor: "orange",
-              borderWidth: "5px",
+              display: "flex",
+              justifyContent: "center",
             }}
-            className="text-center m-1 p-1 bg-dark"
           >
-            <span
-              className="btn btn-outline-success fs-4 fw-bold me-2 border-2"
-              onClick={() => {
-                navigate(`/fg/${item.strCategory}`);
+            <div
+              key={item.idMeal}
+              style={{
+                display: "inline-block",
+                textAlign: "center",
+                borderWidth: "2px",
+                border: "dashed",
+                borderColor: "orange",
               }}
+              className="text-center bg-dark"
             >
-              {item.strCategory} Meals
-            </span>
+              <span
+                className="btn btn-outline-success fs-4 fw-bold border-2"
+                onClick={() => {
+                  navigate(`/fg/${item.strCategory}`);
+                }}
+              >
+                {item.strCategory} Meals
+              </span>
 
-            <span
-              className="btn btn-outline-info fs-4 fw-bold me-2 border-2"
-              onClick={(e) => {
-                navigate(`/area/${item.strArea}`);
-              }}
-            >
-              {item.strArea} Cuisine
-            </span>
+              <span
+                className="btn btn-outline-info fs-4 fw-bold border-2"
+                onClick={(e) => {
+                  navigate(`/area/${item.strArea}`);
+                }}
+              >
+                {item.strArea} Cuisine
+              </span>
+            </div>
           </div>
 
           <div className="container-fluid p-1">
