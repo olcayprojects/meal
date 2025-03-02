@@ -80,9 +80,9 @@ export function CategoryInfo({ cName }) {
 
   return (
     <>
-      <div className="text-center mt-2">
+      <div className="text-center mt-1">
         <img
-          className="img-responsive w-25 mx-auto d-block"
+          className="img-fluid img-thumbnail mx-auto d-block"
           src={infocate?.strCategoryThumb}
           alt={infocate?.strCategory}
           title={infocate?.strCategory}
