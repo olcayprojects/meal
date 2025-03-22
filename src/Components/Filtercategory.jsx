@@ -37,11 +37,11 @@ const Filtercategory = () => {
       {!items ? (
         ""
       ) : (
-        <>
+        <div>
           <Categories />
           <CategoryInfo cName={CategoryName} />
           <Meallist item={items} />
-        </>
+        </div>
       )}
     </div>
   );

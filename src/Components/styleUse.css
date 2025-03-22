@@ -328,3 +328,15 @@ th {
   background-color: #f0ad4e;
   outline: 1px solid orange;
 }
+
+.cardS {
+  opacity: 0; /* Başlangıçta kartlar görünmez */
+  transform: translateY(30px); /* Aşağıda başlayacak şekilde */
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Yumuşak geçiş */
+}
+
+.cardS.visible {
+  opacity: 1; /* Görünür olduğunda opaklık 1 olur */
+  transform: translateY(0); /* Kart normal pozisyona gelir */
+}
+

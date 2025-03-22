@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import React from "react";
 import { MealItemIngredients } from "./MealItemIngredients";
+import useIntersectionObserver from "./useIntersectionObserver"; // Hook'u buradan import ediyoruz
 
 function toTitleCase(str) {
   const titleCase = str
@@ -15,6 +16,8 @@ function toTitleCase(str) {
 }
 
 const MealItem2 = ({ data }) => {
+  const visibleCards = useIntersectionObserver(); // Hook'u kullanıyoruz
+
   let navigate = useNavigate();
 
   return (
@@ -26,13 +29,19 @@ const MealItem2 = ({ data }) => {
             return (
               <div key={item.idMeal} className="p-1">
                 <div
-                  className="h-100 bg-dark bg-opacity-75
-                "
+                  className={`h-100 bg-dark bg-opacity-75 cardS ${
+                    visibleCards.includes(
+                      document.querySelector(`#cardS-${item.idMeal}`)
+                    )
+                      ? "visible"
+                      : ""
+                  }`}
                   style={{
                     border: "dashed",
                     borderColor: "orange",
                     borderWidth: "5px",
                   }}
+                  id={`cardS-${item.idMeal}`}
                 >
                   <div className="mealImg">
                     <img
