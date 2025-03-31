@@ -74,7 +74,7 @@ const Randomeal = () => {
       <div className="container-fluid p-0 mt-1">
         <div className="row d-flex justify-content-center">
           <div
-            className="IngredientList col-md-auto p-0 me-1"
+            className="IngredientList p-0 me-1"
             style={{
               border: "dashed",
               borderColor: "orange",

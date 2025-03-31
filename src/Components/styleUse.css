@@ -312,7 +312,7 @@ th {
 
 .IngredientList li:hover {
   background-color: #f0ad4e !important;
-  color: black !important;
+  color: green !important;
   font-weight: bold;
 }
 

@@ -134,10 +134,10 @@ const RecipeInfo = () => {
             </div>
           </div>
 
-          <div className="container-fluid p-1">
-            <div className="row m-1">
+          <div className="container-fluid">
+            <div className="row d-flex justify-content-center p-1">
               <div
-                className="IngredientList bg-dark col-md-auto p-1"
+                className="IngredientList my-1  p-0 py-1"
                 style={{
                   border: "dashed",
                   borderColor: "orange",
@@ -147,7 +147,7 @@ const RecipeInfo = () => {
                 <Ingredientlist item={item} />
               </div>
               <div
-                className="col p-1 bg-dark ms-1"
+                className=" p-1 bg-dark ms-1"
                 style={{
                   border: "dashed",
                   borderColor: "orange",
@@ -155,7 +155,7 @@ const RecipeInfo = () => {
                 }}
               >
                 <h4 className="text-center m-0">
-                  <pre className="text-black fw-bolder bg-warning text-center p-0 m-0 fs-4">
+                  <pre className="text-black fw-bolder bg-warning text-center p-0 m-0  fs-4">
                     Instructions
                   </pre>
                   <hr className="my-1 border border-warning border-4" />

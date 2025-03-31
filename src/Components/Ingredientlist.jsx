@@ -17,38 +17,29 @@ export default function Ingredientlist(props) {
   }
 
   return (
-    <ul className="list-group fs-5 point">
-      <h4 className="text-center m-0">
-        <pre className="text-black bg-warning px-2 m-0 fs-4">
-          Ingredients
-          <span className="ps-2 fw-bolder">
-            {/* "{props.item.strMeal?.length > 30 ? mealName : props.item.strMeal}" */}
-          </span>
-        </pre>
-        <hr className="my-1 border border-warning border-4" />
-      </h4>
+    <ul className="list-group list-group-horizontal fs-5 point d-flex flex-wrap justify-content-center align-items-center">
       {Object.keys(props.item).map((items, index) => {
         return props.item["strIngredient" + index] ? (
-          <div className="pb-1" key={index}>
-            <span className="p-0">
-              <li
-                id={props.item["strIngredient" + index]}
-                title={
-                  "Click go to " +
-                  props.item["strIngredient" + index] +
-                  " Recipes"
-                }
-                key={index}
-                onClick={(ef) => {
-                  navigate(
-                    `/ingredientsfilter/${props.item["strIngredient" + index]}`
-                  );
-                }}
-                className="fw-bold list-group-item-action bg-dark text-warning border-warning border-top border-bottom p-0 d-block "
-              >
+          <div className="pb-1" key={index} style={{}}>
+            <li
+              id={props.item["strIngredient" + index]}
+              title={
+                "Click go to " +
+                props.item["strIngredient" + index] +
+                " Recipes"
+              }
+              onClick={(ef) => {
+                navigate(
+                  `/ingredientsfilter/${props.item["strIngredient" + index]}`
+                );
+              }}
+              className="fw-bold list-group-item bg-dark text-warning border-warning mx-1 p-0 d-flex flex-column justify-content-center align-items-center"
+              style={{}}
+            >
+              <div className="d-flex justify-content-center">
                 <img
-                  className="img-fluid mx-1"
-                  style={{ width: "25px" }}
+                  className="img-fluid"
+                  style={{}}
                   src={
                     ingredientURL +
                     props.item["strIngredient" + index] +
@@ -56,13 +47,13 @@ export default function Ingredientlist(props) {
                   }
                   alt={props.item["strIngredient" + index]}
                 />
-                <span className="pe-1">
-                  {`${props.item["strMeasure" + index].trim()} ${
-                    props.item["strIngredient" + index]
-                  }`}
-                </span>
-              </li>
-            </span>
+              </div>
+              <p className="text-center bg-black w-100 px-1" style={{}}>
+                {`${props.item["strMeasure" + index].trim()} ${
+                  props.item["strIngredient" + index]
+                }`}
+              </p>
+            </li>
           </div>
         ) : null;
       })}
