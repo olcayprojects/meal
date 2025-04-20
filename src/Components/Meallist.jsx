@@ -12,16 +12,13 @@ const Meallist = ({ item }) => {
         item.map((data) => (
           <div className="col py-2" key={data.idMeal}>
             <div
-              className={`card cardS text-dark bg-black point imgeffect ${
-                visibleCards.includes(document.querySelector(`#cardS-${data.idMeal}`))
-                  ? 'visible'
-                  : ''
+              className={`card text-dark bg-black point transform hover:scale-[1.04] transition-all duration-200 ${
+                visibleCards.includes(
+                  document.querySelector(`#cardS-${data.idMeal}`)
+                )
+                  ? "visible"
+                  : ""
               }`}
-              style={{
-                borderStyle: "dashed",
-                borderWidth: "5px",
-                borderColor: "orange",
-              }}
               id={`cardS-${data.idMeal}`}
               onClick={() => {
                 navigate(`/recipeinfo/${data.idMeal}`);
@@ -29,7 +26,7 @@ const Meallist = ({ item }) => {
               title={`Click to go to '${data.strMeal}' details`}
             >
               <img
-                className="image card-img-top"
+                className="border-4 border-dashed border-orange-500"
                 src={data.strMealThumb + "/Medium"}
                 onError={({ currentTarget }) => {
                   currentTarget.onerror = null; // prevents looping
@@ -37,8 +34,8 @@ const Meallist = ({ item }) => {
                 }}
                 alt={data.strMeal}
               />
-              <div className="card-img-overlay d-flex">
-                <span className="card-title text-warning fs-4 px-3 align-self-end rounded-pill">
+              <div className="card-img-overlay text-center self-end">
+                <span className="text-yellow-500 text-2xl px-3 rounded-full bg-black/50">
                   {data.strMeal}
                 </span>
               </div>

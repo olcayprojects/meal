@@ -299,16 +299,6 @@ th {
   cursor: pointer;
 }
 
-.imgeffect {
-  transition: 1s;
-}
-
-.imgeffect:hover {
-  transform: scale(1.04, 1.04);
-  background-color: whitesmoke !important;
-  /* box-shadow: 0 0 2px 2px cyan; */
-  transition: 0.1s;
-}
 
 .IngredientList li:hover {
   background-color: #f0ad4e !important;

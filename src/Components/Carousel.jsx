@@ -78,10 +78,8 @@ function MyCarousel() {
               />
               <Carousel.Caption>
                 <h1
-                  className="fw-bold px-3 rounded-pill border-start border-end border-5 border-warning text-warning"
+                  class="font-bold px-3 bg-black/40 inline-block rounded-full border-l border-r border-4 border-yellow-500 text-yellow-500"
                   style={{
-                    background: "rgba(0, 0, 0, 0.3)",
-                    display: "inline-block",
                     borderWidth: `${image1.strMeal.length}px`,
                   }}
                 >

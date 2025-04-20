@@ -2,61 +2,54 @@ import { NavLink } from "react-router-dom";
 
 const Nav = () => {
   return (
-    <div className="container-fluid sticky-top">
-      <nav className="navbar navbar-expand-md navbar-dark bg-dark p-0">
-        <NavLink exact="true" to="/">
+    <div className="sticky top-0 bg-dark shadow-md z-50">
+      <nav className="flex flex-wrap items-center justify-between ">
+        <NavLink to="/" className="flex items-center">
           <img
-            className="img abc ms-1"
             src={require("../images/recipes.png")}
-            alt=""
-            height="56"
-            srcSet=""
+            alt="Logo"
+            className="h-[60px] abc "
           />
         </NavLink>
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav d-flex ms-auto me-2">
-            <li className="pe-3">
+
+        {/* Mobil Menü Toggle (isteğe bağlı) */}
+        {/* <button className="md:hidden text-white">
+          <i className="bi bi-list text-3xl"></i>
+        </button> */}
+
+        <div className="w-full md:flex md:items-center md:w-auto mt-4 md:mt-0">
+          <ul className="flex flex-col md:flex-row md:ml-auto gap-3 md:gap-4 text-center">
+            <li>
               <NavLink
                 to="/categories"
-                className="border border-warning nav-link bg-black text-warning p-2 rounded-3 fs-5"
+                className="no-underline border-2 border-yellow-500 bg-black text-yellow-500 px-2 py-1 rounded-lg text-lg hover:bg-yellow-500 hover:text-black transition"
               >
-                <i className="bi bi-card-list"></i> CATEGORIES
+                <i className="bi bi-card-list mr-2"></i> CATEGORIES
               </NavLink>
             </li>
-            <li className="nav-item pe-3">
+            <li>
               <NavLink
                 to="/ingredients"
-                className="border border-warning nav-link bg-black text-warning p-2 rounded-3 fs-5"
+                className="no-underline border-2 border-yellow-500 bg-black text-yellow-500 px-2 py-1 rounded-lg text-lg hover:bg-yellow-500 hover:text-black transition"
               >
-                <i className="bi bi-list-ul"></i> MAIN INGREDIENTS
+                <i className="bi bi-list-ul mr-2"></i> MAIN INGREDIENTS
               </NavLink>
             </li>
-            <li className="nav-item pe-3">
+            <li>
               <NavLink
                 to="/Area"
-                className="border border-warning nav-link bg-black text-warning p-2 rounded-3 fs-5"
+                className="no-underline border-2 border-yellow-300 bg-black text-yellow-500 px-2 py-1 rounded-lg text-lg hover:bg-yellow-500 hover:text-black transition"
               >
-                <i className="bi bi-globe"></i> CUISINE
+                <i className="bi bi-globe mr-2"></i> CUISINE
               </NavLink>
             </li>
-            <li className="nav-item">
+            <li>
               <NavLink
                 reloadDocument
                 to="/randomeal"
-                className="border border-warning nav-link bg-black text-warning p-2 rounded-3 fs-5"
+                className="no-underline border-2 border-yellow-500 bg-black text-yellow-500 px-2 py-1 rounded-lg text-lg hover:bg-yellow-500 hover:text-black transition"
               >
-                <i className="bi bi-shuffle pe-3"></i> RANDOM MEAL
+                <i className="bi bi-shuffle mr-2"></i> RANDOM MEAL
               </NavLink>
             </li>
           </ul>

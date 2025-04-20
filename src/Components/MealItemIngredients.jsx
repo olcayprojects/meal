@@ -20,22 +20,14 @@ export const MealItemIngredients = ({ item }) => {
                 key={key}
               >
                 <img
-                  style={{ width: "50px" }}
-                  className="img-fluid"
+                  className="img-fluid w-10 d-inline m-0"
                   src={`${ingredientURL}${ingredient}-Small.png`}
                   alt={ingredient}
                   title={`Click to go to '${ingredient.toUpperCase()}' integrated meals.`}
                 />
-                <h6
-                  className="text-warning-emphasis px-1 m-0 fw-bold fs-5"
-                  style={{
-                    borderStyle: "dotted",
-                    borderWidth: "2px",
-                    borderColor: "orange",
-                  }}
-                >
+                <span className="text-warning-emphasis px-1 m-0 fw-bold fs-5">
                   {ingredient.toUpperCase()}
-                </h6>
+                </span>
               </span>
             );
           }

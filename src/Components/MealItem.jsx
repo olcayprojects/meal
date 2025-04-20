@@ -64,7 +64,7 @@ const MealItem2 = ({ data }) => {
                   </div>
                   <div className="mealName">
                     <span
-                      className="px-2 fs-3 border border-dark border-4 fw-bold bg-warning text-dark rounded-4"
+                      className="px-2 fs-3  border-dark border-4 fw-bold bg-warning text-dark rounded-4"
                       style={{}}
                     >
                       {toTitleCase(item.strMeal)}

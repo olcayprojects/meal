@@ -27,23 +27,23 @@ const Categories = () => {
         ? "Bulunamadı"
         : item.map((itemCategory) => (
             <div
-              className="col m-1 border border-dark border-4 bg-dark"
+              className="col m-1 border-2 border-gray-900 hover:scale-105 hover:bg-gray-100 transition-all duration-100"
               key={itemCategory.idCategory}
               style={{ width: "150px" }}
               onClick={() => {
                 navigate(`/fg/${itemCategory.strCategory}`);
               }}
             >
-              <div className="card text-dark bg-transparent imgeffect">
+              <div className="card text-gray-500 bg-transparent ">
                 <img
-                  className="card-img-top shadow"
+                  className="shadow"
                   src={itemCategory.strCategoryThumb}
                   title={itemCategory.strCategory}
                   alt={itemCategory.strCategory}
                   style={{ width: "100%", height: "auto" }}
                 />
                 <div className="text-center pt-2">
-                  <span className="text-warning card-title bg-dark fw-bold mb-1 px-1 fs-5">
+                  <span className="text-yellow-500 bg-gray-900 mb-1 px-1">
                     {itemCategory.strCategory.toUpperCase()}
                   </span>
                 </div>
@@ -91,11 +91,8 @@ export function CategoryInfo({ cName }) {
           {infocate?.strCategory} Meals
         </span>
       </div>
-      <div
-        className="bg-dark m-2"
-        style={{ borderStyle: "dashed", borderColor: "orange" }}
-      >
-        <pre className="text-warning lh-sm fst-italic fs-5 p-1 m-0">
+      <div className="bg-gray-800 border-2 border-dashed border-orange-500">
+        <pre className="text-orange-400 lh-sm italic size-100 p-1 m-0">
           {infocate?.strCategoryDescription}
         </pre>
       </div>
