@@ -21,13 +21,13 @@ const MealItem2 = ({ data }) => {
   let navigate = useNavigate();
 
   return (
-    <div className="row row-cols-1 row-cols-md-3 row-cols-lg-5 justify-content-center">
+    <div className="grid grid-cols-6 gap-1 ">
       {!data
         ? "bulunamadı"
         : data.map((item, index) => {
             //const id =Math.floor(Math.random()*1000)
             return (
-              <div key={item.idMeal} className="p-1">
+              <div key={item.idMeal} className="p-1 ">
                 <div
                   className={`h-100 bg-dark bg-opacity-75 cardS ${
                     visibleCards.includes(

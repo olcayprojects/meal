@@ -16,18 +16,18 @@ export const MealItemIngredients = ({ item }) => {
             return (
               <span
                 onClick={() => navigate(`/ingredientsfilter/${ingredient}`)}
-                className="btn btn-outline-warning me-1 mb-1 p-0"
+                className="btn btn-outline-warning p-0"
                 key={key}
               >
                 <img
-                  className="img-fluid w-10 d-inline m-0"
+                  className="img-fluid w-12 d-inline m-0"
                   src={`${ingredientURL}${ingredient}-Small.png`}
                   alt={ingredient}
                   title={`Click to go to '${ingredient.toUpperCase()}' integrated meals.`}
                 />
-                <span className="text-warning-emphasis px-1 m-0 fw-bold fs-5">
-                  {ingredient.toUpperCase()}
-                </span>
+                <h6 className="tracking-tight px-1 m-0">
+                  {ingredient}
+                </h6>
               </span>
             );
           }

@@ -7,12 +7,12 @@ const Meallist = ({ item }) => {
   const navigate = useNavigate();
 
   return (
-    <div className="row row-cols-2 row-cols-md-4 row-cols-lg-5 g-1 justify-content-center">
+    <div className="grid grid-cols-8 gap-1 justify-items-center">
       {item && item.length > 0 ? (
         item.map((data) => (
-          <div className="col py-2" key={data.idMeal}>
+          <div className="" key={data.idMeal}>
             <div
-              className={`card text-dark bg-black point transform hover:scale-[1.04] transition-all duration-200 ${
+              className={`card text-dark bg-black point transform hover:scale-[1.04] transition-all duration-1000 ${
                 visibleCards.includes(
                   document.querySelector(`#cardS-${data.idMeal}`)
                 )
@@ -35,7 +35,7 @@ const Meallist = ({ item }) => {
                 alt={data.strMeal}
               />
               <div className="card-img-overlay text-center self-end">
-                <span className="text-yellow-500 text-2xl px-3 rounded-full bg-black/50">
+                <span className="text-yellow-500 px-2 rounded-full bg-black/50">
                   {data.strMeal}
                 </span>
               </div>
