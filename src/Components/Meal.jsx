@@ -54,7 +54,7 @@ const Meal = () => {
         <div className="heading mt-2">
           <MyCarousel />
         </div>
-        <div className="indexContainer py-2">
+        <div className="flex justify-center">
           <RecipeIndex alphaIndex={(alpa) => setIndex(alpa)} />
         </div>
         <div className="input-group input-group-lg">

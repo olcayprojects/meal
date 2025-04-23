@@ -7,10 +7,13 @@ const Meallist = ({ item }) => {
   const navigate = useNavigate();
 
   return (
-    <div className="grid grid-cols-8 gap-1 justify-items-center">
+    <div className="grid grid-cols-2 md:grid-cols-8 gap-1 justify-items-center">
       {item && item.length > 0 ? (
         item.map((data) => (
-          <div className="" key={data.idMeal}>
+          <div
+            className="border-4 border-dashed border-orange-500"
+            key={data.idMeal}
+          >
             <div
               className={`card text-dark bg-black point transform hover:scale-[1.04] transition-all duration-1000 ${
                 visibleCards.includes(
@@ -26,7 +29,7 @@ const Meallist = ({ item }) => {
               title={`Click to go to '${data.strMeal}' details`}
             >
               <img
-                className="border-4 border-dashed border-orange-500"
+                className=""
                 src={data.strMealThumb + "/Medium"}
                 onError={({ currentTarget }) => {
                   currentTarget.onerror = null; // prevents looping
@@ -34,7 +37,7 @@ const Meallist = ({ item }) => {
                 }}
                 alt={data.strMeal}
               />
-              <div className="card-img-overlay text-center self-end">
+              <div className="text-center">
                 <span className="text-yellow-500 px-2 rounded-full bg-black/50">
                   {data.strMeal}
                 </span>

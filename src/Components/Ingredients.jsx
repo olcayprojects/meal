@@ -28,14 +28,14 @@ const Ingredients = () => {
   return (
     <div className="container-fluid m-0 p-0">
       <Nav />
-      <div className="row row-cols-auto row-cols-md-auto mt-2 justify-content-center m-0 p-0">
+      <div className="flex flex-wrap">
         {!item ? (
           <h1>bulunamadı</h1>
         ) : (
           item.map((item) => {
             return (
               <div
-                className="col point m-0 p-0"
+                className="flex-auto point m-0 p-0 flex justify-center"
                 style={{}}
                 key={item.idIngredient}
               >

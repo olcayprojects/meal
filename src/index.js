@@ -5,9 +5,9 @@ import App from "./App";
 //import reportWebVitals from './reportWebVitals';
 import { HashRouter } from "react-router-dom";
 import Footer from "./Components/Footer.jsx";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap-icons/font/bootstrap-icons.css";
-import "bootstrap/dist/js/bootstrap.min.js"
+// import "bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap-icons/font/bootstrap-icons.css";
+// import "bootstrap/dist/js/bootstrap.min.js"
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

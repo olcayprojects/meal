@@ -7,19 +7,17 @@ const RecipeIndex = ({ alphaIndex }) => {
 
   var num = 0;
   return (
-    <>
-      {alpha.map((item) => {
-        return (
-          <div
-            className="numBox mx-auto me-1"
-            key={num++}
-            onClick={() => alphaIndex(item)}
-          >
-            <h1 className="m-0">{item}</h1>
-          </div>
-        );
-      })}
-    </>
+    <div className=" grid grid-cols-6 sm:flex">
+      {alpha.map((item) => (
+        <div
+          key={item}
+          className="numBox mb-1 text-center cursor-pointer"
+          onClick={() => alphaIndex(item)}
+        >
+          <h1 className="m-0">{item}</h1>
+        </div>
+      ))}
+    </div>
   );
 };
 export default RecipeIndex;
