@@ -5,17 +5,43 @@ import useIntersectionObserver from "./useIntersectionObserver"; // Hook'u burad
 const Meallist = ({ item }) => {
   const visibleCards = useIntersectionObserver(); // Hook'u kullanıyoruz
   const navigate = useNavigate();
+  const splitSmart = (text, maxLen = 40) => {
+    const result = [];
+    let i = 0;
+
+    while (i < text.length) {
+      let end = i + maxLen;
+
+      if (end >= text.length) {
+        result.push(text.slice(i).trim());
+        break;
+      }
+
+      let slice = text.slice(i, end);
+      let lastSpace = slice.lastIndexOf(" ");
+
+      if (lastSpace === -1) {
+        result.push(slice);
+        i = end;
+      } else {
+        result.push(slice.slice(0, lastSpace));
+        i += lastSpace + 1;
+      }
+    }
+
+    return result;
+  };
 
   return (
-    <div className="grid grid-cols-2 md:grid-cols-8 gap-1 justify-items-center">
+    <div className="flex flex-wrap  justify-center mt-1">
       {item && item.length > 0 ? (
         item.map((data) => (
           <div
-            className="border-4 border-dashed border-orange-500"
+            className="transform hover:scale-[1.04] transition-all duration-1000 bg-gray-900 mx-auto my-1 border-4 border-dashed border-orange-500"
             key={data.idMeal}
           >
             <div
-              className={`card text-dark bg-black point transform hover:scale-[1.04] transition-all duration-1000 ${
+              className={`point  ${
                 visibleCards.includes(
                   document.querySelector(`#cardS-${data.idMeal}`)
                 )
@@ -38,8 +64,10 @@ const Meallist = ({ item }) => {
                 alt={data.strMeal}
               />
               <div className="text-center">
-                <span className="text-yellow-500 px-2 rounded-full bg-black/50">
-                  {data.strMeal}
+                <span className="text-yellow-500">
+                  {splitSmart(data.strMeal, 40).map((chunk, index) => (
+                    <div key={index}>{chunk}</div>
+                  ))}
                 </span>
               </div>
             </div>

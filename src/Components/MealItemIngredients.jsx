@@ -25,7 +25,14 @@ export const MealItemIngredients = ({ item }) => {
                   alt={ingredient}
                   title={`Click to go to '${ingredient.toUpperCase()}' integrated meals.`}
                 />
-                <h6 className="tracking-tight px-1 m-0">{ingredient}</h6>
+                <h6 className="tracking-tight px-1 m-0">
+                  {ingredient.split(" ").map((word, index) => (
+                    <span className="text-capitalize" key={index}>
+                      {word}
+                      <br />
+                    </span>
+                  ))}
+                </h6>
               </span>
             );
           }
