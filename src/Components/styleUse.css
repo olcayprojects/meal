@@ -13,14 +13,6 @@ body {
   text-align: center;
 }
 
-.card-title {
-  background-color: rgba(0, 0, 0, 0.6);
-  text-align: center;
-}
-.card-text {
-  background-color: rgba(0, 0, 0, 0.4);
-  text-align: center;
-}
 
 .card-img-top {
   transition: transform 0.01s; /* Animation */
