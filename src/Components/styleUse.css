@@ -13,7 +13,6 @@ body {
   text-align: center;
 }
 
-
 .card-img-top {
   transition: transform 0.01s; /* Animation */
   cursor: pointer;
@@ -26,13 +25,13 @@ body {
 
 .numBox {
   cursor: pointer;
-  width: 60px;
+  width: 4-20px;
   background-color: rgba(41, 41, 41, 0.8);
   display: block;
   justify-content: center;
   align-items: center;
   color: orange;
-  margin: 0 5px 0 5px;
+  margin: 0 1px 0 1px;
 }
 
 .numBox :hover {
@@ -290,7 +289,6 @@ th {
   cursor: pointer;
 }
 
-
 .IngredientList li:hover {
   background-color: #f0ad4e !important;
   color: green !important;
@@ -320,4 +318,3 @@ th {
   opacity: 1; /* Görünür olduğunda opaklık 1 olur */
   transform: translateY(0); /* Kart normal pozisyona gelir */
 }
-

@@ -3,11 +3,11 @@ const RecipeIndex = ({ alphaIndex }) => {
   const alpha = Array.from(
     { length: 26 },
     (_, i) => String.fromCharCode(65 + i) // A - Z
-  );
+  ).filter((letter) => letter !== "Q" && letter !== "X");
 
   var num = 0;
   return (
-    <div className=" grid grid-cols-6 sm:flex">
+    <div className=" grid grid-cols-12 sm:flex">
       {alpha.map((item) => (
         <div
           key={item}
