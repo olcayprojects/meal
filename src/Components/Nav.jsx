@@ -1,23 +1,41 @@
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 
 const Nav = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <div className="sticky top-0 bg-dark shadow-md z-50">
-      <nav className="flex flex-wrap items-center justify-between ">
+      <nav className="flex items-center justify-between">
+        {/* Logo */}
         <NavLink to="/" className="flex items-center">
           <img
             src={require("../images/recipes.png")}
             alt="Logo"
-            className="h-[60px] abc "
+            className="h-[60px] abc"
           />
         </NavLink>
 
-        {/* Mobil Menü Toggle (isteğe bağlı) */}
-        {/* <button className="md:hidden text-white">
-          <i className="bi bi-list text-3xl"></i>
-        </button> */}
+        <button
+          onClick={toggleMenu}
+          className="md:hidden text-white focus:outline-none"
+        >
+          <div className="space-y-2">
+            <span className="block w-6 h-0.5 bg-white"></span>
+            <span className="block w-6 h-0.5 bg-white"></span>
+            <span className="block w-6 h-0.5 bg-white"></span>
+          </div>
+        </button>
 
-        <div className="w-full md:flex md:items-center md:w-auto mt-4 md:mt-0">
+        <div
+          className={`${
+            isMenuOpen ? "block" : "hidden"
+          } w-full md:flex md:items-center md:w-auto mt-4 md:mt-0`}
+        >
           <ul className="flex flex-col md:flex-row md:ml-auto gap-3 md:gap-4 text-center">
             <li>
               <NavLink
