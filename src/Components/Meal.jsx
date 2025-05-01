@@ -47,7 +47,7 @@ const Meal = () => {
 
   if (loading) return <Loader />;
   return (
-    <div className="container-fluid">
+    <div className="container-fluid p-0">
       <div className="main">
         <Nav />
 

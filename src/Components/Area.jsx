@@ -37,14 +37,13 @@ const AreaFilter = () => {
     return <Loader />;
   } else {
     return (
-      <div className="container-fluid">
+      <div className="container-fluid p-0">
         <Nav />
         <div className="my-2 text-center mt-3">
           <div className="d-flex justify-content-center">
             <Cmbarealist />
           </div>
-          <span className="text-red-300">
-            
+          <span className="text-orange-300 font-bold text-3xl">
             {areaName} Cuisine
           </span>
         </div>
