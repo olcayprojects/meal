@@ -27,7 +27,7 @@ const Categories = () => {
         ? "Bulunamadı"
         : item.map((itemCategory) => (
             <div
-              className="col m-1 border-2 border-gray-900 hover:scale-105 hover:bg-gray-100 transition-all duration-100"
+              className="col m-1 border-2 border-gray-900 hover:scale-105 hover:bg-yellow-500 transition-all duration-100"
               key={itemCategory.idCategory}
               style={{ width: "150px" }}
               onClick={() => {
