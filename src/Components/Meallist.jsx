@@ -33,7 +33,7 @@ const Meallist = ({ item }) => {
   };
 
   return (
-    <div className="flex flex-wrap justify-center mt-1">
+    <div className="mt-1 grid grid-cols-1 sm:grid-cols-6 gap-1 ">
       {item && item.length > 0 ? (
         item.map((data) => (
           <div
