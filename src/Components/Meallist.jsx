@@ -37,11 +37,11 @@ const Meallist = ({ item }) => {
       {item && item.length > 0 ? (
         item.map((data) => (
           <div
-            className="transform hover:scale-[1.04] transition-all duration-1000 bg-gray-900 mx-auto my-1 border-4 border-dashed border-orange-500"
+            className="bg-gray-900 mx-auto my-1 border-4 border-dashed border-orange-500"
             key={data.idMeal}
           >
             <div
-              className={`point  ${
+              className={`overflow-hidden  point  ${
                 visibleCards.includes(
                   document.querySelector(`#cardS-${data.idMeal}`)
                 )
@@ -55,7 +55,7 @@ const Meallist = ({ item }) => {
               title={`Click to go to '${data.strMeal}' details`}
             >
               <img
-                className=""
+                className="transform hover:scale-[1.9] transition-all duration-1000 "
                 src={data.strMealThumb + "/Medium"}
                 onError={({ currentTarget }) => {
                   currentTarget.onerror = null; // prevents looping
@@ -64,7 +64,7 @@ const Meallist = ({ item }) => {
                 alt={data.strMeal}
               />
               <div className="text-center">
-                <span className="text-yellow-500">
+                <span className="text-yellow-500 font-bold">
                   {splitSmart(data.strMeal, 40).map((chunk, index) => (
                     <div key={index}>{chunk}</div>
                   ))}
