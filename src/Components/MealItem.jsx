@@ -43,12 +43,12 @@ const MealItem2 = ({ data }) => {
                   }}
                   id={`cardS-${item.idMeal}`}
                 >
-                  <div className="mealImg">
+                  <div className="mealImg overflow-hidden">
                     <img
                       onClick={() => {
                         navigate(`/recipeinfo/${item.idMeal}`);
                       }}
-                      className="card-img-top"
+                      className="card-img-top transform hover:scale-[1.9] transition-all duration-1000"
                       // src={item.strMealThumb + "/preview"}
                       src={item.strMealThumb + "/medium"}
                       onError={(e) => {

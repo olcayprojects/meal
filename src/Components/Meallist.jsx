@@ -41,7 +41,7 @@ const Meallist = ({ item }) => {
             key={data.idMeal}
           >
             <div
-              className={`overflow-hidden  point  ${
+              className={`point  ${
                 visibleCards.includes(
                   document.querySelector(`#cardS-${data.idMeal}`)
                 )
@@ -54,15 +54,18 @@ const Meallist = ({ item }) => {
               }}
               title={`Click to go to '${data.strMeal}' details`}
             >
-              <img
-                className="transform hover:scale-[1.9] transition-all duration-1000 "
-                src={data.strMealThumb + "/Medium"}
-                onError={({ currentTarget }) => {
-                  currentTarget.onerror = null; // prevents looping
-                  currentTarget.src = data.strMealThumb; // Fallback to the original image if the medium size fails
-                }}
-                alt={data.strMeal}
-              />
+              <div className="overflow-hidden">
+                <img
+                  className="transform hover:scale-[1.9] transition-all "
+                  style={{ transitionDuration: "2s" }}
+                  src={data.strMealThumb + "/Medium"}
+                  onError={({ currentTarget }) => {
+                    currentTarget.onerror = null; // prevents looping
+                    currentTarget.src = data.strMealThumb; // Fallback to the original image if the medium size fails
+                  }}
+                  alt={data.strMeal}
+                />
+              </div>
               <div className="text-center">
                 <span className="text-yellow-500 font-bold">
                   {splitSmart(data.strMeal, 40).map((chunk, index) => (
