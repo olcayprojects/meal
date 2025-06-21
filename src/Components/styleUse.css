@@ -295,17 +295,25 @@ th {
   font-weight: bold;
 }
 
+/* Firefox için */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: orange #000; /* Turuncu scrollbar, siyah track */
+}
+
+/* WebKit tabanlı tarayıcılar için */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 12px;
 }
 
 ::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 12px rgba(255, 115, 0, 0.8);
+  background: #000; /* Scrollbar track (arka plan): siyah */
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #f0ad4e;
-  outline: 1px solid orange;
+  background-color: #000; /* İç kısmı siyah */
+  border: 2px solid orange; /* Turuncu kenarlık */
+  border-radius: 10px;
 }
 
 .cardS {
