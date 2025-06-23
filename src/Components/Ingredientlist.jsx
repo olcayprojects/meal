@@ -1,61 +1,38 @@
 import { useNavigate } from "react-router-dom";
 
-export default function Ingredientlist(props) {
-  let navigate = useNavigate();
-  let ingredientURL = "https://www.themealdb.com/images/ingredients/";
-
-  let mealName = "";
-
-  for (let index = 25; index > 1; index--) {
-    if (props.item.strMeal?.substring(index, index + 1) === " ") {
-      mealName =
-        props.item.strMeal.substring(0, index) +
-        "\n" +
-        props.item.strMeal.substring(index, props.item.strMeal.length);
-      break;
-    }
-  }
+export default function IngredientList({ item }) {
+  const navigate = useNavigate();
+  const ingredientURL = "https://www.themealdb.com/images/ingredients/";
 
   return (
     <ul className="list-group list-group-horizontal fs-5 point d-flex flex-wrap justify-content-center align-items-center">
-      {Object.keys(props.item).map((items, index) => {
-        return props.item["strIngredient" + index] ? (
-          <div className="pb-1" key={index} style={{}}>
+      {[...Array(20)].map((_, index) => {
+        const ingredient = item[`strIngredient${index + 1}`];
+        const measure = item[`strMeasure${index + 1}`];
+
+        if (!ingredient || ingredient.trim() === "") return null;
+
+        return (
+          <div className="pb-1" key={index}>
             <li
-              id={props.item["strIngredient" + index]}
-              title={
-                "Click go to " +
-                props.item["strIngredient" + index] +
-                " Recipes"
-              }
-              onClick={(ef) => {
-                navigate(
-                  `/ingredientsfilter/${props.item["strIngredient" + index]}`
-                );
-              }}
+              id={ingredient}
+              title={`Click to go to ${ingredient} Recipes`}
+              onClick={() => navigate(`/ingredientsfilter/${ingredient}`)}
               className="fw-bold list-group-item bg-dark text-warning border-warning mx-1 p-0 d-flex flex-column justify-content-center align-items-center"
-              style={{}}
             >
-              <div className="d-flex justify-content-center">
+              <div className="d-flex justify-content-center overflow-hidden">
                 <img
-                  className="img-fluid"
-                  style={{}}
-                  src={
-                    ingredientURL +
-                    props.item["strIngredient" + index] +
-                    "-Small.png"
-                  }
-                  alt={props.item["strIngredient" + index]}
+                  className="img-fluid transform hover:scale-[1.9] transition-all duration-1000"
+                  src={`${ingredientURL}${ingredient}-Small.png`}
+                  alt={ingredient}
                 />
               </div>
-              <p className="text-center bg-black w-100 px-1" style={{}}>
-                {`${props.item["strMeasure" + index].trim()} ${
-                  props.item["strIngredient" + index]
-                }`}
+              <p className="text-center bg-black px-1 w-full max-w-[20ch] leading-[1.2em] h-[2.4em] overflow-hidden break-words whitespace-normal line-clamp-2">
+                {`${measure?.trim() || ""} ${ingredient}`}
               </p>
             </li>
           </div>
-        ) : null;
+        );
       })}
     </ul>
   );

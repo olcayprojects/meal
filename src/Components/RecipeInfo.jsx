@@ -156,7 +156,7 @@ const RecipeInfo = () => {
                   <hr className="my-1 border-orange-500 border-4" />
                 </h4>
 
-                <pre className="text-warning bg-dark p-1 fs-5 lh-sm m-0">
+                <pre className="text-warning bg-dark px-1 fs-5 lh-sm m-0 italic">
                   {item?.strInstructions}
                 </pre>
               </div>
