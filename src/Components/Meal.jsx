@@ -61,7 +61,7 @@ const Meal = () => {
           <div className="input-group-prepend"></div>
           <input
             type="search"
-            className="form-control bg-warning-subtle fw-bold fs-4"
+            className="form-control bg-warning-subtle fw-bold fs-4 p-0 text-center"
             aria-label="Large"
             aria-describedby="inputGroup-sizing-lg"
             onChange={(e) => setSearch(e.target.value)}

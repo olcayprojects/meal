@@ -86,15 +86,17 @@ nav li a {
   text-decoration: none;
   font-size: larger;
   font-weight: normal;
-} */
+} 
 
-nav li :hover {
+
+*/
+Nav li :hover {
   color: black !important;
   background-color: #f0ad4e !important;
   font-weight: bolder;
   transform: rotate(-1deg);
-  transition: 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Yavaş geçişler */
-  transition-delay: 0.2s; /* Gecikme ekle */
+  transition: 0.9s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  transition-delay: 0.1s;
 }
 
 .abc:hover {

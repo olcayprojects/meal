@@ -12,7 +12,7 @@ const Nav = () => {
     <div className="sticky top-0 bg-dark shadow-md z-50">
       <nav className="flex items-center justify-between">
         {/* Logo */}
-        <NavLink to="/" className="flex items-center">
+        <NavLink to="/" className="flex items-center ps-2">
           <img
             src={require("../images/recipes.png")}
             alt="Logo"
@@ -34,40 +34,40 @@ const Nav = () => {
         <div
           className={`${
             isMenuOpen ? "block" : "hidden"
-          } w-full md:flex md:items-center md:w-auto mt-4 md:mt-0`}
+          } w-full md:flex md:items-center me-2 md:w-auto mt-4 md:mt-0`}
         >
           <ul className="flex flex-col md:flex-row md:ml-auto gap-3 md:gap-4 text-center">
             <li>
               <NavLink
                 to="/categories"
-                className="no-underline border-2 border-yellow-500 bg-black text-yellow-500 px-2 py-1 rounded-lg text-lg hover:bg-yellow-500 hover:text-black transition"
+                className="no-underline border-2 border-yellow-200 bg-black text-yellow-500 px-2 py-1 rounded-lg text-lg hover:bg-yellow-500"
               >
-                <i className="bi bi-card-list mr-2"></i> CATEGORIES
+                CATEGORIES
               </NavLink>
             </li>
             <li>
               <NavLink
                 to="/ingredients"
-                className="no-underline border-2 border-yellow-500 bg-black text-yellow-500 px-2 py-1 rounded-lg text-lg hover:bg-yellow-500 hover:text-black transition"
+                className="no-underline border-2 border-yellow-200 bg-black text-yellow-500 px-2 py-1 rounded-lg text-lg"
               >
-                <i className="bi bi-list-ul mr-2"></i> MAIN INGREDIENTS
+                MAIN INGREDIENTS
               </NavLink>
             </li>
             <li>
               <NavLink
                 to="/Area"
-                className="no-underline border-2 border-yellow-300 bg-black text-yellow-500 px-2 py-1 rounded-lg text-lg hover:bg-yellow-500 hover:text-black transition"
+                className="no-underline border-2 border-yellow-200 bg-black text-yellow-500 px-2 py-1 rounded-lg text-lg"
               >
-                <i className="bi bi-globe mr-2"></i> CUISINE
+                CUISINE
               </NavLink>
             </li>
             <li>
               <NavLink
                 reloadDocument
                 to="/randomeal"
-                className="no-underline border-2 border-yellow-500 bg-black text-yellow-500 px-2 py-1 rounded-lg text-lg hover:bg-yellow-500 hover:text-black transition"
+                className="no-underline border-2 border-yellow-200 bg-black text-yellow-500 px-2 py-1 rounded-lg text-lg"
               >
-                <i className="bi bi-shuffle mr-2"></i> RANDOM MEAL
+                RANDOM MEAL
               </NavLink>
             </li>
           </ul>
