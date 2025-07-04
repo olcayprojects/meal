@@ -66,12 +66,12 @@ const Meallist = ({ item }) => {
                   alt={data.strMeal}
                 />
               </div>
-              <div className="text-center">
-                <span className="text-yellow-500 font-bold">
+              <div className="text-center px-1 bg-gradient">
+                <div className="text-yellow-500 font-bold">
                   {splitSmart(data.strMeal, 40).map((chunk, index) => (
                     <div key={index}>{chunk}</div>
                   ))}
-                </span>
+                </div>
               </div>
             </div>
           </div>
