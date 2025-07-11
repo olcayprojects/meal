@@ -82,12 +82,12 @@ export function CategoryInfo({ cName }) {
     <>
       <div className="text-center mt-1">
         <img
-          className="img-fluid img-thumbnail mx-auto d-block"
+          className="img-fluid bg-orange-200 mx-auto d-block"
           src={infocate?.strCategoryThumb}
           alt={infocate?.strCategory}
           title={infocate?.strCategory}
         />
-        <span className="bg-warning fs-1 px-4 fw-bold rounded-pill">
+        <span className="bg-orange-700 text-black fs-1 px-4 fw-bold rounded-pill">
           {infocate?.strCategory} Meals
         </span>
       </div>
