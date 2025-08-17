@@ -21,7 +21,7 @@ const MealItem2 = ({ data }) => {
   let navigate = useNavigate();
 
   return (
-    <div className="grid  grid-cols-1 md:grid-cols-3 lg:grid-cols-4">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
       {!data
         ? "bulunamadı"
         : data.map((item, index) => {
@@ -64,7 +64,7 @@ const MealItem2 = ({ data }) => {
                   </div>
                   <div className="mealName">
                     <span
-                      className="px-2 fs-3  border-dark border-4 fw-bold bg-warning text-dark rounded-4"
+                      className="px-2 fs-3 border-dark border-4 fw-bold bg-warning text-dark rounded-4"
                       style={{}}
                     >
                       {toTitleCase(item.strMeal)}

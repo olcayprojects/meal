@@ -6,7 +6,7 @@ export const MealItemIngredients = ({ item }) => {
   let ingredientURL = "https://www.themealdb.com/images/ingredients/";
 
   return (
-    <div className="grid grid-cols-4 px-1">
+    <div className="grid grid-cols-3">
       {Object.keys(item)
         .filter((key) => key.startsWith("strIng"))
         .map((key, ind) => {
@@ -16,7 +16,7 @@ export const MealItemIngredients = ({ item }) => {
             return (
               <span
                 onClick={() => navigate(`/ingredientsfilter/${ingredient}`)}
-                className="btn btn-outline-warning p-0"
+                className="btn btn-outline-warning p-0 m-1"
                 key={key}
               >
                 <img
@@ -25,7 +25,7 @@ export const MealItemIngredients = ({ item }) => {
                   alt={ingredient}
                   title={`Click to go to '${ingredient.toUpperCase()}' integrated meals.`}
                 />
-                <h6 className="tracking-tight px-1 m-0">
+                <h6 className="tracking-tight m-0">
                   {ingredient.split(" ").map((word, index) => (
                     <span className="text-capitalize" key={index}>
                       {word}
