@@ -7,14 +7,14 @@ const RecipeIndex = ({ alphaIndex }) => {
   ).filter((letter) => letter !== "Q" && letter !== "X");
 
   return (
-    <div className="flex flex-nowrap overflow-x-auto justify-start">
+    <div className="flex flex-nowrap overflow-x-auto justify-start cursor-pointer numBox my-1">
       {alpha.map((item) => (
         <div
           key={item}
-          className="numBox text-center cursor-pointer py-1 shrink-0"
+          className="border border-warning text-warning text-center px-1 mx-1 shrink-0"
           onClick={() => alphaIndex(item)}
         >
-          <h1 className="m-0">{item}</h1>
+          <h2 className="m-1">{item}</h2>
         </div>
       ))}
     </div>

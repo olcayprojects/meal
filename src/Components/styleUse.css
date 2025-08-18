@@ -23,23 +23,13 @@ body {
   justify-content: center;
 }
 
-.numBox {
-  cursor: pointer;
-  width: 4-20px;
-  background-color: rgba(41, 41, 41, 0.8);
-  display: block;
-  justify-content: center;
-  align-items: center;
-  color: orange;
-  margin: 0 1px 0 1px;
-}
-
 .numBox :hover {
+  display: block;
   color: black;
   font-weight: bold;
   background-color: orange;
   transition: all 0.5s ease-out, color 0.5ms;
-  border-style: none;
+  border: none !important;
 }
 
 .recipe-details {
