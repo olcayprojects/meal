@@ -50,7 +50,7 @@ const MealItem2 = ({ data }) => {
                       }}
                       className="card-img-top transform hover:scale-[1.9] transition-all duration-1000"
                       // src={item.strMealThumb + "/preview"}
-                      src={item.strMealThumb + "/medium"}
+                      src={item.strMealThumb + ""}
                       onError={(e) => {
                         e.currentTarget.src = item.strMealThumb;
                       }}
@@ -69,6 +69,9 @@ const MealItem2 = ({ data }) => {
                     >
                       {toTitleCase(item.strMeal)}
                     </span>
+                    <h6 className="text-info underline lh-1">
+                      {item["strTags"]}
+                    </h6>
                     <div className="my-2">
                       <button
                         type="button"
@@ -89,17 +92,6 @@ const MealItem2 = ({ data }) => {
                         {item["strCategory"]} Meals
                       </button>
                     </div>
-
-                    {item["strTags"]?.split(",").map((itemtag, i) => {
-                      return (
-                        <span
-                          key={i}
-                          className="fs-5 badge rounded-pill bg-info text-black mb-2 mx-1"
-                        >
-                          {itemtag}
-                        </span>
-                      );
-                    })}
                   </div>
                   <MealItemIngredients key={item.idMeal} item={item} />
                 </div>

@@ -54,7 +54,7 @@ const RecipeInfo = () => {
                   }}
                 ></i>
                 <span
-                  className="fw-bold px-1 bg-warning text-dark"
+                  className="fw-bold px-1 py-0 lh-1 bg-warning text-dark"
                   style={{
                     border: "dashed",
                     borderColor: "dimgrey",
@@ -110,7 +110,7 @@ const RecipeInfo = () => {
               className="text-center bg-dark"
             >
               <span
-                className="btn btn-outline-success fs-4 fw-bold border-2"
+                className="btn btn-outline-success lh-1 fs-4 fw-bold border-2"
                 onClick={() => {
                   navigate(`/fg/${item.strCategory}`);
                 }}
@@ -119,7 +119,7 @@ const RecipeInfo = () => {
               </span>
 
               <span
-                className="btn btn-outline-info fs-4 fw-bold border-2"
+                className="btn btn-outline-info lh-1 fs-4 fw-bold border-2"
                 onClick={(e) => {
                   navigate(`/area/${item.strArea}`);
                 }}

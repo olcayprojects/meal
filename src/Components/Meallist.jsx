@@ -58,7 +58,7 @@ const Meallist = ({ item }) => {
                 <img
                   className="transform hover:scale-[1.9] transition-all "
                   style={{ transitionDuration: "2s" }}
-                  src={data.strMealThumb + "/Medium"}
+                  src={data.strMealThumb + ""}
                   onError={({ currentTarget }) => {
                     currentTarget.onerror = null; // prevents looping
                     currentTarget.src = data.strMealThumb; // Fallback to the original image if the medium size fails
