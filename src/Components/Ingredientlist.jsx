@@ -18,7 +18,8 @@ export default function IngredientList({ item }) {
               id={ingredient}
               title={`Click to go to ${ingredient} Recipes`}
               onClick={() => navigate(`/ingredientsfilter/${ingredient}`)}
-              className="fw-bold list-group-item bg-dark text-warning border-warning mx-1 p-0 d-flex flex-column justify-content-center align-items-center"
+              className="fw-bold list-group-item bg-dark text-warning border-warning mx-1 p-0 d-flex flex-col justify-center items-center
+             hover:scale-105 hover:shadow-2xl hover:shadow-yellow-500/50 transition-all duration-300"
             >
               <div className="d-flex justify-content-center overflow-hidden">
                 <img

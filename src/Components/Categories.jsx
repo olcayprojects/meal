@@ -36,7 +36,7 @@ const Categories = () => {
             >
               <div className="card text-gray-500 bg-transparent ">
                 <img
-                  className="shadow"
+                  className="shadow bg-gray-900"
                   src={itemCategory.strCategoryThumb}
                   title={itemCategory.strCategory}
                   alt={itemCategory.strCategory}

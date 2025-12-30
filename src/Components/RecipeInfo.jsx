@@ -75,7 +75,7 @@ const RecipeInfo = () => {
               <img
                 key={item.idMeal}
                 className="mx-auto border-4 border-dashed border-orange-500 d-block rounded"
-                src={item.strMealThumb + ""}
+                src={item.strMealThumb + "/large"}
                 onError={({ currentTarget }) => {
                   currentTarget.onerror = null; // prevents looping
                   currentTarget.src = item.strMealThumb;
