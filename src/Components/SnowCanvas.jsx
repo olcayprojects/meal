@@ -29,7 +29,7 @@ export default function SnowCanvas() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       ctx.fillStyle = "rgba(255,255,255,0.8)";
       ctx.beginPath();
-      flakes.forEach(flake => {
+      flakes.forEach((flake) => {
         ctx.moveTo(flake.x, flake.y);
         ctx.arc(flake.x, flake.y, flake.radius, 0, Math.PI * 2);
       });
@@ -37,7 +37,7 @@ export default function SnowCanvas() {
     };
 
     const update = () => {
-      flakes.forEach(flake => {
+      flakes.forEach((flake) => {
         flake.y += flake.speedY;
         flake.x += flake.speedX;
         if (flake.y > canvas.height) {
@@ -65,7 +65,7 @@ export default function SnowCanvas() {
     <canvas
       ref={canvasRef}
       style={{
-        position: "fixed",
+        position: "absolute",
         inset: 0,
         pointerEvents: "none",
         zIndex: 999,

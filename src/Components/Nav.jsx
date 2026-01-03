@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
+import SnowCanvas from "./SnowCanvas";
 
 const Nav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -9,8 +10,10 @@ const Nav = () => {
   };
 
   return (
-    <div className="sticky top-0 bg-dark shadow-md z-50">
-      <nav className="flex items-center justify-between">
+    <div className=" top-0 bg-dark shadow-md z-50 relative overflow-hidden">
+      <SnowCanvas />
+
+      <nav className="flex items-center justify-between relative z-10">
         {/* Logo */}
         <NavLink to="/" className="flex items-center ps-2">
           <img
